@@ -1,0 +1,17 @@
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.exe.config
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.exe
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.pdb
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.AssemblyReference.cache
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\MainWindow.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\App.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.cache
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.lref
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\MainWindow.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.g.resources
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.Properties.Resources.resources
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.GenerateResource.cache
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.CoreCompileInputs.cache
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.exe
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.pdb
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Page1.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration système\Projet_M1_Integration_Systeme\obj\Debug\Page1.baml
