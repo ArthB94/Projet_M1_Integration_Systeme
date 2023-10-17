@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,30 +16,57 @@ using System.Windows.Shapes;
 
 namespace Projet_M1_Integration_Systeme
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            List<PizzaViewModel> pizzas = new List<PizzaViewModel>
+            Pizzas = new ObservableCollection<PizzaViewModel>
             {
-                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Small" }),
-                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Medium" }),
-                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Large" }),
-                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Small" }),
-                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Medium" }),
-                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Large" }),
-                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Small" }),
-                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Medium" }),
-                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Large" }),
-
+                new PizzaViewModel(new Pizza ()),
                 // Ajoutez autant d'éléments que vous le souhaitez
             };
+            // Abonnez-vous à l'événement PriceChanged de chaque PizzaViewModel
+            foreach (var pizzaViewModel in Pizzas)
+            {
+                pizzaViewModel.PriceChanged += UpdateTotalPrice;
+            }
 
-            LbxPizzas.ItemsSource = pizzas;
+            LblTotalPriceValue.Content = TotalPrice;
+            DgPizzas.ItemsSource = Pizzas;
         }
+
+        public void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Pizzas.Add(new PizzaViewModel(new Pizza()));
+            UpdateTotalPrice();
+        }
+
+        public void BtnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Merci pour votre achat !");
+        }
+
+        public void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.DataContext is PizzaViewModel pizzaViewModel)
+                {
+                    Pizzas.Remove(pizzaViewModel);
+                }
+            }
+            UpdateTotalPrice();
+        }
+        private void UpdateTotalPrice()
+        {
+            LblTotalPriceValue.Content = TotalPrice;
+        }
+
+        public int TotalPrice => Pizzas.Sum(p => p.Pizza.Price);
+
+
     }
 }
