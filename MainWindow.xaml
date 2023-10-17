@@ -7,15 +7,17 @@
         mc:Ignorable="d"
         Title="Pizzeria" Height="450" Width="800">
     <Grid>
-        <ListBox HorizontalAlignment="Center" VerticalAlignment="Top"
-                 x:Name="LbxUtilisateurs">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Content="{Binding Nom}" />
-                    
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+		<ListBox HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="LbxPizzas">
+    <ListBox.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Name}" />
+                <Label Content="{Binding Size}" />
+                <Label Content="{Binding Price}" />
+            </StackPanel>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>
         
     </Grid>
 </Window>

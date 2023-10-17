@@ -23,12 +23,22 @@ namespace Projet_M1_Integration_Systeme
         public MainWindow()
         {
             InitializeComponent();
-            LbxUtilisateurs.ItemsSource = new List<Utilisateur>
+            List<PizzaViewModel> pizzas = new List<PizzaViewModel>
             {
-                new Utilisateur { Nom = "Jean" },
-                new Utilisateur { Nom = "Paul" },
-                new Utilisateur { Nom = "Jacques" }
+                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Small" }),
+                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Medium" }),
+                new PizzaViewModel(new Pizza { Name = "Margherita", Size = "Large" }),
+                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Small" }),
+                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Medium" }),
+                new PizzaViewModel(new Pizza { Name = "Pepperoni", Size = "Large" }),
+                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Small" }),
+                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Medium" }),
+                new PizzaViewModel(new Pizza { Name = "Hawaiian", Size = "Large" }),
+
+                // Ajoutez autant d'éléments que vous le souhaitez
             };
+
+            LbxPizzas.ItemsSource = pizzas;
         }
     }
 }
