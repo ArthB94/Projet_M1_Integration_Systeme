@@ -51,6 +51,11 @@ namespace Projet_M1_Integration_Systeme
             mainWindow.BtnNext_Click(sender, e);
         }
 
+        public void BtnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.BtnPrevious_Click(sender, e);
+        }
+
         public void BtnRemove_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
