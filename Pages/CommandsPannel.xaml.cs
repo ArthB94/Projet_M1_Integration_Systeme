@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Projet_M1_Integration_Systeme
 {
     /// <summary>
-    /// Logique d'interaction pour Page1.xaml
+    /// Logique d'interaction pour CommandsPannel.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class CommandsPannel : Page
     {
-        public Page1()
+        public CommandsPannel()
         {
             InitializeComponent();
         }

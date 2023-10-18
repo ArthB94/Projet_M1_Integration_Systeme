@@ -16,60 +16,50 @@ using System.Windows.Shapes;
 
 namespace Projet_M1_Integration_Systeme
 {
+
     public partial class MainWindow : Window
     {
-        public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
+        public List<Page> Pages { get; set; }
+        public int CurrentPageIndex { get; set; }
+        public Page CurrentPage => Pages[CurrentPageIndex];
 
+        public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
         public MainWindow()
         {
-            InitializeComponent();
             Pizzas = new ObservableCollection<PizzaViewModel>
             {
                 new PizzaViewModel(new Pizza ()),
-                // Ajoutez autant d'éléments que vous le souhaitez
             };
-            foreach (var pizzaViewModel in Pizzas)
+            Pages = new List<Page>
             {
-                pizzaViewModel.PriceChanged += UpdateTotalPrice;
-            }
+                new CommandePage(),
+                new CommandsPannel(),
+            };
 
-            LblTotalPriceValue.Content = TotalPrice;
-            DgPizzas.ItemsSource = Pizzas;
+            InitializeComponent();
+
         }
 
-        public void BtnAdd_Click(object sender, RoutedEventArgs e)
+        public void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-            Pizzas.Add(new PizzaViewModel(new Pizza()));
-            UpdateTotalPrice();
-            foreach (var pizzaViewModel in Pizzas)
+            if (CurrentPageIndex < Pages.Count - 1)
             {
-                pizzaViewModel.PriceChanged += UpdateTotalPrice;
+                CurrentPageIndex++;
+                MainFrame.Content = CurrentPage;
             }
         }
 
-        public void BtnBuy_Click(object sender, RoutedEventArgs e)
+        public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Merci pour votre achat !");
-        }
-
-        public void BtnRemove_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is Button button)
+            if (CurrentPageIndex > 0)
             {
-                if (button.DataContext is PizzaViewModel pizzaViewModel)
-                {
-                    Pizzas.Remove(pizzaViewModel);
-                }
+                CurrentPageIndex--;
+                MainFrame.Content = CurrentPage;
             }
-            UpdateTotalPrice();
-        }
-        private void UpdateTotalPrice()
-        {
-            LblTotalPriceValue.Content = TotalPrice;
         }
 
-        public int TotalPrice => Pizzas.Sum(p => p.Pizza.Price);
 
+        
 
     }
 }
