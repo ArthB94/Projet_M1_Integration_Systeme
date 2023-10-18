@@ -28,7 +28,6 @@ namespace Projet_M1_Integration_Systeme
                 new PizzaViewModel(new Pizza ()),
                 // Ajoutez autant d'éléments que vous le souhaitez
             };
-            // Abonnez-vous à l'événement PriceChanged de chaque PizzaViewModel
             foreach (var pizzaViewModel in Pizzas)
             {
                 pizzaViewModel.PriceChanged += UpdateTotalPrice;
@@ -42,6 +41,10 @@ namespace Projet_M1_Integration_Systeme
         {
             Pizzas.Add(new PizzaViewModel(new Pizza()));
             UpdateTotalPrice();
+            foreach (var pizzaViewModel in Pizzas)
+            {
+                pizzaViewModel.PriceChanged += UpdateTotalPrice;
+            }
         }
 
         public void BtnBuy_Click(object sender, RoutedEventArgs e)
