@@ -17,7 +17,7 @@ namespace Projet_M1_Integration_Systeme
             SelectedName = AvailableName[0];
             SelectedSize = AvailableSizes[0];
         }
-        public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Hawaiian" };
+        public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood"};
 
         public string SelectedName
         {
@@ -36,7 +36,7 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-        public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large" };
+        public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
 
         public string SelectedSize
         {
@@ -62,9 +62,10 @@ namespace Projet_M1_Integration_Systeme
             if (SelectedSize == "Small") price += 5;
             else if (SelectedSize == "Medium") price += 10;
             else if (SelectedSize == "Large") price += 15;
+            else if (SelectedSize == "Extra Large") price += 20;
 
-            if (SelectedName == "Pepperoni") price += 2;
-            else if (SelectedName == "Hawaiian") price += 3;
+            if (new string[] { "Pepperoni", "Vegetarian", "Cheese" }.Contains(SelectedName)) price += 2;
+            else if (new string[] { "Hawaiian", "Meat Lovers", "Seafood" }.Contains(SelectedName)) price += 3;
 
             return price;
         }
@@ -81,20 +82,19 @@ namespace Projet_M1_Integration_Systeme
     {
         public static int count = 0;
         public event PropertyChangedEventHandler PropertyChanged;
-        public event Action PriceChanged; // Nouvel événement PriceChanged
+        public event Action PriceChanged;
         public int Id { get; }
 
         public PizzaViewModel(Pizza pizza)
         {
             count++;
             Pizza = pizza;
-            // Abonnez-vous à l'événement PropertyChanged de la pizza pour mettre à jour la propriété Price
             Pizza.PropertyChanged += (sender, args) =>
             {
                 if (args.PropertyName == "Price")
                 {
                     OnPropertyChanged(nameof(Price));
-                    PriceChanged?.Invoke(); // Déclenche l'événement PriceChanged
+                    PriceChanged?.Invoke();
                 }
             };
             Id = count;
@@ -108,7 +108,7 @@ namespace Projet_M1_Integration_Systeme
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            PriceChanged?.Invoke(); // Déclenche l'événement PriceChanged
+            PriceChanged?.Invoke();
         }
     }
 

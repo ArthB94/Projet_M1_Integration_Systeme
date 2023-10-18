@@ -32,11 +32,16 @@ namespace Projet_M1_Integration_Systeme
             };
             Pages = new List<Page>
             {
+                new ConnectionPage(),
+                new ClientPage(),
                 new CommandePage(),
-                new CommandsPannel(),
             };
 
+
             InitializeComponent();
+            CurrentPageIndex = 0;
+            MainFrame.Content = CurrentPage;
+
 
         }
 

@@ -5,78 +5,75 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Projet_M1_Integration_Systeme"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="300" d:Background="White"
       Title="CommandsPannel">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
 
-    <Border BorderBrush="Black" BorderThickness="1"  >
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1*" />
-
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
-                <Label Content="Commandes in preparation" FontWeight="Bold"  HorizontalAlignment="Center" />
-            </Border>
-            <DataGrid Grid.Row="1" x:Name="DgCommandesCooking" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
-                <DataGrid.Background>
-                    <SolidColorBrush Color="Gray" Opacity="0.6"  />
-                </DataGrid.Background>
-                <DataGrid.Resources>
-                    <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="BorderThickness" Value="0,0,1,1" />
-                        <Setter Property="BorderBrush" Value="Black" />
-                        <Setter Property="Padding" Value="5" />
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns >
-                    <!---->
-                    <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                    <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
-                <Label   Content="Commandes ready" FontWeight="Bold"  HorizontalAlignment="Center" />
-            </Border>
-            <DataGrid Grid.Row="3" x:Name="DgCommandesReady" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
-                <DataGrid.Background>
-                    <SolidColorBrush Color="Gray" Opacity="0.6"  />
-                </DataGrid.Background>
-                <DataGrid.Resources>
-                    <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="BorderThickness" Value="0,0,1,1" />
-                        <Setter Property="BorderBrush" Value="Black" />
-                        <Setter Property="Padding" Value="5" />
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns >
-                    <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                    <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
-                </DataGrid.Columns>
-            </DataGrid >
-            <Border Grid.Row="4" BorderBrush="Black" BorderThickness="1">
-                <Label   Content="Commandes delivered" FontWeight="Bold"  HorizontalAlignment="Center" />
-            </Border>
-            <DataGrid Grid.Row="5" x:Name="DgCommandesDelivered" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
-                <DataGrid.Background>
-                    <SolidColorBrush Color="Gray" Opacity="0.6"  />
-                </DataGrid.Background>
-                <DataGrid.Resources>
-                    <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="BorderThickness" Value="0,0,1,1" />
-                        <Setter Property="BorderBrush" Value="Black" />
-                        <Setter Property="Padding" Value="5" />
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.Columns >
-                    <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                    <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
-    </Border>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
+            <Label Content="Commandes in preparation" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="1" x:Name="DgCommandesCooking" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <!---->
+                <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
+                <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+            <Label   Content="Commandes ready" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="3" x:Name="DgCommandesReady" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
+                <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+            </DataGrid.Columns>
+        </DataGrid >
+        <Border Grid.Row="4" BorderBrush="Black" BorderThickness="1">
+            <Label   Content="Commandes delivered" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="5" x:Name="DgCommandesDelivered" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
+                <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Page>

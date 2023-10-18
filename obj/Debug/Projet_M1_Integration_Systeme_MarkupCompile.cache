@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\App.xaml
-3-987416326
+5-57869101
 
-9897745827
+11798616762
 13-1310406943
-MainWindow.xaml;Pages\CommandsPannel.xaml;Pages\CommandePage.xaml;
+Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\ClientPage.xaml;Pages\CommandsPannel.xaml;Pages\CommandePage.xaml;
 
 False
 

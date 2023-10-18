@@ -34,3 +34,7 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandePage.g.cs
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsPannel.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandePage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ClientPage.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ClientPage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.baml
