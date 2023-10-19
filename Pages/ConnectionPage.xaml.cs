@@ -21,26 +21,29 @@ namespace Projet_M1_Integration_Systeme
     /// </summary>
     public partial class ConnectionPage : Page
     {
+        // permet de récupérer touts les elements initialisés dans MainWindow
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
+        // permet de vérifier si les champs repectent toutes les conditions nécessaires
         public bool IsButtonEnabled => NameTextBox.Text.Length > 0
             && SurnameTextBox.Text.Length > 0 && PhoneNumberTextBox.Text.Length == 10;
-
-
-
 
         public ConnectionPage()
         {
 
             InitializeComponent();
 
+            // permet de vérifier si les champs sont vides a chaque fois que un input est modifié
             VerifyIsEmpty();
             NameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
             SurnameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
             PhoneNumberTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
 
+            // empêche la saisie de caractères non numériques
             PhoneNumberTextBox.PreviewTextInput += Number_PreviewTextInput;
             PhoneNumberTextBox.MaxLength = 10;
+
+            // empêche la saisie de caractères non alphabétiques
             NameTextBox.PreviewTextInput += String_PreviewTextInput;
             SurnameTextBox.PreviewTextInput += String_PreviewTextInput;
 
@@ -64,6 +67,7 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
+        // permet de vérifier si les champs sont vides et affiche un message d'erreur si nécessaire
         private void VerifyIsEmpty()
         {
             BtnConnection.IsEnabled = IsButtonEnabled;
@@ -77,12 +81,13 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-
+        // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.BtnNext_Click(sender, e);
         }
 
+        // permet de passer directement à la page de commande
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.CurrentPageIndex = 2;

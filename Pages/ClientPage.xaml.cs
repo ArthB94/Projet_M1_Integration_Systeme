@@ -36,7 +36,9 @@ namespace Projet_M1_Integration_Systeme
 
             InitializeComponent();
 
+            // permet de vérifier si les champs sont vides
             VerifyIsEmpty();
+            // permet de vérifier si les champs sont vides apres chaque modification
             NameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
             SurnameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
             PhoneNumberTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
@@ -46,11 +48,14 @@ namespace Projet_M1_Integration_Systeme
             PostalCodeTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
             CountryTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
 
+            //empêche la saisie de caractères non numériques
             PhoneNumberTextBox.PreviewTextInput += Number_PreviewTextInput;
             PhoneNumberTextBox.MaxLength = 10;
             NumberTextBox.PreviewTextInput += Number_PreviewTextInput;
             PostalCodeTextBox.PreviewTextInput += Number_PreviewTextInput;
             PostalCodeTextBox.MaxLength = 5;
+
+            // empêche la saisie de caractères non alphabétiques
             CountryTextBox.PreviewTextInput += String_PreviewTextInput;
             CityTextBox.PreviewTextInput += String_PreviewTextInput;
             NameTextBox.PreviewTextInput += String_PreviewTextInput;
@@ -84,18 +89,18 @@ namespace Projet_M1_Integration_Systeme
             {
                 ErrorLabel.Content = "";
             }
-
             else
             {
                 ErrorLabel.Content = "Every input must be empty";
             }
         }   
 
-
+        // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.BtnNext_Click(sender, e);
         }
+        // permet de revenir à la page précédente
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.BtnPrevious_Click(sender, e);

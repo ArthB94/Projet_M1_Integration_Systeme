@@ -7,8 +7,10 @@ using System.ComponentModel;
 
 namespace Projet_M1_Integration_Systeme
 {
+    // Définit la class Pizza comme un objet observable, c'est a dire que si un de ses attributs est modifié, la vue est informée
     public class Pizza : INotifyPropertyChanged
     {
+        // Définit les caractéristiques d'une pizza qui peuvent etre selectionné parmis une liste.
         private string selectedSize;
         private string selectedName;
 
@@ -17,6 +19,8 @@ namespace Projet_M1_Integration_Systeme
             SelectedName = AvailableName[0];
             SelectedSize = AvailableSizes[0];
         }
+
+        // Définit la liste des noms de pizza disponible
         public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood"};
 
         public string SelectedName
@@ -27,6 +31,7 @@ namespace Projet_M1_Integration_Systeme
             }
             set
             {
+             
                 if (selectedName != value)
                 {
                     selectedName = value;
@@ -36,6 +41,7 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
+        // Définit la liste des tailles de pizza disponible
         public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
 
         public string SelectedSize
@@ -54,6 +60,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
 
+        // Définit le prix de la pizza en fonction de sa taille et de son nom
         public int Price => CalculatePrice();
 
         private int CalculatePrice()
@@ -70,24 +77,27 @@ namespace Projet_M1_Integration_Systeme
             return price;
         }
 
+        // Creer un Evenement qui permet de mettre à jour le prix de la pizza lorsqu'une propriété est modifiée
         public event PropertyChangedEventHandler PropertyChanged;
 
+        // Creer une fonction qui invoque l'evenement de mise à jour du prix de la pizza quand nécessaire
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 
+    // Définit la class PizzaViewModel comme un objet observable. Cette classe permet de définir comment une pizza doit etre affiché dans la vue
     public class PizzaViewModel : INotifyPropertyChanged
     {
-        public static int count = 0;
+        // Creer un Evenement qui permet de mettre à jour le prix de la pizza lorsque celui ci est modifié
         public event PropertyChangedEventHandler PropertyChanged;
+        
+        // Creer un Evenement qui permet de mettre à jour le prix total de la commande lorsque celui ci est modifié
         public event Action PriceChanged;
-        public int Id { get; }
 
         public PizzaViewModel(Pizza pizza)
         {
-            count++;
             Pizza = pizza;
             Pizza.PropertyChanged += (sender, args) =>
             {
@@ -97,13 +107,13 @@ namespace Projet_M1_Integration_Systeme
                     PriceChanged?.Invoke();
                 }
             };
-            Id = count;
         }
-
 
         public Pizza Pizza { get; }
 
+        // Définit comment doit etre affiché le nom de la pizza dans la vue
         public string Price => $"${Pizza.Price}";
+
 
         protected void OnPropertyChanged(string propertyName)
         {
