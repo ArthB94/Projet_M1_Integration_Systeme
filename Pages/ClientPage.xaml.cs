@@ -23,6 +23,7 @@ namespace Projet_M1_Integration_Systeme
     {
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
+        // permet de vérifier si les champs repectent toutes les conditions nécessaires
         public bool IsButtonEnabled => NameTextBox.Text.Length > 0 
             && SurnameTextBox.Text.Length > 0 && PhoneNumberTextBox.Text.Length == 10
             && NumberTextBox.Text.Length > 0 && StreetTextBox.Text.Length > 0 && CityTextBox.Text.Length > 0

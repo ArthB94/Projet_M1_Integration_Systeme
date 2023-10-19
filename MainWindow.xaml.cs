@@ -26,7 +26,7 @@ namespace Projet_M1_Integration_Systeme
         public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
         public MainWindow()
         {
-            // permet de créer une liste de pizzas utilisable dans toute l'application
+            // permet de créer une liste de pizzas utilisable dans toute l'application et de l'initialiser avec une pizza par défaut
             Pizzas = new ObservableCollection<PizzaViewModel>
             {
                 new PizzaViewModel(new Pizza ()),
@@ -66,6 +66,12 @@ namespace Projet_M1_Integration_Systeme
                 CurrentPageIndex--;
                 MainFrame.Content = CurrentPage;
             }
+        }
+
+        public void NaviateToPage(int pageIndex)
+        {
+            CurrentPageIndex = pageIndex;
+            MainFrame.Content = CurrentPage;
         }
 
 

@@ -90,8 +90,7 @@ namespace Projet_M1_Integration_Systeme
         // permet de passer directement à la page de commande
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.CurrentPageIndex = 2;
-            mainWindow.MainFrame.Content = mainWindow.CurrentPage;
+            mainWindow.NaviateToPage(2);
         }
     }
 }

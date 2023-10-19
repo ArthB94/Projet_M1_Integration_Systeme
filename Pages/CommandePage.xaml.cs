@@ -81,10 +81,11 @@ namespace Projet_M1_Integration_Systeme
             mainWindow.BtnNext_Click(sender, e);
         }
 
-        // permet de passer à la page précédente
+        // permet de passer à la page de connection
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.BtnPrevious_Click(sender, e);
+            mainWindow.NaviateToPage(0);
+
         }
 
 
