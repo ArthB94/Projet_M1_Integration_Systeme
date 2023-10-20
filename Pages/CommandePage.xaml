@@ -11,8 +11,8 @@
 
     <Grid Grid.Row="0" Grid.Column="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="150" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -29,7 +29,7 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns >
-                <DataGridComboBoxColumn Header="Name" SelectedItemBinding="{Binding Pizza.SelectedName}" Width="100">
+                <DataGridComboBoxColumn Header="Name" SelectedItemBinding="{Binding Pizza.SelectedName}" Width="3*">
                     <DataGridComboBoxColumn.ElementStyle>
                         <Style TargetType="ComboBox">
                             <Setter Property="ItemsSource" Value="{Binding Pizza.AvailableName}" />
@@ -41,7 +41,7 @@
                         </Style>
                     </DataGridComboBoxColumn.EditingElementStyle>
                 </DataGridComboBoxColumn>
-                <DataGridComboBoxColumn Header="Size" SelectedItemBinding="{Binding Pizza.SelectedSize}"  Width="100">
+                <DataGridComboBoxColumn Header="Size" SelectedItemBinding="{Binding Pizza.SelectedSize}"  Width="3*">
                     <DataGridComboBoxColumn.ElementStyle>
                         <Style TargetType="ComboBox">
                             <Setter Property="ItemsSource" Value="{Binding Pizza.AvailableSizes}" />
@@ -53,8 +53,8 @@
                         </Style>
                     </DataGridComboBoxColumn.EditingElementStyle>
                 </DataGridComboBoxColumn>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="75" />
-                <DataGridTemplateColumn  Width="*">
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="2*" />
+                <DataGridTemplateColumn  Width="25">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="BtnRemove" Content="X" Click="BtnRemove_Click"/>

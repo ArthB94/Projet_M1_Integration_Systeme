@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace Projet_M1_Integration_Systeme
 {
@@ -13,15 +14,23 @@ namespace Projet_M1_Integration_Systeme
         // Définit les caractéristiques d'une pizza qui peuvent etre selectionné parmis une liste.
         private string selectedSize;
         private string selectedName;
+        public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood" };
+        public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
+        public List<string> AvailableStatus { get; } = new List<string> { "Waiting","InPreparation", "Prepared"};
+
+        public int Price => CalculatePrice();
+        public int Delay { get; set; }
+        public string Status { get; set;}
 
         public Pizza()
         {
             SelectedName = AvailableName[0];
             SelectedSize = AvailableSizes[0];
+            Status = AvailableStatus[0];
+            Delay = CalculateDelay();
         }
 
-        // Définit la liste des noms de pizza disponible
-        public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood"};
+
 
         public string SelectedName
         {
@@ -37,12 +46,10 @@ namespace Projet_M1_Integration_Systeme
                     selectedName = value;
                     OnPropertyChanged(nameof(SelectedName));
                     OnPropertyChanged(nameof(Price)); // Informez la vue du changement de prix
+                    Delay = CalculateDelay();
                 }
             }
         }
-
-        // Définit la liste des tailles de pizza disponible
-        public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
 
         public string SelectedSize
         {
@@ -54,14 +61,29 @@ namespace Projet_M1_Integration_Systeme
                     selectedSize = value;
                     OnPropertyChanged(nameof(SelectedSize));
                     OnPropertyChanged(nameof(Price)); // Informez la vue du changement de prix
-                    
+                    Delay = CalculateDelay();
+
                 }
             }
+        }
+        public async Task Prepare()
+        {
+            if (Status == AvailableStatus[1]) return;
+            Status = AvailableStatus[1];
+            //Console.WriteLine($"Prepare");
+            while (Delay > 0 && Status != AvailableStatus[2])
+            {
+                await Task.Delay(1000);
+                //Console.WriteLine($"Delay:{ Delay} Status: {Status}");
+                Delay -= 1;
+                OnPropertyChanged(nameof(Delay));
+            }
+            Status = AvailableStatus[2];
+            return ;
         }
 
 
         // Définit le prix de la pizza en fonction de sa taille et de son nom
-        public int Price => CalculatePrice();
 
         private int CalculatePrice()
         {
@@ -75,6 +97,21 @@ namespace Projet_M1_Integration_Systeme
             else if (new string[] { "Hawaiian", "Meat Lovers", "Seafood" }.Contains(SelectedName)) price += 3;
 
             return price;
+        }
+
+        // Définit le temps de préparation de la pizza en fonction de sa taille et de son nom
+
+        private int CalculateDelay()
+        {
+            var delay = 0;
+            if (SelectedSize == "Small") delay += 5;
+            else if (SelectedSize == "Medium") delay += 7;
+            else if (SelectedSize == "Large") delay += 10;
+            else if (SelectedSize == "Extra Large") delay += 13;
+
+            if (new string[] { "Pepperoni", "Meat Lovers",  "Cheese" }.Contains(SelectedName)) delay += 1;
+            else if (new string[] { "Hawaiian", "Vegetarian", "Seafood" }.Contains(SelectedName)) delay += 2;
+            return delay ;
         }
 
         // Creer un Evenement qui permet de mettre à jour le prix de la pizza lorsqu'une propriété est modifiée
@@ -104,7 +141,10 @@ namespace Projet_M1_Integration_Systeme
                 if (args.PropertyName == "Price")
                 {
                     OnPropertyChanged(nameof(Price));
-                    PriceChanged?.Invoke();
+                }
+                if (args.PropertyName == "Delay")
+                {
+                    OnPropertyChanged(nameof(Delay));
                 }
             };
         }
@@ -113,6 +153,8 @@ namespace Projet_M1_Integration_Systeme
 
         // Définit comment doit etre affiché le nom de la pizza dans la vue
         public string Price => $"${Pizza.Price}";
+        public string Delay => $"{Pizza.Delay/60}:{Pizza.Delay % 60}";
+
 
 
         protected void OnPropertyChanged(string propertyName)

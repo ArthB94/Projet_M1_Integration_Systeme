@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_M1_Integration_Systeme.Pages.Pannel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -25,29 +26,31 @@ namespace Projet_M1_Integration_Systeme
 
         // permet de récupérer touts les elements initialisés dans MainWindow
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+        public int TotalPrice => mainWindow.PizzasCommande.Sum(p => p.Pizza.Price);
+
         public CommandePage()
         {
             InitializeComponent();
 
             // permet de mettre à jour le prix total de la commande lorsque chaque pizza est modifiée
-            foreach (var pizzaViewModel in mainWindow.Pizzas)
+            foreach (var pizzaViewModel in mainWindow.PizzasCommande)
             {
                 pizzaViewModel.PriceChanged += UpdateTotalPrice;
             }
 
             // permet de mettre à jour le prix total de la commande lorsque la page est chargée
             LblTotalPriceValue.Content = TotalPrice;
-            DgPizzas.ItemsSource = mainWindow.Pizzas;
+            DgPizzas.ItemsSource = mainWindow.PizzasCommande;
         }
 
         // permet d'ajouter une pizza à la commande 
         public void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.Pizzas.Add(new PizzaViewModel(new Pizza()));
+            mainWindow.PizzasCommande.Add(new PizzaViewModel(new Pizza()));
             UpdateTotalPrice();
 
             // permet de mettre à jour le prix total de la commande lorsque chaque nouvelle pizza est modifiée
-            foreach (var pizzaViewModel in mainWindow.Pizzas)
+            foreach (var pizzaViewModel in mainWindow.PizzasCommande)
             {
                 pizzaViewModel.PriceChanged += UpdateTotalPrice;
             }
@@ -60,7 +63,7 @@ namespace Projet_M1_Integration_Systeme
             {
                 if (button.DataContext is PizzaViewModel pizzaViewModel)
                 {
-                    mainWindow.Pizzas.Remove(pizzaViewModel);
+                    mainWindow.PizzasCommande.Remove(pizzaViewModel);
                 }
             }
             UpdateTotalPrice();
@@ -72,23 +75,23 @@ namespace Projet_M1_Integration_Systeme
             LblTotalPriceValue.Content = TotalPrice;
         }
 
-        public int TotalPrice => mainWindow.Pizzas.Sum(p => p.Pizza.Price);
-
         // permet de passer à la page suivante
         public void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Merci pour votre achat !");
-            mainWindow.BtnNext_Click(sender, e);
+            // MessageBox.Show("Merci pour votre achat !");
+
+            foreach (var pizzaViews in mainWindow.PizzasCommande) 
+            {
+                mainWindow.PizzaInPreparation.Add(pizzaViews);
+            };
+            mainWindow.NaviateToPage(1);
+            mainWindow.commandsPannel.LaunchPreparation();
         }
 
         // permet de passer à la page de connection
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.NaviateToPage(0);
-
         }
-
-
-
     }
 }

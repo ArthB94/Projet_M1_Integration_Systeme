@@ -97,8 +97,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Pannel\AdditionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Pannel\CommandePannel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Pannel\InPreparationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Pannel\AdditionPanel.xaml.cs">
+      <DependentUpon>AdditionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pannel\CommandePannel.xaml.cs">
+      <DependentUpon>CommandePannel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pannel\InPreparationPanel.xaml.cs">
+      <DependentUpon>InPreparationPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

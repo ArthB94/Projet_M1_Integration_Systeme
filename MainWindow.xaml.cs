@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_M1_Integration_Systeme.Pages.Pannel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,17 +23,25 @@ namespace Projet_M1_Integration_Systeme
         public List<Page> Pages { get; set; }
         public int CurrentPageIndex { get; set; }
         public Page CurrentPage => Pages[CurrentPageIndex];
+        public CommandsPannel commandsPannel { get; set; }
 
-        public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
+        public ObservableCollection<PizzaViewModel> PizzasCommande { get; set; }
+        public ObservableCollection<PizzaViewModel> PizzaInPreparation { get; set; }
+        public ObservableCollection<PizzaViewModel> PizzaReady { get; set; }
+        public ObservableCollection<PizzaViewModel> PizzaDelivered { get; set; }
+
         public MainWindow()
         {
             // permet de créer une liste de pizzas utilisable dans toute l'application et de l'initialiser avec une pizza par défaut
-            Pizzas = new ObservableCollection<PizzaViewModel>
+            PizzasCommande = new ObservableCollection<PizzaViewModel>
             {
                 new PizzaViewModel(new Pizza ()),
             };
-
+            PizzaInPreparation = new ObservableCollection<PizzaViewModel>();
+            PizzaReady = new ObservableCollection<PizzaViewModel>();
+            PizzaDelivered = new ObservableCollection<PizzaViewModel>();
             // permet de créer une liste de pages a parcourir
+            commandsPannel = new CommandsPannel();
             Pages = new List<Page>
             {
                 new ConnectionPage(),
@@ -44,8 +53,11 @@ namespace Projet_M1_Integration_Systeme
             InitializeComponent();
 
             // initialise la page première page de la liste
-            CurrentPageIndex = 2;
+            CurrentPageIndex = 0;
             MainFrame.Content = CurrentPage;
+            CommandsPannelFrame.Content = commandsPannel;
+
+
         }
 
         // permet de passer à la page suivante
@@ -68,11 +80,13 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
+        // permet de naviguer vers une page spécifique
         public void NaviateToPage(int pageIndex)
         {
             CurrentPageIndex = pageIndex;
             MainFrame.Content = CurrentPage;
         }
+
 
 
         

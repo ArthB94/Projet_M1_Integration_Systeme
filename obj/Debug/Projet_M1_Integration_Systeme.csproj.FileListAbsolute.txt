@@ -38,3 +38,9 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ClientPage.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.g.cs
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\AdditionPanel.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandePannel.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\InPreparationPanel.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\AdditionPanel.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandePannel.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\InPreparationPanel.baml

@@ -30,8 +30,6 @@ namespace Projet_M1_Integration_Systeme
             && PostalCodeTextBox.Text.Length == 5 && CountryTextBox.Text.Length > 0;
 
 
-
-
         public ClientPage()
         {
 
