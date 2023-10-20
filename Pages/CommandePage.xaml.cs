@@ -76,7 +76,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         // permet de passer à la page suivante
-        public void BtnBuy_Click(object sender, RoutedEventArgs e)
+        public async void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Merci pour votre achat !");
 
@@ -84,8 +84,11 @@ namespace Projet_M1_Integration_Systeme
             {
                 mainWindow.PizzaInPreparation.Add(pizzaViews);
             };
-            mainWindow.NaviateToPage(1);
-            mainWindow.commandsPannel.LaunchPreparation();
+            mainWindow.NaviateToPage(0);
+            mainWindow.PizzasCommande.Clear();
+            mainWindow.PizzasCommande.Add(new PizzaViewModel(new Pizza()));
+            await mainWindow.commandsPannel.LaunchPreparation();
+            MessageBox.Show("Vos Pizzas sont cuites !");
         }
 
         // permet de passer à la page de connection

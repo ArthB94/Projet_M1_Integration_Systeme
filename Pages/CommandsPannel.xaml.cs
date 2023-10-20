@@ -53,12 +53,13 @@ namespace Projet_M1_Integration_Systeme
                 var IndexPizza = 0;
                 while (mainWindow.PizzaInPreparation[IndexPizza].Pizza.Status != "Waiting")
                 {
+                    IndexPizza++;
                     if (IndexPizza > mainWindow.PizzaInPreparation.Count - 1)
                     {
                         Console.WriteLine("LaunchOneCookFinished");
                         return;
                     }
-                    IndexPizza++;
+
                 }
                 PizzaViewModel pizzaView = mainWindow.PizzaInPreparation[IndexPizza];
                 await pizzaView.Pizza.Prepare();
