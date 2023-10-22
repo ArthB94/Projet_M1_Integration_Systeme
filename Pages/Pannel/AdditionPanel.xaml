@@ -9,6 +9,28 @@
       Title="AdditionPanel">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
+            <Label Content="Add to the order" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="1" x:Name="DgAddtotheorder" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn IsReadOnly="True" Header="Drink" Binding="{Binding Addition.SelectedType}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Volume" Binding="{Binding Addition.SelectedVolume}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
