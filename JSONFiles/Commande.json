@@ -1,0 +1,136 @@
+[
+  {
+    "Id": 1,
+    "Status": "Ready",
+    "Pizzas": [],
+    "PizzasReady": [
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      }
+    ],
+    "DeliveryDelay": 0
+  },
+  {
+    "Id": 2,
+    "Status": "Ready",
+    "Pizzas": [],
+    "PizzasReady": [
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 18,
+          "Delay": 12,
+          "Status": "Prepared",
+          "SelectedName": "Hawaiian",
+          "SelectedSize": "Large"
+        },
+        "Price": "$18",
+        "Delay": "0:12"
+      },
+      {
+        "Pizza": {
+          "Price": 5,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Small"
+        },
+        "Price": "$5",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 13,
+          "Delay": 9,
+          "Status": "Prepared",
+          "SelectedName": "Seafood",
+          "SelectedSize": "Medium"
+        },
+        "Price": "$13",
+        "Delay": "0:9"
+      }
+    ],
+    "DeliveryDelay": 0
+  },
+  {
+    "Id": 3,
+    "Status": "Ready",
+    "Pizzas": [],
+    "PizzasReady": [
+      {
+        "Pizza": {
+          "Price": 15,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Margarita",
+          "SelectedSize": "Large"
+        },
+        "Price": "$15",
+        "Delay": "0:0"
+      },
+      {
+        "Pizza": {
+          "Price": 7,
+          "Delay": 0,
+          "Status": "Prepared",
+          "SelectedName": "Pepperoni",
+          "SelectedSize": "Small"
+        },
+        "Price": "$7",
+        "Delay": "0:0"
+      }
+    ],
+    "DeliveryDelay": 0
+  }
+]

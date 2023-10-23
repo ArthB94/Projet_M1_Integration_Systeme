@@ -14,14 +14,15 @@ namespace Projet_M1_Integration_Systeme
         // Définit les caractéristiques d'une pizza qui peuvent etre selectionné parmis une liste.
         private string selectedSize;
         private string selectedName;
-        public List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood" };
-        public List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
-        public List<string> AvailableStatus { get; } = new List<string> { "Waiting","InPreparation", "Prepared"};
+        public static List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood" };
+        public static List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
+        public static List<string> AvailableStatus { get; } = new List<string> { "Waiting","InPreparation", "Prepared"};
 
         public int Price => CalculatePrice();
         public int Delay { get; set; }
         public string Status { get; set;}
 
+        public event Action PriceChanged;
         public Pizza()
         {
             SelectedName = AvailableName[0];
@@ -70,7 +71,7 @@ namespace Projet_M1_Integration_Systeme
         {
             if (Status == AvailableStatus[1]) return;
             Status = AvailableStatus[1];
-            //Console.WriteLine($"Prepare");
+            Console.WriteLine($"Prepare");
             while (Delay > 0 && Status != AvailableStatus[2])
             {
                 await Task.Delay(1000);
@@ -121,6 +122,8 @@ namespace Projet_M1_Integration_Systeme
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PriceChanged?.Invoke();
+
         }
     }
 

@@ -12,14 +12,14 @@
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Frame Grid.Row="0" x:Name="FrameCommande" />
+        <Frame Grid.Row="0" x:Name="FramePizza" />
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
-                <Label   Content="Commandes delivered" FontWeight="Bold"  HorizontalAlignment="Center" />
+                <Label   Content="Commandes waiting for delivery" FontWeight="Bold"  HorizontalAlignment="Center" />
             </Border>
             <DataGrid Grid.Row="1" x:Name="DgCommandesDelivered" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
                 <DataGrid.Background>
@@ -33,8 +33,10 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                    <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+                    <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
+                    <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}" Width="1*" />
+                    <DataGridTextColumn Header="Deliring" Binding="{Binding DeliveryDelay}" Width="1*" />
+
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

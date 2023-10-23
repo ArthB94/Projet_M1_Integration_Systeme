@@ -14,6 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
             <Label Content="Pizzas in preparation" FontWeight="Bold"  HorizontalAlignment="Center" />
@@ -32,7 +33,8 @@
             <DataGrid.Columns >
                 <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Pizza.SelectedName}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Size" Binding="{Binding Pizza.SelectedSize}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Delay" Binding="{Binding Delay}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Delay" Binding="{Binding Pizza.Delay}" Width="*" />
+                
             </DataGrid.Columns>
         </DataGrid>
         <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" >
@@ -52,8 +54,10 @@
             <DataGrid.Columns >
                 <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Pizza.SelectedName}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Size" Binding="{Binding Pizza.SelectedSize}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Delay" Binding="{Binding Pizza.Delay}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Price" Binding="{Binding Price}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button Grid.Row="4" x:Name="BtnShow" Content="&lt;" Click="BtnShow_Click" />
     </Grid>
 </Page>

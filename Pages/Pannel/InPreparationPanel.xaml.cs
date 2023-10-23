@@ -26,10 +26,13 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         public InPreparationPanel()
         {
             InitializeComponent();
-            DgPizzasInPreparation.ItemsSource = mainWindow.PizzaInPreparation;
-            DgPizzasReady.ItemsSource = mainWindow.PizzaReady;
+            DgPizzasInPreparation.ItemsSource = mainWindow.clerk.commandeShown.Pizzas;
+            DgPizzasReady.ItemsSource = mainWindow.clerk.commandeShown.PizzasReady;
         }
-
-        
+        public void BtnShow_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.clerk.ShowCommandes();
+        }
     }
+
 }

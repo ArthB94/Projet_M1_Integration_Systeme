@@ -20,9 +20,22 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     /// </summary>
     public partial class CommandePannel : Page
     {
+        public MainWindow mainWindow { get; set; } = (MainWindow)Application.Current.MainWindow;
         public CommandePannel()
         {
             InitializeComponent();
+            DgCommandesInPreparation.ItemsSource = mainWindow.kitchen.Commandes;
+            DgCommandesReady.ItemsSource = mainWindow.kitchen.CommandesReady;
+        }
+        public void BtnShow_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.DataContext is Classes.Commande commande)
+                {
+                    mainWindow.clerk.CommandeShown(commande);
+                }
+            }
         }
     }
 }

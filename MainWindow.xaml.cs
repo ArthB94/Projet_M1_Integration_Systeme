@@ -1,4 +1,5 @@
-﻿using Projet_M1_Integration_Systeme.Pages.Pannel;
+﻿using Projet_M1_Integration_Systeme.Classes;
+using Projet_M1_Integration_Systeme.Pages.Pannel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,28 +21,23 @@ namespace Projet_M1_Integration_Systeme
 
     public partial class MainWindow : Window
     {
+        public Clerk clerk { get; set; }
+        public Kitchen kitchen { get; set; }
+        public DeliveryMan deliveryMan { get; set; }
         public List<Page> Pages { get; set; }
         public int CurrentPageIndex { get; set; }
         public Page CurrentPage => Pages[CurrentPageIndex];
         public CommandsPannel commandsPannel { get; set; }
 
-        public ObservableCollection<PizzaViewModel> PizzasCommande { get; set; }
-        public ObservableCollection<PizzaViewModel> PizzaInPreparation { get; set; }
-        public ObservableCollection<PizzaViewModel> PizzaReady { get; set; }
-        public ObservableCollection<PizzaViewModel> PizzaDelivered { get; set; }
 
         public MainWindow()
         {
-            // permet de créer une liste de pizzas utilisable dans toute l'application et de l'initialiser avec une pizza par défaut
-            PizzasCommande = new ObservableCollection<PizzaViewModel>
-            {
-                new PizzaViewModel(new Pizza ()),
-            };
-            PizzaInPreparation = new ObservableCollection<PizzaViewModel>();
-            PizzaReady = new ObservableCollection<PizzaViewModel>();
-            PizzaDelivered = new ObservableCollection<PizzaViewModel>();
-            // permet de créer une liste de pages a parcourir
+            clerk = new Clerk(1, "Jean");
+            deliveryMan = new DeliveryMan();
+            kitchen = new Kitchen();
+
             commandsPannel = new CommandsPannel();
+
             Pages = new List<Page>
             {
                 new ConnectionPage(),
@@ -53,10 +49,10 @@ namespace Projet_M1_Integration_Systeme
             InitializeComponent();
 
             // initialise la page première page de la liste
-            CurrentPageIndex = 0;
+            CurrentPageIndex = 2;
             MainFrame.Content = CurrentPage;
             CommandsPannelFrame.Content = commandsPannel;
-
+            
 
         }
 

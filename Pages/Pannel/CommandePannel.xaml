@@ -18,7 +18,7 @@
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
             <Label Content="Commandes in preparation" FontWeight="Bold"  HorizontalAlignment="Center" />
         </Border>
-        <DataGrid Grid.Row="1" x:Name="DgCommandeInPreparation" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
+        <DataGrid Grid.Row="1" x:Name="DgCommandesInPreparation" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
             <DataGrid.Background>
                 <SolidColorBrush Color="Gray" Opacity="0.6"  />
             </DataGrid.Background>
@@ -29,9 +29,16 @@
                     <Setter Property="Padding" Value="5" />
                 </Style>
             </DataGrid.Resources>
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="1*" />
+                <DataGridTemplateColumn  Width="25" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnRemove" Content=">" Click="BtnShow_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
@@ -49,8 +56,15 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Commande" Binding="{Binding Commande.Id}" Width="1*" />
-                <DataGridTextColumn Header="Client" Binding="{Binding Commande.Client.Name}" Width="1*" />
+                <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="1*" />
+                <DataGridTemplateColumn  Width="25" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnRemove" Content=">" Click="BtnShow_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid >
     </Grid>
