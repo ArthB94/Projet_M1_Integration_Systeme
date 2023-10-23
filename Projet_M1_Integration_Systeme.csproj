@@ -40,6 +40,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Clerk.cs" />
     <Compile Include="Classes\Commande.cs" />
     <Compile Include="Classes\Cook.cs" />
@@ -76,7 +80,6 @@
       <DependentUpon>CommandePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Pizza.cs" />
-    <Compile Include="Classes\Utilisateur.cs" />
     <Page Include="Pages\ConnectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,7 +149,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="JSONFiles\Commande.json" />
-    <None Include="JSONFiles\Customer.json" />
+    <None Include="JSONFiles\Client.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

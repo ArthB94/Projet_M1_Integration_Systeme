@@ -1,32 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Windows;
+using Newtonsoft.Json;
 
 namespace Projet_M1_Integration_Systeme
 {
-    // Définit la class Pizza comme un objet observable, c'est a dire que si un de ses attributs est modifié, la vue est informée
     public class Pizza : INotifyPropertyChanged
     {
-        // Définit les caractéristiques d'une pizza qui peuvent etre selectionné parmis une liste.
-        private string selectedSize;
-        private string selectedName;
         public static List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood" };
         public static List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
-        public static List<string> AvailableStatus { get; } = new List<string> { "Waiting","InPreparation", "Prepared"};
-
-        public int Price => CalculatePrice();
+        public static List<string> AvailableStatus { get; } = new List<string> { "Waiting", "InPreparation", "Prepared" };
+        
+        
+        private string selectedSize;
+        private string selectedName;
+        
+        [JsonIgnore]
         public int Delay { get; set; }
-        public string Status { get; set;}
+        [JsonIgnore]
+        public string Status { get; set; }
+
+
+
 
         public event Action PriceChanged;
         public Pizza()
         {
             SelectedName = AvailableName[0];
             SelectedSize = AvailableSizes[0];
+            Status = AvailableStatus[0];
+            Delay = CalculateDelay();
+        }
+        public Pizza(string Name, string Size ) {
+            if (!AvailableName.Contains(Name) ) {
+                MessageBox.Show(Name + " not in avaliable names");
+                return;
+            }
+            else if(!AvailableSizes.Contains(Size))
+            {
+                MessageBox.Show(Size + " not in avaliable sizes");
+                return;
+
+            }
+            SelectedName = Name;
+            SelectedSize = Size;
             Status = AvailableStatus[0];
             Delay = CalculateDelay();
         }
@@ -67,6 +87,7 @@ namespace Projet_M1_Integration_Systeme
                 }
             }
         }
+        public double Price => CalculatePrice();
         public async Task Prepare()
         {
             if (Status == AvailableStatus[1]) return;
@@ -86,9 +107,9 @@ namespace Projet_M1_Integration_Systeme
 
         // Définit le prix de la pizza en fonction de sa taille et de son nom
 
-        private int CalculatePrice()
+        private double CalculatePrice()
         {
-            var price = 0;
+            var price = 0.0;
             if (SelectedSize == "Small") price += 5;
             else if (SelectedSize == "Medium") price += 10;
             else if (SelectedSize == "Large") price += 15;

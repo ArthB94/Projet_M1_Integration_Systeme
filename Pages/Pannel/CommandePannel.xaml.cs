@@ -31,7 +31,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         {
             if (sender is Button button)
             {
-                if (button.DataContext is Classes.Commande commande)
+                if (button.DataContext is Commande commande)
                 {
                     mainWindow.clerk.CommandeShown(commande);
                 }

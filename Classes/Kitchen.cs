@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Projet_M1_Integration_Systeme.Classes
+namespace Projet_M1_Integration_Systeme
 {
     public class Kitchen
     {

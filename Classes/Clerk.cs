@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Markup;
 using Newtonsoft.Json;
-using Projet_M1_Integration_Systeme.Pages.Pannel;
 
-namespace Projet_M1_Integration_Systeme.Classes
+
+namespace Projet_M1_Integration_Systeme
 {
     public class Clerk
     {
@@ -32,7 +27,7 @@ namespace Projet_M1_Integration_Systeme.Classes
             Id = id;
             Name = name;
             Status = "Waiting";
-            List<Commande> commandes = LoadCommande();
+            List<CommandeParser> commandes = LoadCommandes();
             lastCommadeID = commandes.Count +1;
             NewCommande();
             commandeShown = currentCommande;
@@ -40,16 +35,25 @@ namespace Projet_M1_Integration_Systeme.Classes
         public void NewCommande()
         {
             
-            currentCommande= new Commande(lastCommadeID, new ObservableCollection<PizzaViewModel>());
+            currentCommande= new Commande( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
 
         }
         public void AddPizza()
         {
             currentCommande.Pizzas.Add(new PizzaViewModel(new Pizza()));
         }
+        public void AddDrink()
+        {
+            currentCommande.Drinks.Add(new DrinkViewModel(new Drink()));
+        }
         public void RemovePizza(PizzaViewModel pizza) {
             currentCommande.Pizzas.Remove(pizza);
         }
+        public void RemoveDrink(DrinkViewModel drink)
+        {
+            currentCommande.Drinks.Remove(drink);
+        }
+
         public void AddCurentCommande()
         {
             Console.WriteLine("AddCurentCommande");
@@ -73,10 +77,34 @@ namespace Projet_M1_Integration_Systeme.Classes
                 mainWindow.commandsPannel.ShowCommandes();
             }
         }
-        public List<Commande> LoadCommande ()
+        public List<CommandeParser> LoadCommandesFile(string fileName)
         {
-            string jsonContent = File.ReadAllText(jsonFileSource + "Commande.json");
-            return JsonConvert.DeserializeObject<List<Commande>>(jsonContent);           
+            string jsonContent = File.ReadAllText(fileName);
+            List<CommandeParser> commandes = JsonConvert.DeserializeObject<List<CommandeParser>>(jsonContent);
+            return commandes;
+        }
+        public List<CommandeParser> LoadCommandes ()
+        {
+            return LoadCommandesFile(jsonFileSource + "Commande.json");
+        }
+
+        public void LoadCommandeFile(string fileName)
+        {
+            List<CommandeParser> commandes = LoadCommandesFile(fileName);
+            foreach (Pizza pizza in commandes[0].Pizzas)
+            {
+                currentCommande.Pizzas.Add(new PizzaViewModel(pizza));
+            }
+            foreach (Drink drink in commandes[0].Drinks)
+            {
+                currentCommande.Drinks.Add(new DrinkViewModel(drink));
+            }
+
+        }
+        public List<Client> LoadClients()
+        {
+            string jsonContent = File.ReadAllText(jsonFileSource + "Client.json");
+            return JsonConvert.DeserializeObject<List<Client>>(jsonContent);
         }
         public void SendAddition(Commande commande)
         {
@@ -89,8 +117,8 @@ namespace Projet_M1_Integration_Systeme.Classes
         {
             string jsonFilePath = jsonFileSource + "Commande.json";
             string jsonContent = File.ReadAllText(jsonFilePath);
-            List<Commande> data = JsonConvert.DeserializeObject<List<Commande>>(jsonContent);
-            data.Add(NewValue);
+            List<CommandeParser> data = JsonConvert.DeserializeObject<List<CommandeParser>>(jsonContent);
+            data.Add(new CommandeParser(NewValue));
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);

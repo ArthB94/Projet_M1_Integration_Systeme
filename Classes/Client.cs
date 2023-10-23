@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projet_M1_Integration_Systeme
-{
-   
+namespace Projet_M1_Integration_Systeme 
+{ 
+    public class Client
+    {
+    }
 }

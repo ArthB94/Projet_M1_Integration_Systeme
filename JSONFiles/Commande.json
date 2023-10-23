@@ -1,136 +1,187 @@
 [
   {
     "Id": 1,
-    "Status": "Ready",
-    "Pizzas": [],
-    "PizzasReady": [
+    "Date_time": "2023-10-23_22:57:18",
+    "Price": 13.0,
+    "Pizzas": [
       {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       }
     ],
-    "DeliveryDelay": 0
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   },
   {
     "Id": 2,
-    "Status": "Ready",
-    "Pizzas": [],
-    "PizzasReady": [
+    "Date_time": "2023-10-23_22:59:06",
+    "Price": 18.0,
+    "Pizzas": [
       {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       },
       {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       },
       {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
-      },
-      {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
-      },
-      {
-        "Pizza": {
-          "Price": 18,
-          "Delay": 12,
-          "Status": "Prepared",
-          "SelectedName": "Hawaiian",
-          "SelectedSize": "Large"
-        },
-        "Price": "$18",
-        "Delay": "0:12"
-      },
-      {
-        "Pizza": {
-          "Price": 5,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Small"
-        },
-        "Price": "$5",
-        "Delay": "0:0"
-      },
-      {
-        "Pizza": {
-          "Price": 13,
-          "Delay": 9,
-          "Status": "Prepared",
-          "SelectedName": "Seafood",
-          "SelectedSize": "Medium"
-        },
-        "Price": "$13",
-        "Delay": "0:9"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       }
     ],
-    "DeliveryDelay": 0
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   },
   {
     "Id": 3,
-    "Status": "Ready",
-    "Pizzas": [],
-    "PizzasReady": [
+    "Date_time": "2023-10-23_22:59:12",
+    "Price": 24.5,
+    "Pizzas": [
       {
-        "Pizza": {
-          "Price": 15,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Margarita",
-          "SelectedSize": "Large"
-        },
-        "Price": "$15",
-        "Delay": "0:0"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       },
       {
-        "Pizza": {
-          "Price": 7,
-          "Delay": 0,
-          "Status": "Prepared",
-          "SelectedName": "Pepperoni",
-          "SelectedSize": "Small"
-        },
-        "Price": "$7",
-        "Delay": "0:0"
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
       }
     ],
-    "DeliveryDelay": 0
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Date_time": "2023-10-23_22:59:18",
+    "Price": 14.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Date_time": "2023-10-23_22:59:22",
+    "Price": 28.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   }
 ]
