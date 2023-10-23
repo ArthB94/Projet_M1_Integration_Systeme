@@ -28,7 +28,7 @@ namespace Projet_M1_Integration_Systeme
             Name = name;
             Status = "Waiting";
             List<CommandeParser> commandes = LoadCommandes();
-            lastCommadeID = commandes.Count +1;
+            Commande.IDS = commandes.Last().Id;
             NewCommande();
             commandeShown = currentCommande;
         }
@@ -91,11 +91,12 @@ namespace Projet_M1_Integration_Systeme
         public void LoadCommandeFile(string fileName)
         {
             List<CommandeParser> commandes = LoadCommandesFile(fileName);
-            foreach (Pizza pizza in commandes[0].Pizzas)
+            var commande = commandes.Last();
+            foreach (Pizza pizza in commande.Pizzas)
             {
                 currentCommande.Pizzas.Add(new PizzaViewModel(pizza));
             }
-            foreach (Drink drink in commandes[0].Drinks)
+            foreach (Drink drink in commande.Drinks)
             {
                 currentCommande.Drinks.Add(new DrinkViewModel(drink));
             }
@@ -109,7 +110,8 @@ namespace Projet_M1_Integration_Systeme
         public void SendAddition(Commande commande)
         {
             Console.WriteLine("SendAddition");
-            MessageBox.Show("Commande "+commande.ToString() + "delivered");
+            commande.setDate();
+            MessageBox.Show("Commande "+ JsonConvert.SerializeObject(new CommandeParser(commande), Formatting.Indented) + " delivered");
             SaveCommande( commande);
         }
 

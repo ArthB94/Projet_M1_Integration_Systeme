@@ -11,7 +11,7 @@ namespace Projet_M1_Integration_Systeme
     {
         public static double totalPrices = 0;
         public static double avg => CalculateAvg();
-        public static int IDS = 1;
+        public static int IDS { get; set; } = 1;
 
         public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
 
@@ -31,7 +31,8 @@ namespace Projet_M1_Integration_Systeme
         public double Price => CalculatePrice();
         public Commande(ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
         {
-            Id = IDS++;
+            IDS++;
+            Id = IDS;
             Status = "Waiting";
             Pizzas = pizzas;
             Drinks = drinklist;
@@ -67,6 +68,11 @@ namespace Projet_M1_Integration_Systeme
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void setDate()
+        {
+            Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
         }
 
 
