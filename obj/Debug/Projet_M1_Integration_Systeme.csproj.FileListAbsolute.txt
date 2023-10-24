@@ -58,3 +58,16 @@ D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\obj\Debug\Projet_M1_Integratio
 D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.lref
 D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\obj\Debug\Projet_M1_Integration_Systeme.exe
 D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\obj\Debug\Projet_M1_Integration_Systeme.pdb
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.AssemblyReference.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\MainWindow.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CustomerPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsPannel.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandsPreparation.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\DetailsCommand.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\App.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.lref
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.exe
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.pdb
