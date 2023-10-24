@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Release\
+D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\obj\Release\
 Projet_M1_Integration_Systeme
 none
 false
 TRACE
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\App.xaml
-2345076152
+D:\moi\EFREI\M1\S7\INFO\IS applications\PROJECT F\App.xaml
+7-985294859
 
-8-825743215
-13-1310406943
-MainWindow.xaml;CommandePage.xaml;
+19894712623
+16457450234
+Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\CustomerPage.xaml;Pages\CommandsPannel.xaml;Pages\CommandPage.xaml;Pages\Pannel\CommandsPreparation.xaml;Pages\Pannel\DetailsCommand.xaml;
 
 True
 
