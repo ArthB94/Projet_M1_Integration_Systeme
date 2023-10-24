@@ -80,7 +80,7 @@ namespace Projet_M1_Integration_Systeme.Pages
         // permet de passer directement à la page de commande
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.NaviateToPage(2);
+            mainWindow.NavigateToPage(2);
         }
     }
 }

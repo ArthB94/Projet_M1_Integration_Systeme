@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Clerk.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Classes\Cook.cs" />
     <Compile Include="Classes\DeliveryMan.cs" />
     <Compile Include="Classes\Kitchen.cs" />
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Pages\CommandsStatusPage.xaml.cs">
       <DependentUpon>CommandsStatusPage.xaml</DependentUpon>
     </Compile>
@@ -124,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Pannel\ShowCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\StatisticsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +147,9 @@
     </Compile>
     <Compile Include="Pages\Pannel\ShowOldDetails.xaml.cs">
       <DependentUpon>ShowOldDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pannel\ShowCustomers.xaml.cs">
+      <DependentUpon>ShowCustomers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>

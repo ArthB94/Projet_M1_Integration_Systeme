@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using Projet_M1_Integration_Systeme.Pages.Pannel;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,7 +8,7 @@ namespace Projet_M1_Integration_Systeme.Pages
     /// <summary>
     /// Logique d'interaction pour ClientPage.xaml
     /// </summary>
-    public partial class ClientPage : Page
+    public partial class CustomerPage : Page
     {
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
@@ -17,10 +18,11 @@ namespace Projet_M1_Integration_Systeme.Pages
             && NumberTextBox.Text.Length > 0 && StreetTextBox.Text.Length > 0 && CityTextBox.Text.Length > 0
             && PostalCodeTextBox.Text.Length == 5 && CountryTextBox.Text.Length > 0;
 
-
-        public ClientPage()
+        private bool IsUpdating;
+        private Frame FrameShow;
+        public CustomerPage()
         {
-
+            IsUpdating = false;
             InitializeComponent();
 
             // permet de vérifier si les champs sont vides
@@ -50,6 +52,53 @@ namespace Projet_M1_Integration_Systeme.Pages
             StreetTextBox.PreviewTextInput += String_PreviewTextInput;
 
         }
+        public CustomerPage(Frame frameShow,Customer customer)
+        {
+            IsUpdating = true;
+            InitializeComponent();
+
+            // permet de vérifier si les champs sont vides
+            VerifyIsEmpty();
+            // permet de vérifier si les champs sont vides apres chaque modification
+            NameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            SurnameTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            PhoneNumberTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            NumberTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            StreetTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            CityTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            PostalCodeTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+            CountryTextBox.TextChanged += (sender, args) => VerifyIsEmpty();
+
+            //empêche la saisie de caractères non numériques
+            PhoneNumberTextBox.PreviewTextInput += Number_PreviewTextInput;
+            PhoneNumberTextBox.MaxLength = 10;
+            NumberTextBox.PreviewTextInput += Number_PreviewTextInput;
+            PostalCodeTextBox.PreviewTextInput += Number_PreviewTextInput;
+            PostalCodeTextBox.MaxLength = 5;
+
+            // empêche la saisie de caractères non alphabétiques
+            CountryTextBox.PreviewTextInput += String_PreviewTextInput;
+            CityTextBox.PreviewTextInput += String_PreviewTextInput;
+            NameTextBox.PreviewTextInput += String_PreviewTextInput;
+            SurnameTextBox.PreviewTextInput += String_PreviewTextInput;
+            StreetTextBox.PreviewTextInput += String_PreviewTextInput;
+
+            NameTextBox.Text = customer.Name;
+            SurnameTextBox.Text = customer.Surname;
+            PhoneNumberTextBox.Text = customer.PhoneNumber.ToString();
+            NumberTextBox.Text = customer.Address.Number.ToString();
+            StreetTextBox.Text = customer.Address.Street;
+            CityTextBox.Text = customer.Address.City;
+            PostalCodeTextBox.Text = customer.Address.PostalCode.ToString();
+            CountryTextBox.Text = customer.Address.Country;
+
+            FrameShow = frameShow;
+
+            BtnNext.Content = "Update";
+            BtnBack.Visibility = Visibility.Hidden;
+
+        }
+
 
         private void Number_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
@@ -85,12 +134,32 @@ namespace Projet_M1_Integration_Systeme.Pages
         // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.BtnNext_Click(sender, e);
+            if (IsUpdating)
+            {
+                // mainWindow.clerk.UpdateCustomer(new Customer(NameTextBox.Text, SurnameTextBox.Text, int.Parse(PhoneNumberTextBox.Text), new Address(int.Parse(NumberTextBox.Text), StreetTextBox.Text, CityTextBox.Text, int.Parse(PostalCodeTextBox.Text), CountryTextBox.Text)));
+                FrameShow.Navigate(new ShowCustomers(FrameShow));
+
+            }
+            else
+            {
+                //mainWindow.clerk.AddCustomer(new Customer(NameTextBox.Text, SurnameTextBox.Text, int.Parse(PhoneNumberTextBox.Text), new Address(int.Parse(NumberTextBox.Text), StreetTextBox.Text, CityTextBox.Text, int.Parse(PostalCodeTextBox.Text), CountryTextBox.Text)));
+                mainWindow.BtnNext_Click(sender, e);
+            }
+            
         }
         // permet de revenir à la page précédente
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.BtnPrevious_Click(sender, e);
+            if (IsUpdating)
+            {
+                FrameShow.Navigate(new ShowCustomers(FrameShow));
+            }
+            else
+            {
+
+                mainWindow.BtnPrevious_Click(sender, e);
+            }
+            
         }
     }
 }

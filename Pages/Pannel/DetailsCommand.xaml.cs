@@ -9,10 +9,10 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     /// </summary>
     
 
-    public partial class InPreparationPanel : Page
+    public partial class DetailsCommand : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public InPreparationPanel()
+        public DetailsCommand()
         {
             InitializeComponent();
             DgPizzasInPreparation.ItemsSource = mainWindow.clerk.commandShown.Pizzas;

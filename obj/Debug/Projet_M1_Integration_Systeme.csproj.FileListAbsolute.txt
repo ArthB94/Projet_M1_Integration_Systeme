@@ -51,3 +51,5 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.g.cs
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldCommands.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.baml

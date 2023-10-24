@@ -17,10 +17,22 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="Old comandes" FontWeight="Bold"  HorizontalAlignment="Left"/>
                 <TextBlock Text="from" VerticalAlignment="Center" Margin="5,0,5,0" HorizontalAlignment="Right" />
-                <DatePicker x:Name="DateMinPicker" Width="100" SelectedDate="{Binding DateMin}" BorderBrush="Black" />
+                <DatePicker x:Name="DateMinPicker" Width="100" SelectedDate="{Binding DateMin, StringFormat='yyyy-MM-dd_HH:mm:ss'}" BorderBrush="Black">
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="IsReadOnly" Value="True" />
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
                 <TextBlock Text="to" VerticalAlignment="Center" Margin="5,0,5,0" />
-                <DatePicker x:Name="DateMaxPicker" Width="100" SelectedDate="{Binding DateMax}" BorderBrush="Black" />
-                <Button x:Name="BtnSearch" Content="Search" Click="BtnSearch_Click" Margin="10,0" />
+                <DatePicker x:Name="DateMaxPicker" Width="100" SelectedDate="{Binding DateMax, StringFormat='yyyy-MM-dd_HH:mm:ss'}" BorderBrush="Black">
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="IsReadOnly" Value="True" />
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <Button x:Name="BtnSearch" Content="Search" Click="BtnSearch_Click" Margin="10,0" Height="20" />
             </StackPanel>
         </Border>
         <DataGrid Grid.Row="1" x:Name="DgHistorique" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">

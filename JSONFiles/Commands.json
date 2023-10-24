@@ -792,5 +792,57 @@
         "Volume": "25cl"
       }
     ]
+  },
+  {
+    "Id": 18,
+    "ClerkName": "Jean",
+    "CustomerName": "Yo",
+    "CustomerSurname": "Lo",
+    "Date_time": "2023-10-24_20:00:42",
+    "Price": 26.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   }
 ]

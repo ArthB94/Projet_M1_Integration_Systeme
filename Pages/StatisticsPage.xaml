@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
             <Grid Grid.Row="0">
@@ -81,6 +82,14 @@
             </Grid>
         </Border>
         <Frame Grid.Row="1" x:Name="FrameShow" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="BtnShowCustomers" Content="Customers" Click="BtnShowCustomers_Click"/>
+            <Button Grid.Column="1" x:Name="BtnShowCommands" Content="Commands" Click="BtnShowCommands_Click"/>
 
+        </Grid>
     </Grid>
 </Page>

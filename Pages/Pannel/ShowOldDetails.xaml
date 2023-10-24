@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+           
         </Grid.RowDefinitions>
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
             <Label Content="Pizzas" FontWeight="Bold"  HorizontalAlignment="Center" />
@@ -76,6 +76,6 @@
             <TextBlock Grid.Column="1" Grid.Row="2"  x:Name="LblDeliveryDateValue"  Text="00-00-0000"   HorizontalAlignment="Left"/>
 
         </Grid>
-        <Button Grid.Row="5" x:Name="BtnShow" Content="&lt;" Click="BtnShow_Click" />
+        
     </Grid>
 </Page>

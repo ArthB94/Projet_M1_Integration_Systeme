@@ -23,12 +23,17 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     {
         public Frame FrameShow { get; set; }
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+        public DateTime DateMin { get; set; }
+        public DateTime DateMax { get; set; }
         public ShowOldCommands(Frame frameShow)
         {
+            DateMin = DateTime.Today;
+            DateMax = DateMin.AddDays(7);
             FrameShow = frameShow;
             InitializeComponent();
+            SetInitialDates();
+
             DgHistorique.ItemsSource = mainWindow.clerk.LoadCommands();
-            DateMinPicker.PreviewTextInput += Date_PreviewTextInput;
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +41,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             {
                 if (button.DataContext is CommandReader command)
                 {
-                    FrameShow.Navigate(new ShowOldDetails(FrameShow,command));
+                    FrameShow.Navigate(new ShowOldDetails(FrameShow, command));
                 }
             }
         }
@@ -44,16 +49,41 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         {
             var minDate = DateMinPicker.SelectedDate;
             var maxDate = DateMaxPicker.SelectedDate;
-            MessageBox.Show(minDate.ToString()+" et " + maxDate);
-            DgHistorique.ItemsSource = mainWindow.clerk.LoadCommands();
+            //MessageBox.Show(minDate.ToString() + " et " + maxDate);
+            if (minDate != null && maxDate != null)
+            {
+                // tu peux changer cette ligne pour faire une recherche dans la base de données
+                DgHistorique.ItemsSource = mainWindow.clerk.LoadCommands();
+            }
+
         }
 
-        private void Date_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void DateMinPicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!Regex.IsMatch(e.Text, "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$\r\n"))
+            if (DateMinPicker.SelectedDate >= DateMaxPicker.SelectedDate)
             {
-                e.Handled = true; // Empêche la saisie du texte non numérique
+                DateMaxPicker.SelectedDate = DateMinPicker.SelectedDate?.AddDays(1);
             }
+        }
+
+        private void DateMaxPicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DateMaxPicker.SelectedDate <= DateMinPicker.SelectedDate)
+            {
+                DateMinPicker.SelectedDate = DateMaxPicker.SelectedDate?.AddDays(-1);
+            }
+        }
+
+        private void SetInitialDates()
+        {
+            DateMinPicker.SelectedDateChanged -= DateMinPicker_SelectedDateChanged;
+            DateMaxPicker.SelectedDateChanged -= DateMaxPicker_SelectedDateChanged;
+
+            DateMinPicker.SelectedDate = DateMin;
+            DateMaxPicker.SelectedDate = DateMax;
+
+            DateMinPicker.SelectedDateChanged += DateMinPicker_SelectedDateChanged;
+            DateMaxPicker.SelectedDateChanged += DateMaxPicker_SelectedDateChanged;
         }
     }
 

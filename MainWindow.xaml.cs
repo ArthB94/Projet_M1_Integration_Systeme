@@ -23,7 +23,7 @@ namespace Projet_M1_Integration_Systeme
 
         public MainWindow()
         {
-            currentCustomer = new Customer();
+            currentCustomer = new Customer("1111111111", "Jaky","Jack");
             clerk = new Clerk(1, "Jean");
             deliveryMan = new DeliveryMan("Pierre");
             kitchen = new Kitchen();
@@ -33,7 +33,7 @@ namespace Projet_M1_Integration_Systeme
             Pages = new List<Page>
             {
                 new ConnectionPage(),
-                new ClientPage(),
+                new CustomerPage(),
                 new CommandPage(),
             };
 
@@ -70,7 +70,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         // permet de naviguer vers une page spécifique
-        public void NaviateToPage(int pageIndex)
+        public void NavigateToPage(int pageIndex)
         {
             CurrentPageIndex = pageIndex;
             InteractiveFrame.Content = CurrentPage;

@@ -7,10 +7,10 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     /// <summary>
     /// Logique d'interaction pour CommandPannel.xaml
     /// </summary>
-    public partial class CommandPannel : Page
+    public partial class CommandPreparation : Page
     {
         public MainWindow mainWindow { get; set; } = (MainWindow)Application.Current.MainWindow;
-        public CommandPannel()
+        public CommandPreparation()
         {
             InitializeComponent();
             DgCommandsInPreparation.ItemsSource = mainWindow.kitchen.Commands;

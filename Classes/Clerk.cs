@@ -38,7 +38,7 @@ namespace Projet_M1_Integration_Systeme
         }
         public void NewCommand()
         {
-            
+
             currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
             currentCommand.CustomerName = mainWindow.currentCustomer.Name;
             currentCommand.CustomerSurname = mainWindow.currentCustomer.Surname;

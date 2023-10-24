@@ -12,13 +12,13 @@ namespace Projet_M1_Integration_Systeme.Pages
     public partial class CommandsStatusPage : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public CommandPannel CommandPannel { get; set; }
+        public CommandPreparation CommandPannel { get; set; }
 
 
 
         public CommandsStatusPage()
         {
-            CommandPannel CommandPannel = new CommandPannel();
+            CommandPreparation CommandPannel = new CommandPreparation();
 
             InitializeComponent();
             FramePizza.Content = CommandPannel;
@@ -28,12 +28,12 @@ namespace Projet_M1_Integration_Systeme.Pages
 
         public void ShowCommand()
         {
-            InPreparationPanel InPreparationPanel = new InPreparationPanel();
+            DetailsCommand InPreparationPanel = new DetailsCommand();
             FramePizza.Content = InPreparationPanel;
         }
         public void ShowCommands() 
         {
-            CommandPannel CommandPannel = new CommandPannel();
+            CommandPreparation CommandPannel = new CommandPreparation();
             FramePizza.Content = CommandPannel;
 
         }
