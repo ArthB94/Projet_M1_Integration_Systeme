@@ -17,6 +17,7 @@ namespace Projet_M1_Integration_Systeme
 
         public int Id { get; set; }
         public string ClerkName { get; set; }
+        public Customer Client { get; set; }
 
         [JsonIgnore]
         private int delay;
@@ -31,7 +32,7 @@ namespace Projet_M1_Integration_Systeme
         public ObservableCollection<PizzaViewModel> PizzasReady { get; set; } = new ObservableCollection<PizzaViewModel>();
 
         public double Price => CalculatePrice();
-        public Command(ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
+        public Command(Customer client, ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
         {
             IDS++;
             Id = IDS;
@@ -39,6 +40,7 @@ namespace Projet_M1_Integration_Systeme
             Pizzas = pizzas;
             Drinks = drinklist;
             delay = 5;
+            Client = client;
 
         }
         public string Status 
@@ -96,6 +98,7 @@ namespace Projet_M1_Integration_Systeme
         public double Price { get; set; }
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
         public List<Drink> Drinks { get; set; } = new List<Drink>();
+        public Customer Client { get; set; }
 
         public CommandReader(Command commande)
         {
@@ -103,6 +106,7 @@ namespace Projet_M1_Integration_Systeme
             Date_time = commande.Date_time;
             Price = commande.Price;
             ClerkName = commande.ClerkName;
+            Client = commande.Client;
             
             foreach (PizzaViewModel pizza in commande.PizzasReady)
             {
@@ -144,5 +148,7 @@ namespace Projet_M1_Integration_Systeme
 
 
         }
+
+        
     }
 }

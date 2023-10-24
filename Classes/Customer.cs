@@ -8,5 +8,6 @@ namespace Projet_M1_Integration_Systeme
 { 
     public class Customer
     {
+        public String Name;
     }
 }

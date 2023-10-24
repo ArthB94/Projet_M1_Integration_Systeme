@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -20,6 +21,7 @@ namespace Projet_M1_Integration_Systeme
         public Command commandShown { get; set; }
         private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
         private int lastCommadeID;
+        private int cptCmd = 0;
 
 
         public Clerk(int id, string name)
@@ -139,6 +141,54 @@ namespace Projet_M1_Integration_Systeme
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);
+        }
+
+        public List<CommandReader> getMyCommands()
+        {
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<CommandReader> mycmd = new List<CommandReader>(); //empty list of only mine
+
+            foreach (CommandReader cmd in allComds)
+            {
+                if(cmd.ClerkName == this.Name)
+                {
+                    mycmd.Add(cmd);
+                    this.cptCmd++;
+                }
+                
+            }
+
+            return mycmd;
+        }
+
+        public List<CommandReader> orderedAtSpecTime(String timeBegin, String timeEnds)
+        {
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<CommandReader> inTime = new List<CommandReader>(); //empty list of only right time
+
+            foreach (CommandReader cmd in allComds)
+            {
+                if (DateTime.Parse(cmd.Date_time) >= DateTime.Parse(timeBegin) && DateTime.Parse(cmd.Date_time) <= DateTime.Parse(timeEnds))
+                {
+                    inTime.Add(cmd);
+                }
+
+            }
+
+            return inTime;
+        }
+
+        public double getAvgAccount()
+        {
+            double ttlAccount = 0;
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<Customer> allClients = LoadCustomers(); //all clients
+
+            foreach(CommandReader cmd in allComds) {
+                ttlAccount += cmd.Price;
+            }  
+            return ttlAccount/allClients.Count;
+                
         }
     }
 }

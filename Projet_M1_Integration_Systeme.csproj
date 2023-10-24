@@ -141,6 +141,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="JSONFiles\base-dadresses-nationale-ouverte-bano-paris.json" />
     <None Include="JSONFiles\Commands.json" />
     <None Include="JSONFiles\Customers.json" />
     <None Include="packages.config" />

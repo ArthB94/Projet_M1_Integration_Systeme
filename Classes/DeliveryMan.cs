@@ -55,5 +55,10 @@ namespace Projet_M1_Integration_Systeme
             clerk.SendAddition(command);
 
         }
+
+        public int getNbOfDelivery()
+        {
+            return this.CommandsDelivered.Count();
+        }
     }
 }
