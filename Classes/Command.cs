@@ -88,7 +88,7 @@ namespace Projet_M1_Integration_Systeme
 
 
     }
-    public class CommandParser
+    public class CommandReader
     {
         public int Id { get; set; }
         public string ClerkName { get; set; }
@@ -97,7 +97,7 @@ namespace Projet_M1_Integration_Systeme
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
         public List<Drink> Drinks { get; set; } = new List<Drink>();
 
-        public CommandParser(Command commande)
+        public CommandReader(Command commande)
         {
             Id = commande.Id;
             Date_time = commande.Date_time;
@@ -115,7 +115,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandParser(int id, string date_time,string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandReader(int id, string date_time,string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;

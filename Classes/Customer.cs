@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_M1_Integration_Systeme 
 { 
-    public class Client
+    public class Customer
     {
     }
 }

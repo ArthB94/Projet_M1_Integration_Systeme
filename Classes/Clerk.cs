@@ -27,7 +27,7 @@ namespace Projet_M1_Integration_Systeme
             Id = id;
             Name = name;
             Status = "Waiting";
-            List<CommandParser> commands = LoadCommands();
+            List<CommandReader> commands = LoadCommands();
             if (commands.Count() > 0)
             {
                 Command.IDS = commands.Last().Id;
@@ -82,20 +82,30 @@ namespace Projet_M1_Integration_Systeme
                 mainWindow.commandsPannel.ShowCommands();
             }
         }
-        public List<CommandParser> LoadCommandsFile(string fileName)
+        public List<CommandReader> LoadCommandsFile(string fileName)
         {
             string jsonContent = File.ReadAllText(fileName);
-            List<CommandParser> commands = JsonConvert.DeserializeObject<List<CommandParser>>(jsonContent);
+            List<CommandReader> commands = JsonConvert.DeserializeObject<List<CommandReader>>(jsonContent);
             return commands;
         }
-        public List<CommandParser> LoadCommands ()
+        public List<CommandReader> LoadCommands ()
         {
             return LoadCommandsFile(jsonFileSource + "Commands.json");
+        }
+        public void StoreCommand(Command newCommand)
+        {
+            string jsonFilePath = jsonFileSource + "Commands.json";
+            string jsonContent = File.ReadAllText(jsonFilePath);
+            List<CommandReader> data = JsonConvert.DeserializeObject<List<CommandReader>>(jsonContent);
+            data.Add(new CommandReader(newCommand));
+            string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
+            Console.WriteLine(updatedJson);
+            File.WriteAllText(jsonFilePath, updatedJson);
         }
 
         public void LoadCommandFile(string fileName)
         {
-            List<CommandParser> commands = LoadCommandsFile(fileName);
+            List<CommandReader> commands = LoadCommandsFile(fileName);
             var command = commands.Last();
             foreach (Pizza pizza in command.Pizzas)
             {
@@ -107,25 +117,25 @@ namespace Projet_M1_Integration_Systeme
             }
 
         }
-        public List<Client> LoadClients()
-        {
-            string jsonContent = File.ReadAllText(jsonFileSource + "Client.json");
-            return JsonConvert.DeserializeObject<List<Client>>(jsonContent);
-        }
         public void SendAddition(Command command)
         {
             Console.WriteLine("SendAddition");
             command.setDate();
-            MessageBox.Show("Command "+ JsonConvert.SerializeObject(new CommandParser(command), Formatting.Indented) + " delivered");
-            SaveCommand( command);
+            MessageBox.Show("Command " + JsonConvert.SerializeObject(new CommandReader(command), Formatting.Indented) + " delivered");
+            StoreCommand(command);
         }
 
-        public void SaveCommand(Command NewValue)
+        public List<Customer> LoadCustomers()
         {
-            string jsonFilePath = jsonFileSource + "Commands.json";
+            string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
+            return JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
+        }
+        public void StoreCustomer(Customer newCustomer)
+        {
+            string jsonFilePath = jsonFileSource + "Customers.json";
             string jsonContent = File.ReadAllText(jsonFilePath);
-            List<CommandParser> data = JsonConvert.DeserializeObject<List<CommandParser>>(jsonContent);
-            data.Add(new CommandParser(NewValue));
+            List<Customer> data = JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
+            data.Add(newCustomer);
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);

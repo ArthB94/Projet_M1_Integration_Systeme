@@ -60,7 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Clerk.cs" />
     <Compile Include="Classes\Command.cs" />
@@ -70,8 +70,8 @@
     <Compile Include="Pages\ConnectionPage.xaml.cs">
       <DependentUpon>ConnectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ClientPage.xaml.cs">
-      <DependentUpon>ClientPage.xaml</DependentUpon>
+    <Compile Include="Pages\CustomerPage.xaml.cs">
+      <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CommandsPannel.xaml.cs">
       <DependentUpon>CommandsPannel.xaml</DependentUpon>
@@ -96,7 +96,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\ClientPage.xaml">
+    <Page Include="Pages\CustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,7 +142,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="JSONFiles\Commands.json" />
-    <None Include="JSONFiles\Client.json" />
+    <None Include="JSONFiles\Customers.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
