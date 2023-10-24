@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 using Newtonsoft.Json;
-
 namespace Projet_M1_Integration_Systeme
 {
     public abstract class Person : INotifyPropertyChanged
@@ -17,5 +17,7 @@ namespace Projet_M1_Integration_Systeme
         {
             this.name = name;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

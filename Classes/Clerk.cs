@@ -19,7 +19,7 @@ namespace Projet_M1_Integration_Systeme
         public Command currentCommand {get; set; }
         public Command commandShown { get; set; }
         private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
-        private int lastCommadeID;
+        private int lastCommandID;
         public Customer curentCustomer;
 
         public Clerk(int id, string name) : base(name)
@@ -31,6 +31,7 @@ namespace Projet_M1_Integration_Systeme
             if (commands.Count() > 0)
             {
                 Command.IDS = commands.Last().Id;
+                Customer.IDS = commands.Last().Id;
             }
 
             NewCommand();
@@ -63,7 +64,7 @@ namespace Projet_M1_Integration_Systeme
             currentCommand.ClerkName = Name;
             Console.WriteLine("AddCurentCommand");
             mainWindow.kitchen.addCommand(currentCommand);
-            lastCommadeID++;
+            lastCommandID++;
             NewCommand();
             
         }
@@ -92,6 +93,7 @@ namespace Projet_M1_Integration_Systeme
         {
             return LoadCommandsFile(jsonFileSource + "Commands.json");
         }
+
         public void StoreCommand(Command newCommand)
         {
             string jsonFilePath = jsonFileSource + "Commands.json";
@@ -157,10 +159,5 @@ namespace Projet_M1_Integration_Systeme
                 return false;
             }
         }
-        
-        //et dans le bouton connect ça se fait que si on a trouvé le customer
-        //else messagebox.show(no user found) or console.log(smae) dcp obligé passer à register
-
-        //dans customer page faire register, recup data et put in db
     }
 }

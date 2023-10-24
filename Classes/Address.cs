@@ -10,13 +10,13 @@ namespace Projet_M1_Integration_Systeme
 {
     public class Address : INotifyPropertyChanged
     {
-        private int number;
+        private string number;
         private string street;
         private string city;
-        private double postalCode;
+        private string postalCode;
         private string country;
 
-        public Address(int number, string street, string city, double postalCode, string country)
+        public Address(string number, string street, string city, string postalCode, string country)
         {
             this.number = number;
             this.street = street;
@@ -25,28 +25,21 @@ namespace Projet_M1_Integration_Systeme
             this.country = country;
         }
 
-        public int Number
+        public string Number
         {
             get { return number; }
             set
             {
-                if (value is int)
-                {
-                    number = value;
-                    OnPropertyChanged(nameof(Number));
-                }
-                else
-                {
-                    Console.WriteLine("Error: You can only enter numbers");
-                }
+                number = value;
+                OnPropertyChanged(nameof(Number));
             }
         }
 
-        private void OnPropertyChanged(string v)
+        protected void OnPropertyChanged(string propertyName)
         {
-            throw new NotImplementedException();
-        }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        }
         public string Street
         {
             get { return street; }
@@ -66,21 +59,13 @@ namespace Projet_M1_Integration_Systeme
                 OnPropertyChanged(nameof(City));
             }
         }
-        public double PostalCode
+        public string PostalCode
         {
             get { return postalCode; }
             set
             {
-                if (value is double)
-                {
                     postalCode = value;
                     OnPropertyChanged(nameof(PostalCode));
-                }
-                else
-                {
-                    Console.WriteLine("Error: You can only enter numbers");
-                }
-                
             }
         }
         public string Country

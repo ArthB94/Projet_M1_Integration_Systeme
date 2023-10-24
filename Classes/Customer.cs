@@ -15,38 +15,57 @@ namespace Projet_M1_Integration_Systeme
 {
     public class Customer : Person
     {
-        private int phoneNumber;
-        private string name;
+        private string phoneNumber;
         private string surname;
         private int id;
+        public static int IDS { get; set; } = 0;
         private DateTime firstCommandDate;
         private Address address;
 
-        public Customer(int phoneNumber, string name) : base(name) 
+        public Customer(string phoneNumber, string name, string surname) : base(name)
         {
+            IDS++;
+            id = IDS;
             this.phoneNumber = phoneNumber;
+            this.name = name;
+            this.surname = surname;
+        }
+        public Customer(string phoneNumber, string name, string surname, Address address) : base(name)
+        {
+            IDS++;
+            id = IDS;
+            this.phoneNumber = phoneNumber;
+            this.name = name;
+            this.surname = surname;
+            this.address = address;
+        }
+        [JsonConstructor]
+        public Customer(string phoneNumber, string name, string surname, Address address, int id, DateTime FirstCommandDate) : base(name)
+        {
+            IDS++;
+            this.phoneNumber = phoneNumber;
+            this.name = name;
+            this.surname = surname;
+            this.address = address;
+            this.id = id;
+            this.FirstCommandDate = FirstCommandDate;
         }
 
-        public int PhoneNumber
+
+        public string PhoneNumber
         {
             get { return phoneNumber; }
             set
             {
-                if (value is int)
-                {
-                    phoneNumber = value;
-                    OnPropertyChanged(nameof(PhoneNumber));
-                }
-                else
-                {
-                    Console.WriteLine("Error: You can only enter numbers");
-                }
+                phoneNumber = value;
+                OnPropertyChanged(nameof(PhoneNumber));
             }
         }
 
-        private void OnPropertyChanged(string v)
+        protected void OnPropertyChanged(string propertyName)
         {
-            throw new NotImplementedException();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         }
 
         public string Name
@@ -74,7 +93,6 @@ namespace Projet_M1_Integration_Systeme
             set
             {
                 id = value;
-                OnPropertyChanged(nameof(Id));
             }
         }
         public DateTime FirstCommandDate
@@ -98,6 +116,6 @@ namespace Projet_M1_Integration_Systeme
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        // order(int id):void qui fait appel à la fonction order de clerk??
+        // order(int id):void qui fait appel Ã  la fonction order de clerk??
     }
 }

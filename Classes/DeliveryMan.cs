@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace Projet_M1_Integration_Systeme
 {
-    public class DeliveryMan
+    public class DeliveryMan : Person
     {
         private MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         private Clerk clerk;
@@ -13,7 +13,7 @@ namespace Projet_M1_Integration_Systeme
         public ObservableCollection<Command> CommandsDelivered = new ObservableCollection<Command>();
         public string Name { get; set; }
         public string Status {  get; set; }
-        public DeliveryMan(string name) 
+        public DeliveryMan(string name) : base(name) 
         {
             Name = name;
             Status = "Waiting";
