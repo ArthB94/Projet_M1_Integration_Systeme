@@ -20,6 +20,8 @@ namespace Projet_M1_Integration_Systeme
         public MainWindow()
         {
             clerk = new Clerk(1, "Jean");
+            Customer customer = new Customer("1234567899", "Yena", "Marre");
+            clerk.StoreCustomer(customer);
             deliveryMan = new DeliveryMan("Pierre");
             kitchen = new Kitchen();
 
@@ -36,7 +38,7 @@ namespace Projet_M1_Integration_Systeme
             InitializeComponent();
 
             // initialise la page première page de la liste
-            CurrentPageIndex = 1;
+            CurrentPageIndex = 0;
             MainFrame.Content = CurrentPage;
             CommandsPannelFrame.Content = commandsPannel;
             
@@ -64,7 +66,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         // permet de naviguer vers une page spécifique
-        public void NaviateToPage(int pageIndex)
+        public void NavigateToPage(int pageIndex)
         {
             CurrentPageIndex = pageIndex;
             MainFrame.Content = CurrentPage;
