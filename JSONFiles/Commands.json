@@ -1,0 +1,821 @@
+[
+  {
+    "Id": 1,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_08:49:35",
+    "Price": 26.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_08:49:45",
+    "Price": 18.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_08:49:55",
+    "Price": 28.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_08:50:05",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_08:50:12",
+    "Price": 13.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:11:39",
+    "Price": 27.099999999999998,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Medium",
+        "Price": 10.0
+      },
+      {
+        "SelectedName": "Vegetarian",
+        "SelectedSize": "Small",
+        "Price": 7.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.2,
+        "Type": "Perrier",
+        "Volume": "35cl"
+      },
+      {
+        "Price": 2.2,
+        "Type": "Ice Tea",
+        "Volume": "1L"
+      },
+      {
+        "Price": 1.7,
+        "Type": "Lemonade",
+        "Volume": "35cl"
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:12:22",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:12:42",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:12:51",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:12:58",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:19:03",
+    "Price": 32.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:19:13",
+    "Price": 24.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:19:23",
+    "Price": 24.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:27:16",
+    "Price": 148.79999999999996,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Pepperoni",
+        "SelectedSize": "Extra Large",
+        "Price": 22.0
+      },
+      {
+        "SelectedName": "Seafood",
+        "SelectedSize": "Extra Large",
+        "Price": 23.0
+      },
+      {
+        "SelectedName": "Vegetarian",
+        "SelectedSize": "Small",
+        "Price": 7.0
+      },
+      {
+        "SelectedName": "Seafood",
+        "SelectedSize": "Small",
+        "Price": 8.0
+      },
+      {
+        "SelectedName": "Meat Lovers",
+        "SelectedSize": "Extra Large",
+        "Price": 23.0
+      },
+      {
+        "SelectedName": "Cheese",
+        "SelectedSize": "Small",
+        "Price": 7.0
+      },
+      {
+        "SelectedName": "Cheese",
+        "SelectedSize": "Extra Large",
+        "Price": 22.0
+      },
+      {
+        "SelectedName": "Hawaiian",
+        "SelectedSize": "Extra Large",
+        "Price": 23.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Ice Tea",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.7,
+        "Type": "Perrier",
+        "Volume": "1L"
+      },
+      {
+        "Price": 1.7,
+        "Type": "Lemonade",
+        "Volume": "35cl"
+      },
+      {
+        "Price": 1.7,
+        "Type": "Cola",
+        "Volume": "35cl"
+      },
+      {
+        "Price": 2.2,
+        "Type": "Ice Tea",
+        "Volume": "1L"
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:27:24",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:27:32",
+    "Price": 19.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:27:39",
+    "Price": 32.5,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:32:32",
+    "Price": 35.2,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Seafood",
+        "SelectedSize": "Extra Large",
+        "Price": 23.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 2.2,
+        "Type": "Cola",
+        "Volume": "1L"
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "ClerkName": "Jean",
+    "Date_time": "2023-10-24_10:40:27",
+    "Price": 10.0,
+    "Pizzas": [
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      },
+      {
+        "SelectedName": "Margarita",
+        "SelectedSize": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": []
+  }
+]

@@ -63,7 +63,7 @@
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Clerk.cs" />
-    <Compile Include="Classes\Commande.cs" />
+    <Compile Include="Classes\Command.cs" />
     <Compile Include="Classes\Cook.cs" />
     <Compile Include="Classes\DeliveryMan.cs" />
     <Compile Include="Classes\Kitchen.cs" />
@@ -76,8 +76,8 @@
     <Compile Include="Pages\CommandsPannel.xaml.cs">
       <DependentUpon>CommandsPannel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CommandePage.xaml.cs">
-      <DependentUpon>CommandePage.xaml</DependentUpon>
+    <Compile Include="Pages\CommandPage.xaml.cs">
+      <DependentUpon>CommandPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Pizza.cs" />
     <Page Include="Pages\ConnectionPage.xaml">
@@ -104,32 +104,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CommandePage.xaml">
+    <Page Include="Pages\CommandPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Pannel\AdditionPanel.xaml">
+    <Page Include="Pages\Pannel\CommandsPreparation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Pannel\CommandePannel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Pannel\InPreparationPanel.xaml">
+    <Page Include="Pages\Pannel\DetailsCommand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Pannel\AdditionPanel.xaml.cs">
-      <DependentUpon>AdditionPanel.xaml</DependentUpon>
+    <Compile Include="Pages\Pannel\CommandsPreparation.xaml.cs">
+      <DependentUpon>CommandsPreparation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Pannel\CommandePannel.xaml.cs">
-      <DependentUpon>CommandePannel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Pannel\InPreparationPanel.xaml.cs">
-      <DependentUpon>InPreparationPanel.xaml</DependentUpon>
+    <Compile Include="Pages\Pannel\DetailsCommand.xaml.cs">
+      <DependentUpon>DetailsCommand.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -148,7 +141,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="JSONFiles\Commande.json" />
+    <None Include="JSONFiles\Commands.json" />
     <None Include="JSONFiles\Client.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

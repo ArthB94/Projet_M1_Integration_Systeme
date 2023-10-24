@@ -7,19 +7,21 @@ using System.Collections.Generic;
 
 namespace Projet_M1_Integration_Systeme
 {
-    public class Commande : INotifyPropertyChanged
+    public class Command : INotifyPropertyChanged
     {
         public static double totalPrices = 0;
         public static double avg => CalculateAvg();
-        public static int IDS { get; set; } = 1;
+        public static int IDS { get; set; } = 0;
 
         public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
 
         public int Id { get; set; }
-        public string Status { get; set; }
+        public string ClerkName { get; set; }
 
         [JsonIgnore]
         private int delay;
+        [JsonIgnore]
+        private string status;
 
         public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
 
@@ -29,7 +31,7 @@ namespace Projet_M1_Integration_Systeme
         public ObservableCollection<PizzaViewModel> PizzasReady { get; set; } = new ObservableCollection<PizzaViewModel>();
 
         public double Price => CalculatePrice();
-        public Commande(ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
+        public Command(ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
         {
             IDS++;
             Id = IDS;
@@ -38,6 +40,15 @@ namespace Projet_M1_Integration_Systeme
             Drinks = drinklist;
             delay = 5;
 
+        }
+        public string Status 
+        { 
+            get {return status; }
+            set
+            {
+                status = value;
+                OnPropertyChanged(nameof(Status));
+            }   
         }
         public int DeliveryDelay
         {
@@ -77,19 +88,22 @@ namespace Projet_M1_Integration_Systeme
 
 
     }
-    public class CommandeParser
+    public class CommandParser
     {
         public int Id { get; set; }
+        public string ClerkName { get; set; }
         public String Date_time { get; set; }
         public double Price { get; set; }
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
         public List<Drink> Drinks { get; set; } = new List<Drink>();
 
-        public CommandeParser(Commande commande)
+        public CommandParser(Command commande)
         {
             Id = commande.Id;
             Date_time = commande.Date_time;
             Price = commande.Price;
+            ClerkName = commande.ClerkName;
+            
             foreach (PizzaViewModel pizza in commande.PizzasReady)
             {
                 Pizzas.Add(pizza.Pizza);
@@ -101,21 +115,23 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandeParser(int id, string date_time, double price, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandParser(int id, string date_time,string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;
             Price = price;
             Pizzas = pizzas;
             Drinks = drinks;
+            ClerkName = clerkName;
         }
 
-        public Commande ToCommande()
+        public Command ToCommande()
         {
 
-            Commande commande = new Commande(new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
+            Command commande = new Command(new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
             commande.Date_time = Date_time;
-            foreach(Pizza pizza in Pizzas)
+            commande.ClerkName = ClerkName;
+            foreach (Pizza pizza in Pizzas)
             {
                 commande.Pizzas.Add(new PizzaViewModel(pizza));
             }

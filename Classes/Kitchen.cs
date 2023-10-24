@@ -11,14 +11,14 @@ namespace Projet_M1_Integration_Systeme
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public DeliveryMan DeliveryMan { get; set; }
         public List<Cook> Cooks { get; set; }
-        public ObservableCollection<Commande> Commandes { get; set; } = new ObservableCollection<Commande>();
-        public ObservableCollection<Commande> CommandesReady { get; set; } = new ObservableCollection<Commande>();
+        public ObservableCollection<Command> Commands { get; set; } = new ObservableCollection<Command>();
+        public ObservableCollection<Command> CommandsReady { get; set; } = new ObservableCollection<Command>();
         public Kitchen()
         {
 
             Cooks = new List<Cook> {
-                new Cook (this,1,"Jean"),
-                new Cook(this,2, "Jack")
+                new Cook (this,"Mathieu"),
+                new Cook(this, "Jack")
             };
             DeliveryMan = mainWindow.deliveryMan;
 
@@ -39,17 +39,17 @@ namespace Projet_M1_Integration_Systeme
             Console.WriteLine("StartPreparation");
             await Task.WhenAll (tasks);
         }
-        public void addCommande (Commande commande)
+        public void addCommand (Command command)
         {
-            Commandes.Add(commande);
+            Commands.Add(command);
             StartPreparation();
         }
 
-        public async void SendCommandes(Commande commande)
+        public async void SendCommands(Command command)
         {
             await Task.Delay (5000);
-            DeliveryMan.Deliver(commande);
-            CommandesReady.Remove(commande);
+            DeliveryMan.Deliver(command);
+            CommandsReady.Remove(command);
 
         }
     }

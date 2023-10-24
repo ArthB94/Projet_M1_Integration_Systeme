@@ -8,31 +8,31 @@ namespace Projet_M1_Integration_Systeme
     /// Logique d'interaction pour CommandePage.xaml
     /// </summary>
     /// 
-    public partial class CommandePage
+    public partial class CommandPage
     {
 
         // permet de récupérer touts les elements initialisés dans MainWindow
         public MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
-        public double TotalPrice => mainWindow.clerk.currentCommande.Price;
+        public double TotalPrice => mainWindow.clerk.currentCommand.Price;
 
-        public CommandePage()
+        public CommandPage()
         {
             InitializeComponent();
 
             // permet de mettre à jour le prix total de la commande lorsque chaque pizza est modifiée
-            foreach (var pizza in mainWindow.clerk.currentCommande.Pizzas)
+            foreach (var pizza in mainWindow.clerk.currentCommand.Pizzas)
             {
                 pizza.PriceChanged += UpdateTotalPrice;
             }
-            foreach (var drink in mainWindow.clerk.currentCommande.Drinks)
+            foreach (var drink in mainWindow.clerk.currentCommand.Drinks)
             {
                 drink.PriceChanged += UpdateTotalPrice;
             }
 
             // permet de mettre à jour le prix total de la commande lorsque la page est chargée
             LblTotalPriceValue.Content = TotalPrice;
-            DgPizzas.ItemsSource = mainWindow.clerk.currentCommande.Pizzas;
-            DgDrinks.ItemsSource = mainWindow.clerk.currentCommande.Drinks;
+            DgPizzas.ItemsSource = mainWindow.clerk.currentCommand.Pizzas;
+            DgDrinks.ItemsSource = mainWindow.clerk.currentCommand.Drinks;
         }
 
         // permet d'ajouter une pizza à la commande 
@@ -42,11 +42,11 @@ namespace Projet_M1_Integration_Systeme
             UpdateTotalPrice();
 
             // permet de mettre à jour le prix total de la commande lorsque chaque nouvelle pizza est modifiée
-            foreach (var pizza in mainWindow.clerk.currentCommande.Pizzas)
+            foreach (var pizza in mainWindow.clerk.currentCommand.Pizzas)
             {
                 pizza.PriceChanged += UpdateTotalPrice;
             }
-            foreach (var drink in mainWindow.clerk.currentCommande.Drinks)
+            foreach (var drink in mainWindow.clerk.currentCommand.Drinks)
             {
                 drink.PriceChanged += UpdateTotalPrice;
             }
@@ -55,11 +55,11 @@ namespace Projet_M1_Integration_Systeme
         {
             mainWindow.clerk.AddDrink();
             UpdateTotalPrice();
-            foreach (var pizza in mainWindow.clerk.currentCommande.Pizzas)
+            foreach (var pizza in mainWindow.clerk.currentCommand.Pizzas)
             {
                 pizza.PriceChanged += UpdateTotalPrice;
             }
-            foreach (var drink in mainWindow.clerk.currentCommande.Drinks)
+            foreach (var drink in mainWindow.clerk.currentCommand.Drinks)
             {
                 drink.PriceChanged += UpdateTotalPrice;
             }
@@ -99,9 +99,9 @@ namespace Projet_M1_Integration_Systeme
         // permet de passer à la page suivante
         public void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.clerk.AddCurentCommande();
-            DgPizzas.ItemsSource = mainWindow.clerk.currentCommande.Pizzas;
-            DgDrinks.ItemsSource = mainWindow.clerk.currentCommande.Drinks;
+            mainWindow.clerk.LaunchCurentCommand();
+            DgPizzas.ItemsSource = mainWindow.clerk.currentCommand.Pizzas;
+            DgDrinks.ItemsSource = mainWindow.clerk.currentCommand.Drinks;
             //mainWindow.NaviateToPage(0);
         }
 
@@ -123,16 +123,16 @@ namespace Projet_M1_Integration_Systeme
             {
                 // L'utilisateur a choisi un fichier
                 string nomFichier = openFileDialog.FileName;
-                mainWindow.clerk.LoadCommandeFile(nomFichier);
-                DgPizzas.ItemsSource = mainWindow.clerk.currentCommande.Pizzas;
+                mainWindow.clerk.LoadCommandFile(nomFichier);
+                DgPizzas.ItemsSource = mainWindow.clerk.currentCommand.Pizzas;
                 UpdateTotalPrice();
 
             }
-            foreach (var pizza in mainWindow.clerk.currentCommande.Pizzas)
+            foreach (var pizza in mainWindow.clerk.currentCommand.Pizzas)
             {
                 pizza.PriceChanged += UpdateTotalPrice;
             }
-            foreach (var drink in mainWindow.clerk.currentCommande.Drinks)
+            foreach (var drink in mainWindow.clerk.currentCommand.Drinks)
             {
                 drink.PriceChanged += UpdateTotalPrice;
             }

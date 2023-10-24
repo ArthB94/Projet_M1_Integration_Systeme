@@ -15,12 +15,12 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         public InPreparationPanel()
         {
             InitializeComponent();
-            DgPizzasInPreparation.ItemsSource = mainWindow.clerk.commandeShown.Pizzas;
-            DgPizzasReady.ItemsSource = mainWindow.clerk.commandeShown.PizzasReady;
+            DgPizzasInPreparation.ItemsSource = mainWindow.clerk.commandShown.Pizzas;
+            DgPizzasReady.ItemsSource = mainWindow.clerk.commandShown.PizzasReady;
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.clerk.ShowCommandes();
+            mainWindow.clerk.ShowCommands();
         }
     }
 

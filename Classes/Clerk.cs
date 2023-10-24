@@ -16,8 +16,8 @@ namespace Projet_M1_Integration_Systeme
         public int Id { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
-        public Commande currentCommande {get; set; }
-        public Commande commandeShown { get; set; }
+        public Command currentCommand {get; set; }
+        public Command commandShown { get; set; }
         private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
         private int lastCommadeID;
 
@@ -27,78 +27,83 @@ namespace Projet_M1_Integration_Systeme
             Id = id;
             Name = name;
             Status = "Waiting";
-            List<CommandeParser> commandes = LoadCommandes();
-            Commande.IDS = commandes.Last().Id;
-            NewCommande();
-            commandeShown = currentCommande;
+            List<CommandParser> commands = LoadCommands();
+            if (commands.Count() > 0)
+            {
+                Command.IDS = commands.Last().Id;
+            }
+
+            NewCommand();
+            commandShown = currentCommand;
         }
-        public void NewCommande()
+        public void NewCommand()
         {
             
-            currentCommande= new Commande( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
+            currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
 
         }
         public void AddPizza()
         {
-            currentCommande.Pizzas.Add(new PizzaViewModel(new Pizza()));
+            currentCommand.Pizzas.Add(new PizzaViewModel(new Pizza()));
         }
         public void AddDrink()
         {
-            currentCommande.Drinks.Add(new DrinkViewModel(new Drink()));
+            currentCommand.Drinks.Add(new DrinkViewModel(new Drink()));
         }
         public void RemovePizza(PizzaViewModel pizza) {
-            currentCommande.Pizzas.Remove(pizza);
+            currentCommand.Pizzas.Remove(pizza);
         }
         public void RemoveDrink(DrinkViewModel drink)
         {
-            currentCommande.Drinks.Remove(drink);
+            currentCommand.Drinks.Remove(drink);
         }
 
-        public void AddCurentCommande()
+        public void LaunchCurentCommand()
         {
-            Console.WriteLine("AddCurentCommande");
-            mainWindow.kitchen.addCommande(currentCommande);
+            currentCommand.ClerkName = Name;
+            Console.WriteLine("AddCurentCommand");
+            mainWindow.kitchen.addCommand(currentCommand);
             lastCommadeID++;
-            NewCommande();
+            NewCommand();
             
         }
-        public void CommandeShown(Commande commande)
+        public void CommandShown(Command command)
         {
-            commandeShown = commande;
+            commandShown = command;
             if (mainWindow.commandsPannel !=null)
             {
-                mainWindow.commandsPannel.ShowCommande();
+                mainWindow.commandsPannel.ShowCommand();
             }
         }
-        public void ShowCommandes()
+        public void ShowCommands()
         {
             if (mainWindow.commandsPannel != null)
             {
-                mainWindow.commandsPannel.ShowCommandes();
+                mainWindow.commandsPannel.ShowCommands();
             }
         }
-        public List<CommandeParser> LoadCommandesFile(string fileName)
+        public List<CommandParser> LoadCommandsFile(string fileName)
         {
             string jsonContent = File.ReadAllText(fileName);
-            List<CommandeParser> commandes = JsonConvert.DeserializeObject<List<CommandeParser>>(jsonContent);
-            return commandes;
+            List<CommandParser> commands = JsonConvert.DeserializeObject<List<CommandParser>>(jsonContent);
+            return commands;
         }
-        public List<CommandeParser> LoadCommandes ()
+        public List<CommandParser> LoadCommands ()
         {
-            return LoadCommandesFile(jsonFileSource + "Commande.json");
+            return LoadCommandsFile(jsonFileSource + "Commands.json");
         }
 
-        public void LoadCommandeFile(string fileName)
+        public void LoadCommandFile(string fileName)
         {
-            List<CommandeParser> commandes = LoadCommandesFile(fileName);
-            var commande = commandes.Last();
-            foreach (Pizza pizza in commande.Pizzas)
+            List<CommandParser> commands = LoadCommandsFile(fileName);
+            var command = commands.Last();
+            foreach (Pizza pizza in command.Pizzas)
             {
-                currentCommande.Pizzas.Add(new PizzaViewModel(pizza));
+                currentCommand.Pizzas.Add(new PizzaViewModel(pizza));
             }
-            foreach (Drink drink in commande.Drinks)
+            foreach (Drink drink in command.Drinks)
             {
-                currentCommande.Drinks.Add(new DrinkViewModel(drink));
+                currentCommand.Drinks.Add(new DrinkViewModel(drink));
             }
 
         }
@@ -107,20 +112,20 @@ namespace Projet_M1_Integration_Systeme
             string jsonContent = File.ReadAllText(jsonFileSource + "Client.json");
             return JsonConvert.DeserializeObject<List<Client>>(jsonContent);
         }
-        public void SendAddition(Commande commande)
+        public void SendAddition(Command command)
         {
             Console.WriteLine("SendAddition");
-            commande.setDate();
-            MessageBox.Show("Commande "+ JsonConvert.SerializeObject(new CommandeParser(commande), Formatting.Indented) + " delivered");
-            SaveCommande( commande);
+            command.setDate();
+            MessageBox.Show("Command "+ JsonConvert.SerializeObject(new CommandParser(command), Formatting.Indented) + " delivered");
+            SaveCommand( command);
         }
 
-        public void SaveCommande(Commande NewValue)
+        public void SaveCommand(Command NewValue)
         {
-            string jsonFilePath = jsonFileSource + "Commande.json";
+            string jsonFilePath = jsonFileSource + "Commands.json";
             string jsonContent = File.ReadAllText(jsonFilePath);
-            List<CommandeParser> data = JsonConvert.DeserializeObject<List<CommandeParser>>(jsonContent);
-            data.Add(new CommandeParser(NewValue));
+            List<CommandParser> data = JsonConvert.DeserializeObject<List<CommandParser>>(jsonContent);
+            data.Add(new CommandParser(NewValue));
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);

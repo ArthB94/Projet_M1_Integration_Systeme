@@ -12,29 +12,29 @@ namespace Projet_M1_Integration_Systeme
     public partial class CommandsPannel : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public CommandePannel CommandePannel { get; set; }
+        public CommandPannel CommandPannel { get; set; }
 
 
 
         public CommandsPannel()
         {
-            CommandePannel CommandePannel = new CommandePannel();
+            CommandPannel CommandPannel = new CommandPannel();
 
             InitializeComponent();
-            FramePizza.Content = CommandePannel;
-            DgCommandesDelivered.ItemsSource = mainWindow.deliveryMan.CommandesToDeliver;
+            FramePizza.Content = CommandPannel;
+            DgCommandsDelivered.ItemsSource = mainWindow.deliveryMan.CommandsToDeliver;
 
         }
 
-        public void ShowCommande()
+        public void ShowCommand()
         {
             InPreparationPanel InPreparationPanel = new InPreparationPanel();
             FramePizza.Content = InPreparationPanel;
         }
-        public void ShowCommandes() 
+        public void ShowCommands() 
         {
-            CommandePannel CommandePannel = new CommandePannel();
-            FramePizza.Content = CommandePannel;
+            CommandPannel CommandPannel = new CommandPannel();
+            FramePizza.Content = CommandPannel;
 
         }
 

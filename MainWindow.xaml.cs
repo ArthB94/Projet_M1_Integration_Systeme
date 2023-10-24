@@ -20,7 +20,7 @@ namespace Projet_M1_Integration_Systeme
         public MainWindow()
         {
             clerk = new Clerk(1, "Jean");
-            deliveryMan = new DeliveryMan();
+            deliveryMan = new DeliveryMan("Pierre");
             kitchen = new Kitchen();
 
             commandsPannel = new CommandsPannel();
@@ -29,7 +29,7 @@ namespace Projet_M1_Integration_Systeme
             {
                 new ConnectionPage(),
                 new ClientPage(),
-                new CommandePage(),
+                new CommandPage(),
             };
 
             // permet d'initialiser la page de connexion au lancement de l'application donc le fichiers xaml (Attention à bien d'initialises dans cette fonction tout ce qui est nécessaire avant d'initialiser la page xaml)

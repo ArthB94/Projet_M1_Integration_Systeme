@@ -6,14 +6,12 @@ namespace Projet_M1_Integration_Systeme
 {
     public class Cook
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
         private Kitchen Kitchen { get; set; }
 
-        public Cook(Kitchen kitchen, int id, string name)
+        public Cook(Kitchen kitchen, string name)
         {
-            Id = id;
             Name = name;
             Status = "Waiting";
             Kitchen = kitchen;
@@ -28,63 +26,63 @@ namespace Projet_M1_Integration_Systeme
 
             Status = "Working";
             
-            var commandesFinished = false;
-            while (!commandesFinished && Kitchen.Commandes.Count() != 0)
+            var commandsFinishing = false;
+            while (!commandsFinishing && Kitchen.Commands.Count() != 0)
             {
-                var IndexCommande = 0;
+                var IndexCommand = 0;
 
-                while (Kitchen.Commandes[IndexCommande].Status == "Finished")
+                while (Kitchen.Commands[IndexCommand].Status == "Finishing")
                 {
-                    IndexCommande++;
+                    IndexCommand++;
 
-                    if (IndexCommande > Kitchen.Commandes.Count() - 1)
+                    if (IndexCommand > Kitchen.Commands.Count() - 1)
                     {
-                        commandesFinished = true;
-                        Console.WriteLine("AllcommandesFinished");
+                        commandsFinishing = true;
+                        Console.WriteLine("AllcommandsFinishing");
                         break;
                     }
                 }
 
-                if (!commandesFinished)
+                if (!commandsFinishing)
                 {
-                    Commande Commande = Kitchen.Commandes[IndexCommande];
-                    Commande.Status = "In Preparation";
+                    Command Command = Kitchen.Commands[IndexCommand];
+                    Command.Status = "In Preparation";
 
-                    var commandeFinished = false;
-                    while (!commandeFinished && Commande.Pizzas.Count() != 0)
+                    var commandFinishing = false;
+                    while (!commandFinishing && Command.Pizzas.Count() != 0)
                     {
                         var IndexPizza = 0;
-                        while (Commande.Pizzas[IndexPizza].Pizza.Status != "Waiting")
+                        while (Command.Pizzas[IndexPizza].Pizza.Status != "Waiting")
                         {
                             IndexPizza++;
-                            if (IndexPizza > Commande.Pizzas.Count() - 1)
+                            if (IndexPizza > Command.Pizzas.Count() - 1)
                             {
-                                Commande.Status = "Finished";
-                                commandeFinished = true;
+                                Command.Status = "Finishing";
+                                commandFinishing = true;
                                 break;
                             }
                         }
 
-                        if (!commandeFinished)
+                        if (!commandFinishing)
                         {
-                            PizzaViewModel pizza = Commande.Pizzas[IndexPizza];
+                            PizzaViewModel pizza = Command.Pizzas[IndexPizza];
                             await pizza.Pizza.Prepare();
-                            Commande.PizzasReady.Add(pizza);
-                            Commande.Pizzas.Remove(pizza);
+                            Command.PizzasReady.Add(pizza);
+                            Command.Pizzas.Remove(pizza);
 
                         }
                     }
-                    if (Commande.Pizzas.Count() == 0)
+                    if (Command.Pizzas.Count() == 0)
                     {
-                        Commande.Status = "Ready";
-                        Kitchen.CommandesReady.Add(Commande);
-                        Kitchen.Commandes.Remove(Commande);
-                        Kitchen.SendCommandes(Commande);
+                        Command.Status = "Ready";
+                        Kitchen.CommandsReady.Add(Command);
+                        Kitchen.Commands.Remove(Command);
+                        Kitchen.SendCommands(Command);
 
                     }
                 }
             }
-            Console.WriteLine("Cook : " + this.Name + " Finishe Commandes" );
+            Console.WriteLine("Cook : " + this.Name + " Finishe Commands" );
 
             Status = "Waiting";
         }

@@ -8,20 +8,22 @@ namespace Projet_M1_Integration_Systeme
     public class DeliveryMan
     {
         private MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        private Clerk clerk {  get; set; }
-        public ObservableCollection<Commande> CommandesToDeliver = new ObservableCollection<Commande>();
-        public ObservableCollection<Commande> CommandeDelivered = new ObservableCollection<Commande>();
+        private Clerk clerk;
+        public ObservableCollection<Command> CommandsToDeliver = new ObservableCollection<Command>();
+        public ObservableCollection<Command> CommandsDelivered = new ObservableCollection<Command>();
+        public string Name { get; set; }
         public string Status {  get; set; }
-        public DeliveryMan() 
+        public DeliveryMan(string name) 
         {
+            Name = name;
             Status = "Waiting";
             clerk = mainWindow.clerk;
         }
 
 
-        public void  Deliver(Commande Commande)
+        public void  Deliver(Command Command)
         {
-            CommandesToDeliver.Add(Commande);
+            CommandsToDeliver.Add(Command);
             StartDelivering();
 
         }
@@ -33,24 +35,24 @@ namespace Projet_M1_Integration_Systeme
                 return;
             }
             Status = "Working";
-            while(CommandesToDeliver.Count() != 0)
+            while(CommandsToDeliver.Count() != 0)
             {
-                await DeliverCommande(CommandesToDeliver[0]);
+                await DeliverCommande(CommandsToDeliver[0]);
 
             }
             Status = "Waiting";
         }
-        public async Task DeliverCommande(Commande commande)
+        public async Task DeliverCommande(Command command)
         {
-            while (commande.DeliveryDelay > 0)
+            while (command.DeliveryDelay > 0)
             {
                 await Task.Delay(1000);
-                commande.DeliveryDelay -= 1;
+                command.DeliveryDelay -= 1;
             }
 
-            CommandeDelivered.Add(commande);
-            CommandesToDeliver.Remove(commande);
-            clerk.SendAddition(commande);
+            CommandsDelivered.Add(command);
+            CommandsToDeliver.Remove(command);
+            clerk.SendAddition(command);
 
         }
     }
