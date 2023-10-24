@@ -108,7 +108,7 @@ namespace Projet_M1_Integration_Systeme
         // permet de passer à la page de connection
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.NaviateToPage(0);
+            mainWindow.NavigateToPage(0);
         }
 
         public void BtnLoad_Click(object sender, RoutedEventArgs e)

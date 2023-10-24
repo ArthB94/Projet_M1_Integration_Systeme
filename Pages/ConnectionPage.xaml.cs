@@ -102,7 +102,5 @@ namespace Projet_M1_Integration_Systeme
                 mainWindow.NavigateToPage(1);
             }
         }
-        // recupere valeurs et envoie en parametres pour créer customer
-        // call mainwindow.clerk.fct pour connecter(param)
     }
 }

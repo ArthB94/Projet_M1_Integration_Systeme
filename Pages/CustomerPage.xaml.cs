@@ -90,13 +90,16 @@ namespace Projet_M1_Integration_Systeme
             }
             else
             {
-                ErrorLabel.Content = "Every input must be empty";
+                ErrorLabel.Content = "Every input must be filled";
             }
         }   
 
         // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
+            Address address = new Address(NumberTextBox.Text, StreetTextBox.Text, CityTextBox.Text, PostalCodeTextBox.Text, CountryTextBox.Text);
+            Customer customer = new Customer(PhoneNumberTextBox.Text, NameTextBox.Text, SurnameTextBox.Text,address);
+            mainWindow.clerk.StoreCustomer(customer);
             mainWindow.BtnNext_Click(sender, e);
         }
         // permet de revenir à la page précédente

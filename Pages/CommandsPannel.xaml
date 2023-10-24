@@ -35,7 +35,7 @@
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
                     <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}" Width="1*" />
-                    <DataGridTextColumn Header="Deliring" Binding="{Binding DeliveryDelay}" Width="1*" />
+                    <DataGridTextColumn Header="Delivering" Binding="{Binding DeliveryDelay}" Width="1*" />
 
                 </DataGrid.Columns>
             </DataGrid>
