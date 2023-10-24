@@ -1,5 +1,6 @@
 ﻿
 
+<<<<<<< HEAD
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\Pages\ConnectionPage.xaml;;
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\MainWindow.xaml;;
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\Pages\ClientPage.xaml;;
@@ -8,4 +9,14 @@ FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syst
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\Pages\Pannel\AdditionPanel.xaml;;
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\Pages\Pannel\CommandePannel.xaml;;
 FC:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\Pages\Pannel\InPreparationPanel.xaml;;
+=======
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\ConnectionPage.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\MainWindow.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\ClientPage.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\CommandsPannel.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\CommandePage.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\Pannel\AdditionPanel.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\Pannel\CommandePannel.xaml;;
+FC:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\Pages\Pannel\InPreparationPanel.xaml;;
+>>>>>>> 4f7c8a5f09846682ed1858b0e293f1d78d167cc3
 

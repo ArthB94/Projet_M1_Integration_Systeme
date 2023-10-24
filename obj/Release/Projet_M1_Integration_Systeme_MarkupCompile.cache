@@ -4,12 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Release\
+C:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\obj\Release\
 Projet_M1_Integration_Systeme
 none
 false
 TRACE
+<<<<<<< HEAD
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\App.xaml
+=======
+C:\Users\arthu\source\repos\ArthB94\Projet_M1_Integration_Systeme\App.xaml
+>>>>>>> 4f7c8a5f09846682ed1858b0e293f1d78d167cc3
 81927114793
 
 141779370860
