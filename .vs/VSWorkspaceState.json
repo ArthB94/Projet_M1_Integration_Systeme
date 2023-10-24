@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Classes",
+    "\\Pages"
   ],
+  "SelectedNode": "\\Pages\\ConnectionPage.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

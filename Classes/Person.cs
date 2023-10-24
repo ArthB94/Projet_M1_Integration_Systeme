@@ -1,11 +1,13 @@
 using System;
-
-public abstract class Person : INotifyPropertyChanged
+namespace Projet_M1_Integration_Systeme
 {
-    public string name { get; set; }
-
-    public Person(string name)
+    public abstract class Person : INotifyPropertyChanged
     {
-        this.name = name;
+        public string name { get; set; }
+
+        public Person(string name)
+        {
+            this.name = name;
+        }
     }
 }

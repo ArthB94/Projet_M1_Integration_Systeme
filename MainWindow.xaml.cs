@@ -36,7 +36,7 @@ namespace Projet_M1_Integration_Systeme
             InitializeComponent();
 
             // initialise la page première page de la liste
-            CurrentPageIndex = 2;
+            CurrentPageIndex = 1;
             MainFrame.Content = CurrentPage;
             CommandsPannelFrame.Content = commandsPannel;
             

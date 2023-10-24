@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace Projet_M1_Integration_Systeme
 {
-    public class Clerk
+    public class Clerk : Person
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public int Id { get; set; }
@@ -20,9 +20,9 @@ namespace Projet_M1_Integration_Systeme
         public Command commandShown { get; set; }
         private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
         private int lastCommadeID;
+        public Customer curentCustomer;
 
-
-        public Clerk(int id, string name)
+        public Clerk(int id, string name) : base(name)
         {
             Id = id;
             Name = name;
@@ -130,6 +130,7 @@ namespace Projet_M1_Integration_Systeme
             string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
             return JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
         }
+
         public void StoreCustomer(Customer newCustomer)
         {
             string jsonFilePath = jsonFileSource + "Customers.json";
@@ -140,5 +141,26 @@ namespace Projet_M1_Integration_Systeme
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);
         }
+
+        public bool ConnectCustomer(string name)
+        {
+            List<Customer> customers = LoadCustomers();
+            Customer foundCustomer = customers.Find(customer => customer.Name == name);
+            if (foundCustomer != null)
+            {
+                curentCustomer = foundCustomer;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Client non enregistré dans la base de données");
+                return false;
+            }
+        }
+        
+        //et dans le bouton connect ça se fait que si on a trouvé le customer
+        //else messagebox.show(no user found) or console.log(smae) dcp obligé passer à register
+
+        //dans customer page faire register, recup data et put in db
     }
 }

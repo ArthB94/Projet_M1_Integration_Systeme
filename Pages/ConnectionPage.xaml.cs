@@ -90,7 +90,19 @@ namespace Projet_M1_Integration_Systeme
         // permet de passer directement à la page de commande
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.NaviateToPage(2);
+            // string name = NameTextBox.Text;
+
+            if (mainWindow.clerk.ConnectCustomer(NameTextBox.Text))
+            {
+                mainWindow.NavigateToPage(2);
+            }
+            else
+            {
+                MessageBox.Show("Vous n'êtes pas dans la base de données, veuillez vous inscrire.");
+                mainWindow.NavigateToPage(1);
+            }
         }
+        // recupere valeurs et envoie en parametres pour créer customer
+        // call mainwindow.clerk.fct pour connecter(param)
     }
 }

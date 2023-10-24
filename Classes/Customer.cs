@@ -17,7 +17,7 @@ namespace Projet_M1_Integration_Systeme
     {
         private int phoneNumber;
         private string name;
-        private string firstName;
+        private string surname;
         private int id;
         private DateTime firstCommandDate;
         private Address address;
@@ -59,13 +59,13 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-        public string FirstName
+        public string Surname
         {
-            get { return firstName; }
+            get { return surname; }
             set
             {
-                firstName = value;
-                OnPropertyChanged(nameof(FirstName));
+                surname = value;
+                OnPropertyChanged(nameof(Surname));
             }
         }
         public int Id
@@ -93,28 +93,6 @@ namespace Projet_M1_Integration_Systeme
             {
                 address = value;
                 OnPropertyChanged(nameof(Address));
-            }
-        }
-
-        public static List<Customer> LoadCustomers()
-        {
-            string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
-            string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
-            return JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
-        }
-
-        public static Customer ConnectCustomer(string name)
-        {
-            List<Customer> customers = LoadCustomers();
-            Customer foundCustomer = customers.Find(customer => customer.Name == name);
-            if (foundCustomer != null)
-            {
-                return foundCustomer;
-            }
-            else
-            {
-                Console.WriteLine("Client non enregistré dans la base de données");
-                return null;
             }
         }
 
