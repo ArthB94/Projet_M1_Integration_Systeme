@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\App.xaml
-2345076152
+81927114793
 
-8-825743215
+141779370860
 13-1310406943
-MainWindow.xaml;CommandePage.xaml;
+Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\ClientPage.xaml;Pages\CommandsPannel.xaml;Pages\CommandePage.xaml;Pages\Pannel\AdditionPanel.xaml;Pages\Pannel\CommandePannel.xaml;Pages\Pannel\InPreparationPanel.xaml;
 
 True
 
