@@ -1,4 +1,4 @@
-﻿<Page x:Class="Projet_M1_Integration_Systeme.CommandsPannel"
+﻿<Page x:Class="Projet_M1_Integration_Systeme.Pages.CommandsStatusPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -34,8 +34,19 @@
                 </DataGrid.Resources>
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
-                    <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}" Width="1*" />
-                    <DataGridTextColumn Header="Deliring" Binding="{Binding DeliveryDelay}" Width="1*" />
+                    <DataGridTemplateColumn Header="Customer" Width="1*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <Run Text="{Binding CustomerName}" />
+                                    <Run Text=" " />
+                                    <Run Text="{Binding CustomerSurname}" />
+
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Delivering" Binding="{Binding DeliveryDelay}" Width="1*" />
 
                 </DataGrid.Columns>
             </DataGrid>

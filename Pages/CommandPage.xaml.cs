@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Forms;
 
-namespace Projet_M1_Integration_Systeme
+namespace Projet_M1_Integration_Systeme.Pages
 {
     /// <summary>
     /// Logique d'interaction pour CommandePage.xaml

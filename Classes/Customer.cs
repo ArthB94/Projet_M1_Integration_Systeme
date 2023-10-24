@@ -8,5 +8,12 @@ namespace Projet_M1_Integration_Systeme
 { 
     public class Customer
     {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public Customer()
+        {
+            Name = "Yo";
+            Surname = "Lo";
+        }
     }
 }

@@ -1,0 +1,81 @@
+﻿<Page x:Class="Projet_M1_Integration_Systeme.Pages.Pannel.ShowOldDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projet_M1_Integration_Systeme.Pages.Pannel"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="400" Background="White"
+      Title="ShowOldDetails">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" >
+            <Label Content="Pizzas" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="1" x:Name="DgPizzas" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Pizza.SelectedName}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Size" Binding="{Binding Pizza.SelectedSize}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Price" Binding="{Binding Price}" Width="*" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1" >
+            <Label Content="Drinks" FontWeight="Bold"  HorizontalAlignment="Center" />
+        </Border>
+        <DataGrid Grid.Row="3" x:Name="DgDrinks" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1">
+            <DataGrid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.6"  />
+            </DataGrid.Background>
+            <DataGrid.Resources>
+                <Style x:Key="HeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn IsReadOnly="True" Header="Type" Binding="{Binding Drink.SelectedType}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Volume" Binding="{Binding Drink.SelectedVolume}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Price" Binding="{Binding Price}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="4" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Client" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="1" Grid.Row="0"  x:Name="LblClientNameValue"  Text="Jean Jack"   HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Total price"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" x:Name="LblTotalPriceValue" Text="0"   HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Delivery date" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="1" Grid.Row="2"  x:Name="LblDeliveryDateValue"  Text="00-00-0000"   HorizontalAlignment="Left"/>
+
+        </Grid>
+        <Button Grid.Row="5" x:Name="BtnShow" Content="&lt;" Click="BtnShow_Click" />
+    </Grid>
+</Page>

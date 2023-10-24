@@ -14,7 +14,8 @@ namespace Projet_M1_Integration_Systeme
         public static int IDS { get; set; } = 0;
 
         public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
-
+        public string CustomerName { get; set; } = "Name";
+        public string CustomerSurname { get; set; } = "Surname";
         public int Id { get; set; }
         public string ClerkName { get; set; }
 
@@ -92,6 +93,11 @@ namespace Projet_M1_Integration_Systeme
     {
         public int Id { get; set; }
         public string ClerkName { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerSurname { get; set; }
+        [JsonIgnore]
+        public string CustomerFullName => CustomerName + " " + CustomerSurname;
+
         public String Date_time { get; set; }
         public double Price { get; set; }
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
@@ -102,6 +108,8 @@ namespace Projet_M1_Integration_Systeme
             Id = commande.Id;
             Date_time = commande.Date_time;
             Price = commande.Price;
+            CustomerName = commande.CustomerName;
+            CustomerSurname = commande.CustomerSurname;
             ClerkName = commande.ClerkName;
             
             foreach (PizzaViewModel pizza in commande.PizzasReady)
@@ -115,7 +123,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandReader(int id, string date_time,string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandReader(int id, string date_time,string customerName, string customerSurname, string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;
@@ -123,13 +131,20 @@ namespace Projet_M1_Integration_Systeme
             Pizzas = pizzas;
             Drinks = drinks;
             ClerkName = clerkName;
+            CustomerName = customerName;
+            CustomerSurname = customerSurname;
         }
 
         public Command ToCommande()
         {
 
             Command commande = new Command(new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
+            
+            commande.Id = Id;
             commande.Date_time = Date_time;
+            commande.CustomerName = CustomerName;
+            commande.CustomerSurname = CustomerSurname;
+
             commande.ClerkName = ClerkName;
             foreach (Pizza pizza in Pizzas)
             {

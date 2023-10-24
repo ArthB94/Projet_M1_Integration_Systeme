@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using Projet_M1_Integration_Systeme.Pages;
+using Projet_M1_Integration_Systeme.Pages.Pannel;
 
 namespace Projet_M1_Integration_Systeme
 {
@@ -11,19 +13,22 @@ namespace Projet_M1_Integration_Systeme
         public Clerk clerk { get; set; }
         public Kitchen kitchen { get; set; }
         public DeliveryMan deliveryMan { get; set; }
+        public Customer currentCustomer { get; set; }
         public List<Page> Pages { get; set; }
         public int CurrentPageIndex { get; set; }
         public Page CurrentPage => Pages[CurrentPageIndex];
-        public CommandsPannel commandsPannel { get; set; }
+        public CommandsStatusPage CommandsStatusPannel { get; set; }
+        
 
 
         public MainWindow()
         {
+            currentCustomer = new Customer();
             clerk = new Clerk(1, "Jean");
             deliveryMan = new DeliveryMan("Pierre");
             kitchen = new Kitchen();
 
-            commandsPannel = new CommandsPannel();
+            CommandsStatusPannel = new CommandsStatusPage();
 
             Pages = new List<Page>
             {
@@ -37,8 +42,9 @@ namespace Projet_M1_Integration_Systeme
 
             // initialise la page première page de la liste
             CurrentPageIndex = 2;
-            MainFrame.Content = CurrentPage;
-            CommandsPannelFrame.Content = commandsPannel;
+            InteractiveFrame.Content = CurrentPage;
+            CommandsStatusFrame.Content = CommandsStatusPannel;
+            StatisticsFrame.Content = new StatisticsPage();
             
 
         }
@@ -49,7 +55,7 @@ namespace Projet_M1_Integration_Systeme
             if (CurrentPageIndex < Pages.Count - 1)
             {
                 CurrentPageIndex++;
-                MainFrame.Content = CurrentPage;
+                InteractiveFrame.Content = CurrentPage;
             }
         }
 
@@ -59,7 +65,7 @@ namespace Projet_M1_Integration_Systeme
             if (CurrentPageIndex > 0)
             {
                 CurrentPageIndex--;
-                MainFrame.Content = CurrentPage;
+                InteractiveFrame.Content = CurrentPage;
             }
         }
 
@@ -67,7 +73,7 @@ namespace Projet_M1_Integration_Systeme
         public void NaviateToPage(int pageIndex)
         {
             CurrentPageIndex = pageIndex;
-            MainFrame.Content = CurrentPage;
+            InteractiveFrame.Content = CurrentPage;
         }
 
 

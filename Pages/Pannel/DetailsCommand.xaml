@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Projet_M1_Integration_Systeme.Pages.Pannel"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="300" Background="white"
+      d:DesignHeight="500" d:DesignWidth="400" Background="white"
       Title="InPreparationPanel">
 
     <Grid>

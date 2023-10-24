@@ -4,19 +4,19 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace Projet_M1_Integration_Systeme
+namespace Projet_M1_Integration_Systeme.Pages
 {
     /// <summary>
     /// Logique d'interaction pour CommandsPannel.xaml
     /// </summary>
-    public partial class CommandsPannel : Page
+    public partial class CommandsStatusPage : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public CommandPannel CommandPannel { get; set; }
 
 
 
-        public CommandsPannel()
+        public CommandsStatusPage()
         {
             CommandPannel CommandPannel = new CommandPannel();
 

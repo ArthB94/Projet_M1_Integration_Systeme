@@ -13,9 +13,10 @@ namespace Projet_M1_Integration_Systeme
         public static List<string> AvailableName { get; } = new List<string> { "Margarita", "Pepperoni", "Cheese", "Vegetarian", "Hawaiian", "Meat Lovers", "Seafood" };
         public static List<string> AvailableSizes { get; } = new List<string> { "Small", "Medium", "Large", "Extra Large" };
         public static List<string> AvailableStatus { get; } = new List<string> { "Waiting", "InPreparation", "Prepared" };
-        
-        
+
+
         private string selectedSize;
+
         private string selectedName;
         
         [JsonIgnore]
@@ -52,7 +53,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
 
-
+        [JsonProperty("Name")]
         public string SelectedName
         {
             get
@@ -61,7 +62,6 @@ namespace Projet_M1_Integration_Systeme
             }
             set
             {
-             
                 if (selectedName != value)
                 {
                     selectedName = value;
@@ -71,7 +71,7 @@ namespace Projet_M1_Integration_Systeme
                 }
             }
         }
-
+        [JsonProperty("Size")]
         public string SelectedSize
         {
             get { return selectedSize; }
@@ -138,8 +138,6 @@ namespace Projet_M1_Integration_Systeme
 
         // Creer un Evenement qui permet de mettre à jour le prix de la pizza lorsqu'une propriété est modifiée
         public event PropertyChangedEventHandler PropertyChanged;
-
-        // Creer une fonction qui invoque l'evenement de mise à jour du prix de la pizza quand nécessaire
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -151,10 +149,8 @@ namespace Projet_M1_Integration_Systeme
     // Définit la class PizzaViewModel comme un objet observable. Cette classe permet de définir comment une pizza doit etre affiché dans la vue
     public class PizzaViewModel : INotifyPropertyChanged
     {
-        // Creer un Evenement qui permet de mettre à jour le prix de la pizza lorsque celui ci est modifié
         public event PropertyChangedEventHandler PropertyChanged;
         
-        // Creer un Evenement qui permet de mettre à jour le prix total de la commande lorsque celui ci est modifié
         public event Action PriceChanged;
 
         public PizzaViewModel(Pizza pizza)
@@ -178,8 +174,6 @@ namespace Projet_M1_Integration_Systeme
         // Définit comment doit etre affiché le nom de la pizza dans la vue
         public string Price => $"${Pizza.Price}";
         public string Delay => $"{Pizza.Delay/60}:{Pizza.Delay % 60}";
-
-
 
         protected void OnPropertyChanged(string propertyName)
         {

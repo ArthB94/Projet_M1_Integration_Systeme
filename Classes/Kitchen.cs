@@ -47,7 +47,7 @@ namespace Projet_M1_Integration_Systeme
 
         public async void SendCommands(Command command)
         {
-            await Task.Delay (5000);
+            await Task.Delay (2000);
             DeliveryMan.Deliver(command);
             CommandsReady.Remove(command);
 

@@ -30,10 +30,6 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.CoreCompileInputs.cache
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.exe
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.pdb
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsPannel.g.cs
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsPannel.baml
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ClientPage.g.cs
-C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ClientPage.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.g.cs
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\bin\Debug\Newtonsoft.Json.dll
@@ -45,3 +41,13 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandPage.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandsPreparation.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\DetailsCommand.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CustomerPage.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CustomerPage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsStatusPage.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsStatusPage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\StatisticsPage.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\StatisticsPage.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldCommands.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.g.cs
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldCommands.baml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.baml

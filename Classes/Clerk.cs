@@ -40,7 +40,8 @@ namespace Projet_M1_Integration_Systeme
         {
             
             currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
-
+            currentCommand.CustomerName = mainWindow.currentCustomer.Name;
+            currentCommand.CustomerSurname = mainWindow.currentCustomer.Surname;
         }
         public void AddPizza()
         {
@@ -70,16 +71,16 @@ namespace Projet_M1_Integration_Systeme
         public void CommandShown(Command command)
         {
             commandShown = command;
-            if (mainWindow.commandsPannel !=null)
+            if (mainWindow.CommandsStatusPannel !=null)
             {
-                mainWindow.commandsPannel.ShowCommand();
+                mainWindow.CommandsStatusPannel.ShowCommand();
             }
         }
         public void ShowCommands()
         {
-            if (mainWindow.commandsPannel != null)
+            if (mainWindow.CommandsStatusPannel != null)
             {
-                mainWindow.commandsPannel.ShowCommands();
+                mainWindow.CommandsStatusPannel.ShowCommands();
             }
         }
         public List<CommandReader> LoadCommandsFile(string fileName)

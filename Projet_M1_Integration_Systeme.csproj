@@ -67,19 +67,23 @@
     <Compile Include="Classes\Cook.cs" />
     <Compile Include="Classes\DeliveryMan.cs" />
     <Compile Include="Classes\Kitchen.cs" />
+    <Compile Include="Pages\CommandsStatusPage.xaml.cs">
+      <DependentUpon>CommandsStatusPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConnectionPage.xaml.cs">
       <DependentUpon>ConnectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CommandsPannel.xaml.cs">
-      <DependentUpon>CommandsPannel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\CommandPage.xaml.cs">
       <DependentUpon>CommandPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Pizza.cs" />
+    <Page Include="Pages\CommandsStatusPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\ConnectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,10 +104,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CommandsPannel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\CommandPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +116,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Pannel\ShowOldCommands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Pannel\ShowOldDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Pannel\CommandsPreparation.xaml.cs">
@@ -123,6 +135,15 @@
     </Compile>
     <Compile Include="Pages\Pannel\DetailsCommand.xaml.cs">
       <DependentUpon>DetailsCommand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pannel\ShowOldCommands.xaml.cs">
+      <DependentUpon>ShowOldCommands.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pannel\ShowOldDetails.xaml.cs">
+      <DependentUpon>ShowOldDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
