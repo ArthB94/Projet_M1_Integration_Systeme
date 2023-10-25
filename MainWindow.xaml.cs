@@ -10,6 +10,7 @@ namespace Projet_M1_Integration_Systeme
 
     public partial class MainWindow : Window
     {
+
         public Clerk clerk { get; set; }
         public Kitchen kitchen { get; set; }
         public DeliveryMan deliveryMan { get; set; }
@@ -41,7 +42,7 @@ namespace Projet_M1_Integration_Systeme
             InitializeComponent();
 
             // initialise la page première page de la liste
-            CurrentPageIndex = 2;
+            CurrentPageIndex = 0;
             InteractiveFrame.Content = CurrentPage;
             CommandsStatusFrame.Content = CommandsStatusPannel;
             StatisticsFrame.Content = new StatisticsPage();

@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 
 namespace Projet_M1_Integration_Systeme
 {
-    public class Cook
+    public class Cook : Person
     {
         public string Name { get; set; }
         public string Status { get; set; }
         private Kitchen Kitchen { get; set; }
 
-        public Cook(Kitchen kitchen, string name)
+        public Cook(Kitchen kitchen, string name) : base(name)
         {
             Name = name;
             Status = "Waiting";

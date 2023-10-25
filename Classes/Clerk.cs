@@ -10,19 +10,20 @@ using Newtonsoft.Json;
 
 namespace Projet_M1_Integration_Systeme
 {
-    public class Clerk
+    public class Clerk : Person
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
         public Command currentCommand {get; set; }
+        public Customer currentCustomer { get; set; }
         public Command commandShown { get; set; }
         private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
-        private int lastCommadeID;
+        private int lastCommandID;
 
 
-        public Clerk(int id, string name)
+        public Clerk(int id, string name) : base(name)
         {
             Id = id;
             Name = name;
@@ -31,6 +32,7 @@ namespace Projet_M1_Integration_Systeme
             if (commands.Count() > 0)
             {
                 Command.IDS = commands.Last().Id;
+                Customer.IDS = commands.Last().Id;
             }
 
             NewCommand();
@@ -64,7 +66,7 @@ namespace Projet_M1_Integration_Systeme
             currentCommand.ClerkName = Name;
             Console.WriteLine("AddCurentCommand");
             mainWindow.kitchen.addCommand(currentCommand);
-            lastCommadeID++;
+            lastCommandID++;
             NewCommand();
             
         }
@@ -140,6 +142,21 @@ namespace Projet_M1_Integration_Systeme
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);
+        }
+        public bool ConnectCustomer(string name)
+        {
+            List<Customer> customers = LoadCustomers();
+            Customer foundCustomer = customers.Find(customer => customer.Name == name);
+            if (foundCustomer != null)
+            {
+                currentCustomer = foundCustomer;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Client non enregistré dans la base de données");
+                return false;
+            }
         }
     }
 }

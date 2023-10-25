@@ -53,3 +53,41 @@ C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Syste
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.baml
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.g.cs
 C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.AssemblyReference.cache
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CommandsStatusPage.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\ConnectionPage.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\MainWindow.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CustomerPage.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CommandPage.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\CommandsPreparation.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\DetailsCommand.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowOldCommands.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowOldDetails.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowCustomers.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\StatisticsPage.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\App.g.cs
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.cache
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.lref
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.exe
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.pdb
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\bin\Debug\Projet_M1_Integration_Systeme.exe.config
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\bin\Debug\Projet_M1_Integration_Systeme.exe
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\bin\Debug\Projet_M1_Integration_Systeme.pdb
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\bin\Debug\Newtonsoft.Json.dll
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\bin\Debug\Newtonsoft.Json.xml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CommandsStatusPage.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\ConnectionPage.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\MainWindow.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CustomerPage.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\CommandPage.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\CommandsPreparation.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\DetailsCommand.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowOldCommands.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowOldDetails.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\Pannel\ShowCustomers.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Pages\StatisticsPage.baml
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.g.resources
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.Properties.Resources.resources
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.GenerateResource.cache
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.CoreCompileInputs.cache
+D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.CopyComplete

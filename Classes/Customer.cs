@@ -42,7 +42,6 @@ namespace Projet_M1_Integration_Systeme
         [JsonConstructor]
         public Customer(string phoneNumber, string name, string surname, Address address, int id, DateTime FirstCommandDate) : base(name)
         {
-            IDS++;
             this.phoneNumber = phoneNumber;
             this.name = name;
             this.surname = surname;
