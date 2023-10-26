@@ -51,5 +51,44 @@
         "Volume": "25cl"
       }
     ]
+  },
+  {
+    "Id": 4,
+    "ClerkName": "Asma",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "CustomerId": 2,
+    "Status": "Cashed",
+    "Date_time": "2023-10-27_00:08:47",
+    "Price": 11.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   }
 ]

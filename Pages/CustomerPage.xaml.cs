@@ -13,7 +13,7 @@ namespace Projet_M1_Integration_Systeme.Pages
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
         // permet de vérifier si les champs repectent toutes les conditions nécessaires
-        public bool IsButtonEnabled => NameTextBox.Text.Length > 0 
+        public bool IsButtonEnabled => NameTextBox.Text.Length > 0
             && SurnameTextBox.Text.Length > 0 && PhoneNumberTextBox.Text.Length == 10
             && NumberTextBox.Text.Length > 0 && StreetTextBox.Text.Length > 0 && CityTextBox.Text.Length > 0
             && PostalCodeTextBox.Text.Length == 5 && CountryTextBox.Text.Length > 0;
@@ -56,7 +56,7 @@ namespace Projet_M1_Integration_Systeme.Pages
             StreetTextBox.PreviewTextInput += String_PreviewTextInput;
 
         }
-        public CustomerPage(Frame frameShow,Customer customer)
+        public CustomerPage(Frame frameShow, Customer customer)
         {
             Customer = customer;
             IsUpdating = true;
@@ -100,7 +100,7 @@ namespace Projet_M1_Integration_Systeme.Pages
             FrameShow = frameShow;
 
             BtnNext.Content = "Update";
-            BtnBack.Visibility = Visibility.Hidden;
+
 
         }
 
@@ -121,8 +121,8 @@ namespace Projet_M1_Integration_Systeme.Pages
             {
                 e.Handled = true; // Empêche la saisie du texte non alphabétique
             }
-        } 
-        
+        }
+
         private void VerifyIsEmpty()
         {
             BtnNext.IsEnabled = IsButtonEnabled;
@@ -134,7 +134,7 @@ namespace Projet_M1_Integration_Systeme.Pages
             {
                 ErrorLabel.Content = "Every input must be empty";
             }
-        }   
+        }
 
         // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
@@ -164,7 +164,7 @@ namespace Projet_M1_Integration_Systeme.Pages
                 Clerk.StoreCustomer(customer);
                 FrameShow.Navigate(new CommandPage(FrameShow, Clerk));
             }
-            
+
         }
         // permet de revenir à la page précédente
         public void BtnPrevious_Click(object sender, RoutedEventArgs e)
@@ -178,7 +178,7 @@ namespace Projet_M1_Integration_Systeme.Pages
                 FrameShow.Navigate(new ConnectionPage(FrameShow));
                 Clerk.CloseCall(Clerk);
             }
-            
+
         }
     }
 }

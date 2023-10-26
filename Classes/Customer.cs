@@ -21,7 +21,8 @@ namespace Projet_M1_Integration_Systeme
         public static int IDS { get; set; } = 0;
         private String firstCommandDate;
         private Address address;
-        
+        public double totalamount { get; set; } = 0;
+
         public Customer(string phoneNumber, string name, string surname) : base(name)
         {
             IDS++;
@@ -61,8 +62,6 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-
-
         public string Surname
         {
             get { return surname; }
@@ -99,7 +98,17 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
- 
-       // order(int id):void qui fait appel Ã  la fonction order de clerk??
+        public double TotalAmount
+        {
+            get { return totalamount; }
+            set
+            {
+                totalamount = value;
+                OnPropertyChanged(nameof(TotalAmount));
+            }
+        }
+
+
+        // order(int id):void qui fait appel Ã  la fonction order de clerk??
     }
 }

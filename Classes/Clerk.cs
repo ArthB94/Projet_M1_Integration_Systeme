@@ -13,19 +13,19 @@ namespace Projet_M1_Integration_Systeme
     public class Clerk : Person
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public static List<Clerk> ClerkReady = new List<Clerk> {new Clerk("Arthur"),new Clerk("Asma") };
+        public static List<Clerk> ClerkReady = new List<Clerk> { new Clerk("Arthur"), new Clerk("Asma") };
         public string Status { get; set; }
-        public Command currentCommand {get; set; }
-        public Customer currentCustomer { get; set; } 
+        public Command currentCommand { get; set; }
+        public Customer currentCustomer { get; set; }
         private static string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
 
 
-        public Clerk( string name) : base(name)
+        public Clerk(string name) : base(name)
         {
 
             Name = name;
             Status = "Waiting";
- 
+
         }
         public static Clerk CallPizzaria()
         {
@@ -44,7 +44,7 @@ namespace Projet_M1_Integration_Systeme
         public void NewCommand()
         {
 
-            currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
+            currentCommand = new Command(new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
             currentCommand.CustomerName = currentCustomer.Name;
             currentCommand.CustomerSurname = currentCustomer.Surname;
             currentCommand.CustomerId = currentCustomer.Id;
@@ -57,7 +57,8 @@ namespace Projet_M1_Integration_Systeme
         {
             currentCommand.Drinks.Add(new DrinkViewModel(new Drink()));
         }
-        public void RemovePizza(PizzaViewModel pizza) {
+        public void RemovePizza(PizzaViewModel pizza)
+        {
             currentCommand.Pizzas.Remove(pizza);
         }
         public void RemoveDrink(DrinkViewModel drink)
@@ -71,7 +72,7 @@ namespace Projet_M1_Integration_Systeme
             Console.WriteLine("AddCurentCommand");
             mainWindow.kitchen.addCommand(currentCommand);
             NewCommand();
-            
+
         }
         public static List<CommandReader> LoadCommandsFile(string fileName)
         {
@@ -79,7 +80,7 @@ namespace Projet_M1_Integration_Systeme
             List<CommandReader> commands = JsonConvert.DeserializeObject<List<CommandReader>>(jsonContent);
             return commands;
         }
-        public static List<CommandReader> LoadCommands ()
+        public static List<CommandReader> LoadCommands()
         {
             return LoadCommandsFile(jsonFileSource + "Commands.json");
         }
@@ -113,8 +114,9 @@ namespace Projet_M1_Integration_Systeme
             Console.WriteLine("SendAddition");
             command.setDate();
             Customer customer = FindCustomerById(command.CustomerId);
-            if (customer.FirstCommandDate == null) { 
-                customer.FirstCommandDate = command.Date_time; 
+            if (customer.FirstCommandDate == null)
+            {
+                customer.FirstCommandDate = command.Date_time;
             }
             UpdateCustomer(customer);
 
@@ -125,7 +127,11 @@ namespace Projet_M1_Integration_Systeme
         public static List<Customer> LoadCustomers()
         {
             string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
-            List<Customer> data = JsonConvert.DeserializeObject<List<Customer>>(jsonContent) ;
+            List<Customer> data = JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
+            foreach (Customer customer in data)
+            {
+                customer.TotalAmount = GetTotalAmountByCustomer(customer.Id);
+            }
             return data;
         }
         public void StoreCustomer(Customer newCustomer)
@@ -165,7 +171,7 @@ namespace Projet_M1_Integration_Systeme
             }
             else
             {
-                MessageBox.Show("Customer not found for id "+id);
+                MessageBox.Show("Customer not found for id " + id);
                 return null;
             }
         }
@@ -184,6 +190,23 @@ namespace Projet_M1_Integration_Systeme
             }
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(jsonFileSource + "Customers.json", updatedJson);
+        }
+        public static List<CommandReader> GetCommandsByCustomer(int customerId)
+        {
+            List<CommandReader> commands = LoadCommands();
+            commands = commands.FindAll(command => command.CustomerId == customerId);
+            return commands;
+
+        }
+        public static double GetTotalAmountByCustomer(int customerId)
+        {
+            List<CommandReader> commands = GetCommandsByCustomer(customerId);
+            double totalAmount = 0;
+            foreach (CommandReader command in commands)
+            {
+                totalAmount += command.Price;
+            }
+            return totalAmount;
         }
     }
 }

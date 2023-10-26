@@ -1,5 +1,6 @@
 [
   {
+    "totalamount": 0.0,
     "PhoneNumber": "0000000000",
     "Surname": "Default",
     "Id": 1,
@@ -11,23 +12,11 @@
       "PostalCode": "00000",
       "Country": "Default"
     },
+    "TotalAmount": 0.0,
     "Name": "Default"
   },
   {
-    "PhoneNumber": "0695562491",
-    "Surname": "Billebaut",
-    "Id": 2,
-    "FirstCommandDate": null,
-    "Address": {
-      "Number": "63",
-      "Street": "rue Camelinat",
-      "City": "vitry sur seine",
-      "PostalCode": "94400",
-      "Country": "france"
-    },
-    "Name": "Arthur"
-  },
-  {
+    "totalamount": 31.0,
     "PhoneNumber": "0781805527",
     "Surname": "Chang",
     "Id": 3,
@@ -39,9 +28,11 @@
       "PostalCode": "94400",
       "Country": "France"
     },
+    "TotalAmount": 31.0,
     "Name": "Fanny"
   },
   {
+    "totalamount": 0.0,
     "PhoneNumber": "0000000000",
     "Surname": "Machard",
     "Id": 4,
@@ -53,6 +44,23 @@
       "PostalCode": "99999",
       "Country": "france"
     },
+    "TotalAmount": 0.0,
     "Name": "Paul"
+  },
+  {
+    "totalamount": 0.0,
+    "PhoneNumber": "0695562491",
+    "Surname": "Billebaut",
+    "Id": 2,
+    "FirstCommandDate": "2023-10-27_00:08:47",
+    "Address": {
+      "Number": "63",
+      "Street": "rue Camelinat",
+      "City": "vitry sur seine",
+      "PostalCode": "94400",
+      "Country": "france"
+    },
+    "TotalAmount": 0.0,
+    "Name": "Arthur"
   }
 ]

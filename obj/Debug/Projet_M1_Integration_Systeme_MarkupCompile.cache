@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_systeme_app\obj\Debug\
 Projet_M1_Integration_Systeme
 none
 false
 DEBUG;TRACE
-C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\App.xaml
+C:\Users\arthu\VSCodeProjects\M1\Integration_systeme\Projet_M1_Integration_systeme_app\App.xaml
 12-1357245669
 
 26-1122594894
-16-746310220
+16-1842171339
 Pages\CommandsStatusPage.xaml;Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\CustomerPage.xaml;Pages\CommandPage.xaml;Pages\Pannel\CommandsPreparation.xaml;Pages\Pannel\DetailsCommand.xaml;Pages\Pannel\ShowOldCommands.xaml;Pages\Pannel\ShowOldDetails.xaml;Pages\Pannel\ShowCustomers.xaml;Pages\StatisticsPage.xaml;UserWindow.xaml;
 
 False

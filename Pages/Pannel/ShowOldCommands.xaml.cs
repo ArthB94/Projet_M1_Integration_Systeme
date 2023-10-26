@@ -50,10 +50,14 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             var minDate = DateMinPicker.SelectedDate;
             var maxDate = DateMaxPicker.SelectedDate;
 
-            //MessageBox.Show(minDate.ToString() + " et " + maxDate);
+            // MessageBox.Show(minDate.ToString() + " et " + maxDate);
             if (minDate != null && maxDate != null)
             {
                 // tu peux changer cette ligne pour faire une recherche dans la base de données
+                DgHistorique.ItemsSource = Clerk.LoadCommands();
+            }
+            else
+            {
                 DgHistorique.ItemsSource = Clerk.LoadCommands();
             }
 

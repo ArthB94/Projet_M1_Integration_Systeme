@@ -44,16 +44,9 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         }
         public void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            var Search = TxtSearch.Text;
-            if (Search != null)
-            {
-                // tu peux changer cette ligne pour faire une recherche dans la base de données
-                //DgCustomers.ItemsSource = mainWindow.clerk.LoadCustomers();
-            }
-            else
-            {
-                DgCustomers.ItemsSource = Clerk.LoadCustomers();
-            }
+
+            DgCustomers.ItemsSource = Clerk.LoadCustomers();
+
 
         }
     }
