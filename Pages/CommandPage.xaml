@@ -62,7 +62,7 @@
                         </Style>
                     </DataGridComboBoxColumn.EditingElementStyle>
                 </DataGridComboBoxColumn>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="2*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Price" Binding="{Binding Price}" Width="2*" />
                 <DataGridTemplateColumn  Width="25">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -112,7 +112,7 @@
                         </Style>
                     </DataGridComboBoxColumn.EditingElementStyle>
                 </DataGridComboBoxColumn>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="2*" />
+                <DataGridTextColumn Header="Price" IsReadOnly="True" Binding="{Binding Price}" Width="2*" />
                 <DataGridTemplateColumn  Width="25">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

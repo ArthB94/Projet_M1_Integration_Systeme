@@ -17,7 +17,7 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="Old comandes" FontWeight="Bold"  HorizontalAlignment="Left"/>
                 <TextBlock Text="from" VerticalAlignment="Center" Margin="5,0,5,0" HorizontalAlignment="Right" />
-                <DatePicker x:Name="DateMinPicker" Width="100" SelectedDate="{Binding DateMin, StringFormat='yyyy-MM-dd_HH:mm:ss'}" BorderBrush="Black">
+                <DatePicker x:Name="DateMinPicker"  Width="100" SelectedDate="{Binding DateMin, StringFormat='yyyy-MM-dd_HH:mm:ss'}" BorderBrush="Black">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="IsReadOnly" Value="True" />

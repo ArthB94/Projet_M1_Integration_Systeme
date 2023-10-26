@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\
 Projet_M1_Integration_Systeme
 none
 false
 DEBUG;TRACE
-D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\App.xaml
-111884126340
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\App.xaml
+12-1357245669
 
-26-187032137
-16-18165500
-Pages\CommandsStatusPage.xaml;Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\CustomerPage.xaml;Pages\CommandPage.xaml;Pages\Pannel\CommandsPreparation.xaml;Pages\Pannel\DetailsCommand.xaml;Pages\Pannel\ShowOldCommands.xaml;Pages\Pannel\ShowOldDetails.xaml;Pages\Pannel\ShowCustomers.xaml;Pages\StatisticsPage.xaml;
+271090283784
+16-746310220
+Pages\CommandsStatusPage.xaml;Pages\ConnectionPage.xaml;MainWindow.xaml;Pages\CustomerPage.xaml;Pages\CommandPage.xaml;Pages\Pannel\CommandsPreparation.xaml;Pages\Pannel\DetailsCommand.xaml;Pages\Pannel\ShowOldCommands.xaml;Pages\Pannel\ShowOldDetails.xaml;Pages\Pannel\ShowCustomers.xaml;Pages\StatisticsPage.xaml;UserWindow.xaml;
 
 True
 

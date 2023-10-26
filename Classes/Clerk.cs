@@ -47,6 +47,7 @@ namespace Projet_M1_Integration_Systeme
             currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
             currentCommand.CustomerName = currentCustomer.Name;
             currentCommand.CustomerSurname = currentCustomer.Surname;
+            currentCommand.CustomerId = currentCustomer.Id;
         }
         public void AddPizza()
         {
@@ -112,11 +113,11 @@ namespace Projet_M1_Integration_Systeme
             Console.WriteLine("SendAddition");
             command.setDate();
             Customer customer = FindCustomerById(command.CustomerId);
-
-            if (customer.FirstCommandDate == "0001-01-01_00:00:00")
-            {
-                customer.FirstCommandDate = command.Date_time;
+            if (customer.FirstCommandDate == null) { 
+                customer.FirstCommandDate = command.Date_time; 
             }
+            UpdateCustomer(customer);
+
             MessageBox.Show("Command " + JsonConvert.SerializeObject(new CommandReader(command), Formatting.Indented) + " delivered");
             StoreCommand(command);
         }
@@ -124,7 +125,8 @@ namespace Projet_M1_Integration_Systeme
         public static List<Customer> LoadCustomers()
         {
             string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
-            return JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
+            List<Customer> data = JsonConvert.DeserializeObject<List<Customer>>(jsonContent) ;
+            return data;
         }
         public void StoreCustomer(Customer newCustomer)
         {
@@ -154,6 +156,7 @@ namespace Projet_M1_Integration_Systeme
         }
         public static Customer FindCustomerById(int id)
         {
+
             List<Customer> customers = LoadCustomers();
             Customer foundCustomer = customers.Find(customer => customer.Id == id);
             if (foundCustomer != null)
@@ -162,7 +165,7 @@ namespace Projet_M1_Integration_Systeme
             }
             else
             {
-                Console.WriteLine("Client non enregistré dans la base de données");
+                MessageBox.Show("Customer not found for id "+id);
                 return null;
             }
         }
@@ -172,10 +175,14 @@ namespace Projet_M1_Integration_Systeme
             Customer foundCustomer = data.Find(c => c.Id == customer.Id);
             if (foundCustomer != null)
             {
-                foundCustomer = customer;
+                data.Remove(foundCustomer);
+                data.Add(customer);
+            }
+            else
+            {
+                MessageBox.Show("Customer not found for id " + customer.Id);
             }
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
-            Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFileSource + "Customers.json", updatedJson);
         }
     }

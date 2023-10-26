@@ -114,6 +114,7 @@ namespace Projet_M1_Integration_Systeme
             Price = commande.Price;
             CustomerName = commande.CustomerName;
             CustomerSurname = commande.CustomerSurname;
+            CustomerId = commande.CustomerId;
             ClerkName = commande.ClerkName;
             Status = commande.Status;
 

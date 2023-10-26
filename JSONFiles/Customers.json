@@ -3,7 +3,7 @@
     "PhoneNumber": "0000000000",
     "Surname": "Default",
     "Id": 1,
-    "FirstCommandDate": "0001-01-01T00:00:00",
+    "FirstCommandDate": null,
     "Address": {
       "Number": "0",
       "Street": "Default",
@@ -17,14 +17,42 @@
     "PhoneNumber": "0695562491",
     "Surname": "Billebaut",
     "Id": 2,
-    "FirstCommandDate": "0001-01-01T00:00:00",
+    "FirstCommandDate": null,
     "Address": {
       "Number": "63",
       "Street": "rue Camelinat",
       "City": "vitry sur seine",
       "PostalCode": "94400",
-      "Country": "France"
+      "Country": "france"
     },
     "Name": "Arthur"
+  },
+  {
+    "PhoneNumber": "0781805527",
+    "Surname": "Chang",
+    "Id": 3,
+    "FirstCommandDate": "2023-10-26_18:48:16",
+    "Address": {
+      "Number": "9 ",
+      "Street": "Lacome",
+      "City": "Vitry sur Seine",
+      "PostalCode": "94400",
+      "Country": "France"
+    },
+    "Name": "Fanny"
+  },
+  {
+    "PhoneNumber": "0000000000",
+    "Surname": "Machard",
+    "Id": 4,
+    "FirstCommandDate": "2023-10-26_18:47:20",
+    "Address": {
+      "Number": "2",
+      "Street": "rue du monsieur",
+      "City": "villejuive",
+      "PostalCode": "99999",
+      "Country": "france"
+    },
+    "Name": "Paul"
   }
 ]

@@ -129,3 +129,5 @@ C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Proj
 C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.CopyComplete
 C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.exe
 C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.pdb
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\UserWindow.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\UserWindow.baml

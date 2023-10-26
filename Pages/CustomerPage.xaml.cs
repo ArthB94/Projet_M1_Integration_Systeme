@@ -21,6 +21,7 @@ namespace Projet_M1_Integration_Systeme.Pages
         private bool IsUpdating;
         private Frame FrameShow;
         private Clerk Clerk;
+        private Customer Customer;
         public CustomerPage(Frame frameShow, Clerk clerk)
         {
             FrameShow = frameShow;
@@ -57,6 +58,7 @@ namespace Projet_M1_Integration_Systeme.Pages
         }
         public CustomerPage(Frame frameShow,Customer customer)
         {
+            Customer = customer;
             IsUpdating = true;
             InitializeComponent();
 
@@ -139,6 +141,17 @@ namespace Projet_M1_Integration_Systeme.Pages
         {
             if (IsUpdating)
             {
+                Customer customer = Clerk.FindCustomerById(Customer.Id);
+                customer.Name = NameTextBox.Text;
+                customer.Surname = SurnameTextBox.Text;
+                customer.PhoneNumber = PhoneNumberTextBox.Text;
+                customer.Address.Number = NumberTextBox.Text;
+                customer.Address.Street = StreetTextBox.Text;
+                customer.Address.City = CityTextBox.Text;
+                customer.Address.PostalCode = PostalCodeTextBox.Text;
+                customer.Address.Country = CountryTextBox.Text;
+                Clerk.UpdateCustomer(customer);
+                MessageBox.Show("Customer updated");
                 FrameShow.Navigate(new ShowCustomers(FrameShow));
 
             }

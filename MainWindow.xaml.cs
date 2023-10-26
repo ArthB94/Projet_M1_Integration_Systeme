@@ -26,12 +26,14 @@ namespace Projet_M1_Integration_Systeme
             List<CommandReader> commands = Clerk.LoadCommands();
             if (commands.Count() > 0)
             {
-                Command.IDS = commands.Last().Id;
+                // récupére l'id le plus grand de la liste des commandes et l'ajoute à la variable static IDS de la classe Command
+
+                Command.IDS = commands.Max(x => x.Id);
             }
             List<Customer> customers = Clerk.LoadCustomers();
             if (customers.Count() > 0)
             {
-                Customer.IDS = customers.Last().Id;
+                Customer.IDS = customers.Max(x => x.Id);
             }
 
             CommandsStatusPannel = new CommandsStatusPage();

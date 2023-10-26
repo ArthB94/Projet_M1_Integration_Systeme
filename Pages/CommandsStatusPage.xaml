@@ -33,8 +33,8 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns >
-                    <DataGridTextColumn Header="Commande" Binding="{Binding Id}" Width="1*" />
-                    <DataGridTemplateColumn Header="Customer" Width="1*">
+                    <DataGridTextColumn IsReadOnly="True" Header="Commande" Binding="{Binding Id}" Width="1*" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="Customer" Width="1*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock>
@@ -46,7 +46,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Delivering" Binding="{Binding DeliveryDelay}" Width="1*" />
+                    <DataGridTextColumn Header="Delivering" IsReadOnly="True" Binding="{Binding DeliveryDelay}" Width="1*" />
 
                 </DataGrid.Columns>
             </DataGrid>
