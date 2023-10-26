@@ -19,9 +19,9 @@ namespace Projet_M1_Integration_Systeme
         private string surname;
         private int id;
         public static int IDS { get; set; } = 0;
-        private DateTime firstCommandDate;
+        private String firstCommandDate;
         private Address address;
-
+        
         public Customer(string phoneNumber, string name, string surname) : base(name)
         {
             IDS++;
@@ -40,7 +40,7 @@ namespace Projet_M1_Integration_Systeme
             this.address = address;
         }
         [JsonConstructor]
-        public Customer(string phoneNumber, string name, string surname, Address address, int id, DateTime FirstCommandDate) : base(name)
+        public Customer(string phoneNumber, string name, string surname, Address address, int id, String FirstCommandDate) : base(name)
         {
             this.phoneNumber = phoneNumber;
             this.name = name;
@@ -61,21 +61,7 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        }
-
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
 
         public string Surname
         {
@@ -94,7 +80,7 @@ namespace Projet_M1_Integration_Systeme
                 id = value;
             }
         }
-        public DateTime FirstCommandDate
+        public String FirstCommandDate
         {
             get { return firstCommandDate; }
             set
@@ -113,8 +99,7 @@ namespace Projet_M1_Integration_Systeme
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // order(int id):void qui fait appel Ã  la fonction order de clerk??
+ 
+       // order(int id):void qui fait appel Ã  la fonction order de clerk??
     }
 }

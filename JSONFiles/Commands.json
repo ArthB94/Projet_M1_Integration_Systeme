@@ -372,5 +372,132 @@
         "Volume": "25cl"
       }
     ]
+  },
+  {
+    "Id": 18,
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_16:26:31",
+    "Price": 50.400000000000006,
+    "Pizzas": [
+      {
+        "Name": "Seafood",
+        "Size": "Extra Large",
+        "Price": 23.0
+      },
+      {
+        "Name": "Hawaiian",
+        "Size": "Extra Large",
+        "Price": 23.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 2.2,
+        "Type": "Cola",
+        "Volume": "1L"
+      },
+      {
+        "Price": 2.2,
+        "Type": "Orangina",
+        "Volume": "1L"
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_16:26:36",
+    "Price": 10.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": []
+  },
+  {
+    "Id": 20,
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_16:26:41",
+    "Price": 10.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": []
+  },
+  {
+    "Id": 21,
+    "ClerkName": "Asma",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_16:39:34",
+    "Price": 5.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": []
+  },
+  {
+    "Id": 22,
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_16:41:58",
+    "Price": 13.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      },
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
   }
 ]

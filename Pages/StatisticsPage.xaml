@@ -44,7 +44,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Clerks" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding nbCommande}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding nbCommand}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <DataGrid Grid.Row="2" x:Name="DgDeliveryMan" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderThickness="0" Margin="10">
@@ -61,7 +61,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Delivery man" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbCommande}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbCommand}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <Grid Grid.Row="3"  Margin="10">
@@ -73,10 +73,10 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Average Price"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
-                        <TextBlock Grid.Column="1" x:Name="TbAvgCommande" Grid.Row="0" Text="{Binding AvgCommande}"  HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Total delivery"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
-                        <TextBlock Grid.Column="1" x:Name="TbAvgCustommer" Grid.Row="0" Text="{Binding AvgCustommer}"  HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Average price command"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                        <TextBlock Grid.Column="1" x:Name="LblAvgCommande" Grid.Row="0"   HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Average acount"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                        <TextBlock Grid.Column="1" x:Name="LblAvgCAcount" Grid.Row="0"   HorizontalAlignment="Left"/>
                     </Grid>
                 </Grid>
             </Grid>

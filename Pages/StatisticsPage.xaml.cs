@@ -17,6 +17,10 @@ namespace Projet_M1_Integration_Systeme.Pages
             FrameShow.Content = new ShowOldCommands(FrameShow);
             BtnShowCustomers.Opacity = 0.5;
             BtnShowCommands.Opacity = 1;
+            //DgClerks.ItemsSource = une liste
+            //DgCustomers.ItemsSource = une liste
+            //LblAvgCommande.Text = UnloadedEvent valeur
+            //LblAvgCAcount.Text = UnloadedEvent valeur
         }
         public void BtnShowCustomers_Click(object sender, RoutedEventArgs e)
         {

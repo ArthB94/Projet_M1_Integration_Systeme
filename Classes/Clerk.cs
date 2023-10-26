@@ -14,10 +14,9 @@ namespace Projet_M1_Integration_Systeme
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public static List<Clerk> ClerkReady = new List<Clerk> {new Clerk("Arthur"),new Clerk("Asma") };
-        public string Name { get; set; }
         public string Status { get; set; }
         public Command currentCommand {get; set; }
-        public Customer currentCustomer { get; set; } = new Customer("0000000000","DefaultName","DefaultSurname");
+        public Customer currentCustomer { get; set; } 
         private static string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
 
 
@@ -112,6 +111,12 @@ namespace Projet_M1_Integration_Systeme
         {
             Console.WriteLine("SendAddition");
             command.setDate();
+            Customer customer = FindCustomerById(command.CustomerId);
+
+            if (customer.FirstCommandDate == "0001-01-01_00:00:00")
+            {
+                customer.FirstCommandDate = command.Date_time;
+            }
             MessageBox.Show("Command " + JsonConvert.SerializeObject(new CommandReader(command), Formatting.Indented) + " delivered");
             StoreCommand(command);
         }
@@ -132,10 +137,10 @@ namespace Projet_M1_Integration_Systeme
             File.WriteAllText(jsonFilePath, updatedJson);
             currentCustomer = newCustomer;
         }
-        public bool ConnectCustomer(string name)
+        public bool ConnectCustomer(string phonenumber)
         {
             List<Customer> customers = LoadCustomers();
-            Customer foundCustomer = customers.Find(customer => customer.Name == name);
+            Customer foundCustomer = customers.Find(customer => customer.PhoneNumber == phonenumber);
             if (foundCustomer != null)
             {
                 currentCustomer = foundCustomer;
@@ -146,6 +151,32 @@ namespace Projet_M1_Integration_Systeme
                 Console.WriteLine("Client non enregistré dans la base de données");
                 return false;
             }
+        }
+        public static Customer FindCustomerById(int id)
+        {
+            List<Customer> customers = LoadCustomers();
+            Customer foundCustomer = customers.Find(customer => customer.Id == id);
+            if (foundCustomer != null)
+            {
+                return foundCustomer;
+            }
+            else
+            {
+                Console.WriteLine("Client non enregistré dans la base de données");
+                return null;
+            }
+        }
+        public static void UpdateCustomer(Customer customer)
+        {
+            List<Customer> data = LoadCustomers();
+            Customer foundCustomer = data.Find(c => c.Id == customer.Id);
+            if (foundCustomer != null)
+            {
+                foundCustomer = customer;
+            }
+            string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
+            Console.WriteLine(updatedJson);
+            File.WriteAllText(jsonFileSource + "Customers.json", updatedJson);
         }
     }
 }

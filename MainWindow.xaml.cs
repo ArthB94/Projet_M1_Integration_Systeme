@@ -35,18 +35,21 @@ namespace Projet_M1_Integration_Systeme
             }
 
             CommandsStatusPannel = new CommandsStatusPage();
-            CurrentPageIndex = 2;
+            CurrentPageIndex = 0;
 
             // permet d'initialiser la page de connexion au lancement de l'application donc le fichiers xaml (Attention à bien d'initialises dans cette fonction tout ce qui est nécessaire avant d'initialiser la page xaml)
             InitializeComponent();
             if (CurrentPageIndex != 0)
             {
+               /* Clerk clerk = Clerk.CallPizzaria();
+                Customer customer = new Customer("0000000000","Default","Default");
+                clerk.StoreCustomer(customer);*//*
                 Pages = new List<Page>
                 {
                     new ConnectionPage(InteractiveFrame),
-                    new CustomerPage(InteractiveFrame,Clerk.CallPizzaria()),
-                    new CommandPage(InteractiveFrame,Clerk.CallPizzaria()),
-                };
+                    new CustomerPage(InteractiveFrame,clerk),
+                    new CommandPage(InteractiveFrame,clerk),
+                };*/
             }
             else
             {

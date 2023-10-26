@@ -14,7 +14,6 @@ namespace Projet_M1_Integration_Systeme
         public static List<DeliveryMan> DeliveryMansReady = new List<DeliveryMan> {new DeliveryMan("Jean"),new DeliveryMan("Jack") };
         public static ObservableCollection<Command> CommandsToDeliver = new ObservableCollection<Command>();
         public static ObservableCollection<Command> CommandsDelivering = new ObservableCollection<Command>();
-        public string Name { get; set; }
         public string Status {  get; set; }
         public DeliveryMan(string name) : base(name)
         {

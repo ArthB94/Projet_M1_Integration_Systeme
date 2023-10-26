@@ -6,7 +6,7 @@ namespace Projet_M1_Integration_Systeme
 {
     public class Cook : Person
     {
-        public string Name { get; set; }
+
         public string Status { get; set; }
         private Kitchen Kitchen { get; set; }
 

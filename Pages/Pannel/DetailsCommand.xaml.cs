@@ -22,7 +22,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
-            FrameShow.Navigate(new CommandsStatusPage());
+            FrameShow.Navigate(new CommandPreparation(FrameShow));
         }
     }
 

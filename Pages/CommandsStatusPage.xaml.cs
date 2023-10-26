@@ -18,8 +18,6 @@ namespace Projet_M1_Integration_Systeme.Pages
 
         public CommandsStatusPage()
         {
-
-
             InitializeComponent();
             CommandPreparation CommandPannel = new CommandPreparation(FramePizza);
             FramePizza.Content = CommandPannel;

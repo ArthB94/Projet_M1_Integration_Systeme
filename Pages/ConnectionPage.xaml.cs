@@ -77,7 +77,8 @@ namespace Projet_M1_Integration_Systeme.Pages
         // permet de passer à la page suivante
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.BtnNext_Click(sender, e);
+            Clerk clerk = Clerk.CallPizzaria();
+            FrameShow.Navigate(new CustomerPage(FrameShow, clerk));
         }
 
         // permet de passer directement à la page de commande
@@ -90,7 +91,7 @@ namespace Projet_M1_Integration_Systeme.Pages
                 MessageBox.Show("Erreur aucun clerk disponible");
                 return;
             }
-            if (clerk.ConnectCustomer(NameTextBox.Text))
+            if (clerk.ConnectCustomer(PhoneNumberTextBox.Text))
             {
                 FrameShow.Navigate(new CommandPage(FrameShow, clerk));
             }

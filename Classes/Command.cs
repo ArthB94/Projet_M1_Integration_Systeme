@@ -16,8 +16,10 @@ namespace Projet_M1_Integration_Systeme
         public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
         public string CustomerName { get; set; } = "Name";
         public string CustomerSurname { get; set; } = "Surname";
+        public int CustomerId { get; set;} = 0;
         public int Id { get; set; }
-        public string ClerkName { get; set; }
+        public string ClerkName { get; set; } = "ClerkName";
+        public string DeliveryName { get; set; } = "DeliveryName";
 
         [JsonIgnore]
         private int delay;
@@ -95,6 +97,7 @@ namespace Projet_M1_Integration_Systeme
         public string ClerkName { get; set; }
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
+        public int CustomerId { get; set; }
         public string Status { get; set; }
         [JsonIgnore]
         public string CustomerFullName => CustomerName + " " + CustomerSurname;
@@ -126,17 +129,19 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandReader(int id, string date_time,string customerName, string customerSurname, string clerkName, double price,string status, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandReader(int id, string date_time,string customerName, string customerSurname,int customerid, string clerkName, double price,string status, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;
             Price = price;
-            Pizzas = pizzas;
-            Drinks = drinks;
-            ClerkName = clerkName;
             CustomerName = customerName;
             CustomerSurname = customerSurname;
+            ClerkName = clerkName;
             Status = status;
+            CustomerId = customerid;
+            Pizzas = pizzas;
+            Drinks = drinks;
+
         }
 
         public Command ToCommande()
@@ -148,7 +153,9 @@ namespace Projet_M1_Integration_Systeme
             commande.Date_time = Date_time;
             commande.CustomerName = CustomerName;
             commande.CustomerSurname = CustomerSurname;
+            commande.CustomerId = CustomerId;
             commande.ClerkName = ClerkName;
+            commande.DeliveryName = ClerkName;
             commande.Status = Status;
 
             commande.ClerkName = ClerkName;

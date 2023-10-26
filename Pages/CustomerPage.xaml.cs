@@ -147,6 +147,7 @@ namespace Projet_M1_Integration_Systeme.Pages
 
                 Address address = new Address(NumberTextBox.Text, StreetTextBox.Text, CityTextBox.Text, PostalCodeTextBox.Text, CountryTextBox.Text);
                 Customer customer = new Customer(PhoneNumberTextBox.Text, NameTextBox.Text, SurnameTextBox.Text, address);
+                Clerk.currentCustomer = customer;
                 Clerk.StoreCustomer(customer);
                 FrameShow.Navigate(new CommandPage(FrameShow, Clerk));
             }
@@ -161,7 +162,7 @@ namespace Projet_M1_Integration_Systeme.Pages
             }
             else
             {
-                mainWindow.BtnPrevious_Click(sender, e);
+                FrameShow.Navigate(new ConnectionPage(FrameShow));
                 Clerk.CloseCall(Clerk);
             }
             
