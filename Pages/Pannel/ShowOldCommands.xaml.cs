@@ -54,7 +54,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             if (minDate != null && maxDate != null)
             {
                 // tu peux changer cette ligne pour faire une recherche dans la base de données
-                DgHistorique.ItemsSource = Clerk.LoadCommands();
+                DgHistorique.ItemsSource = Clerk.orderedAtSpecTime(minDate, maxDate);
             }
 
         }

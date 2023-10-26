@@ -17,6 +17,7 @@ namespace Projet_M1_Integration_Systeme
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            
             // Changer la culture pour la culture française (fr-FR)
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");

@@ -11,10 +11,22 @@ namespace Projet_M1_Integration_Systeme
     public class DeliveryMan : Person
     {
         private MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public static List<DeliveryMan> DeliveryMansReady = new List<DeliveryMan> {new DeliveryMan("Jean"),new DeliveryMan("Jack") };
+        public static List<DeliveryMan> DeliveryMansReady = new List<DeliveryMan> { new DeliveryMan("Jean"), new DeliveryMan("Jack") };
         public static ObservableCollection<Command> CommandsToDeliver = new ObservableCollection<Command>();
         public static ObservableCollection<Command> CommandsDelivering = new ObservableCollection<Command>();
+        public ObservableCollection<Command> CommandsDelivered = new ObservableCollection<Command>();
+        public static List<DeliveryMan> AllDeliveryMen { get; set; } = new List<DeliveryMan> { };
         public string Status {  get; set; }
+        public int nbDeliveries { get; set; } = 0;
+
+        public static void cloneList(List<DeliveryMan> listtoclone)
+        {
+            foreach (DeliveryMan c in listtoclone)
+            {
+                AllDeliveryMen.Add(c);
+            }
+
+        }
         public DeliveryMan(string name) : base(name)
         {
             Name = name;
@@ -74,11 +86,23 @@ namespace Projet_M1_Integration_Systeme
                 }
                 CommandsDelivering.Remove(command);
                 Clerk.SendAddition(command);
+                this.CommandsDelivered.Add(command);
 
                 
 
             }
             DeliveryMansReady.Add(this);
+        }
+
+        public int getNbOfDelivery()
+        {
+            this.nbDeliveries = this.CommandsDelivered.Count();
+            return this.nbDeliveries;
+        }
+
+        public static List<DeliveryMan> getAllDeliveryMen()
+        {
+            return AllDeliveryMen;
         }
     }
 }

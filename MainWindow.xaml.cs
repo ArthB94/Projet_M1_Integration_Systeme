@@ -22,6 +22,7 @@ namespace Projet_M1_Integration_Systeme
 
         public MainWindow()
         {
+            
             kitchen = new Kitchen();
             List<CommandReader> commands = Clerk.LoadCommands();
             if (commands.Count() > 0)
@@ -39,6 +40,7 @@ namespace Projet_M1_Integration_Systeme
 
             // permet d'initialiser la page de connexion au lancement de l'application donc le fichiers xaml (Attention à bien d'initialises dans cette fonction tout ce qui est nécessaire avant d'initialiser la page xaml)
             InitializeComponent();
+            
             if (CurrentPageIndex != 0)
             {
                /* Clerk clerk = Clerk.CallPizzaria();

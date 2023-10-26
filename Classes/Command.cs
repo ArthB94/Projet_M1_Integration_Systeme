@@ -13,7 +13,7 @@ namespace Projet_M1_Integration_Systeme
         public static double avg => CalculateAvg();
         public static int IDS { get; set; } = 0;
 
-        public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
+        public String Date_time = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
         public string CustomerName { get; set; } = "Name";
         public string CustomerSurname { get; set; } = "Surname";
         public int CustomerId { get; set;} = 0;
@@ -33,7 +33,7 @@ namespace Projet_M1_Integration_Systeme
         [JsonIgnore]
         public ObservableCollection<PizzaViewModel> PizzasReady { get; set; } = new ObservableCollection<PizzaViewModel>();
 
-        public double Price => CalculatePrice();
+        public double Price { get;  set; } 
         public Command(ObservableCollection<PizzaViewModel> pizzas, ObservableCollection<DrinkViewModel> drinklist)
         {
             IDS++;
@@ -42,6 +42,23 @@ namespace Projet_M1_Integration_Systeme
             Pizzas = pizzas;
             Drinks = drinklist;
             delay = 5;
+            Price = CalculatePrice();
+
+        }
+        [JsonConstructor]
+        public Command(int id, string date_time, string customerName, string customerSurname, int customerid, string clerkName, double price, string status, List<Pizza> pizzas, List<Drink> drinks)
+        {
+            Id = id;
+            Date_time = date_time;
+            Price = price;
+            totalPrices += price;
+            CustomerName = customerName;
+            CustomerSurname = customerSurname;
+            ClerkName = clerkName;
+            Status = status;
+            CustomerId = customerid;
+            /*Pizzas = new ObservableCollection<PizzaViewModel>(new PizzaViewModel(pizzas));
+            Drinks = drinks;*/
 
         }
         public string Status 
@@ -86,7 +103,7 @@ namespace Projet_M1_Integration_Systeme
 
         public void setDate()
         {
-            Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
+            Date_time = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
         }
 
 
@@ -104,6 +121,8 @@ namespace Projet_M1_Integration_Systeme
 
         public String Date_time { get; set; }
         public double Price { get; set; }
+        public static double totalPrices = Command.totalPrices;
+        public static double avg => Command.avg;
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
         public List<Drink> Drinks { get; set; } = new List<Drink>();
 
@@ -172,5 +191,7 @@ namespace Projet_M1_Integration_Systeme
 
 
         }
+
+        
     }
 }

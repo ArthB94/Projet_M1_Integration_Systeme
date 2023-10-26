@@ -44,7 +44,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Clerks" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding nbCommand}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding cptCmd}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <DataGrid Grid.Row="2" x:Name="DgDeliveryMan" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderThickness="0" Margin="10">
@@ -61,7 +61,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Delivery man" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbCommand}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbDeliveries}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <Grid Grid.Row="3"  Margin="10">
@@ -76,7 +76,7 @@
                         <TextBlock Grid.Column="0" Grid.Row="0" Text="Average price command"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
                         <TextBlock Grid.Column="1" x:Name="LblAvgCommande" Grid.Row="0"   HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="Average acount"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
-                        <TextBlock Grid.Column="1" x:Name="LblAvgCAcount" Grid.Row="0"   HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" x:Name="LblAvgAcount" Grid.Row="1"   HorizontalAlignment="Left"/>
                     </Grid>
                 </Grid>
             </Grid>
