@@ -12,15 +12,17 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     public partial class DetailsCommand : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public DetailsCommand()
+        public Frame FrameShow { get; set; }
+        public DetailsCommand(Frame frameshow,Command command)
         {
+            FrameShow = frameshow;
             InitializeComponent();
-            DgPizzasInPreparation.ItemsSource = mainWindow.clerk.commandShown.Pizzas;
-            DgPizzasReady.ItemsSource = mainWindow.clerk.commandShown.PizzasReady;
+            DgPizzasInPreparation.ItemsSource =command.Pizzas;
+            DgPizzasReady.ItemsSource = command.PizzasReady;
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.clerk.ShowCommands();
+            FrameShow.Navigate(new CommandsStatusPage());
         }
     }
 

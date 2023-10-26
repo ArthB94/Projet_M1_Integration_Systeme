@@ -9,7 +9,6 @@ namespace Projet_M1_Integration_Systeme
     public class Kitchen
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public DeliveryMan DeliveryMan { get; set; }
         public List<Cook> Cooks { get; set; }
         public ObservableCollection<Command> Commands { get; set; } = new ObservableCollection<Command>();
         public ObservableCollection<Command> CommandsReady { get; set; } = new ObservableCollection<Command>();
@@ -20,7 +19,6 @@ namespace Projet_M1_Integration_Systeme
                 new Cook (this,"Mathieu"),
                 new Cook(this, "Jack")
             };
-            DeliveryMan = mainWindow.deliveryMan;
 
         }
 
@@ -45,9 +43,8 @@ namespace Projet_M1_Integration_Systeme
             StartPreparation();
         }
 
-        public async void SendCommands(Command command)
+        public  void SendCommands(Command command)
         {
-            await Task.Delay (2000);
             DeliveryMan.Deliver(command);
             CommandsReady.Remove(command);
 

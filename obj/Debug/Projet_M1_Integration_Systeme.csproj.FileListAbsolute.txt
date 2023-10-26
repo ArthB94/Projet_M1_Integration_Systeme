@@ -91,3 +91,41 @@ D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integr
 D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.GenerateResource.cache
 D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.CoreCompileInputs.cache
 D:\moi\EFREI\M1\S7\INFO\IS applications\THISISPROJECT\obj\Debug\Projet_M1_Integration_Systeme.csproj.CopyComplete
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.exe.config
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.exe
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\bin\Debug\Projet_M1_Integration_Systeme.pdb
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\bin\Debug\Newtonsoft.Json.dll
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\bin\Debug\Newtonsoft.Json.xml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.AssemblyReference.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsStatusPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\MainWindow.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CustomerPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandsPreparation.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\DetailsCommand.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldCommands.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\StatisticsPage.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\App.g.cs
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme_MarkupCompile.lref
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandsStatusPage.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\ConnectionPage.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\MainWindow.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CustomerPage.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\CommandPage.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\CommandsPreparation.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\DetailsCommand.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldCommands.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowOldDetails.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\Pannel\ShowCustomers.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Pages\StatisticsPage.baml
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.g.resources
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.Properties.Resources.resources
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.GenerateResource.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.CoreCompileInputs.cache
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.csproj.CopyComplete
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.exe
+C:\Users\arthu\Source\Repos\ArthB94\Projet_M1_Integration_Systeme\obj\Debug\Projet_M1_Integration_Systeme.pdb

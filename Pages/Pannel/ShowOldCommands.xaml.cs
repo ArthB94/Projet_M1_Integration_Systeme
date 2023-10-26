@@ -33,7 +33,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             InitializeComponent();
             SetInitialDates();
 
-            DgHistorique.ItemsSource = mainWindow.clerk.LoadCommands();
+            DgHistorique.ItemsSource = Clerk.LoadCommands();
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
@@ -49,11 +49,12 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
         {
             var minDate = DateMinPicker.SelectedDate;
             var maxDate = DateMaxPicker.SelectedDate;
+
             //MessageBox.Show(minDate.ToString() + " et " + maxDate);
             if (minDate != null && maxDate != null)
             {
                 // tu peux changer cette ligne pour faire une recherche dans la base de données
-                DgHistorique.ItemsSource = mainWindow.clerk.LoadCommands();
+                DgHistorique.ItemsSource = Clerk.LoadCommands();
             }
 
         }

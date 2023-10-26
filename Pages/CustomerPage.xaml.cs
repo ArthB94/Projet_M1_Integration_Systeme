@@ -20,8 +20,11 @@ namespace Projet_M1_Integration_Systeme.Pages
 
         private bool IsUpdating;
         private Frame FrameShow;
-        public CustomerPage()
+        private Clerk Clerk;
+        public CustomerPage(Frame frameShow, Clerk clerk)
         {
+            FrameShow = frameShow;
+            Clerk = clerk;
             IsUpdating = false;
             InitializeComponent();
 
@@ -136,17 +139,16 @@ namespace Projet_M1_Integration_Systeme.Pages
         {
             if (IsUpdating)
             {
-                // mainWindow.clerk.UpdateCustomer(new Customer(NameTextBox.Text, SurnameTextBox.Text, int.Parse(PhoneNumberTextBox.Text), new Address(int.Parse(NumberTextBox.Text), StreetTextBox.Text, CityTextBox.Text, int.Parse(PostalCodeTextBox.Text), CountryTextBox.Text)));
                 FrameShow.Navigate(new ShowCustomers(FrameShow));
 
             }
             else
             {
-                //mainWindow.clerk.AddCustomer(new Customer(NameTextBox.Text, SurnameTextBox.Text, int.Parse(PhoneNumberTextBox.Text), new Address(int.Parse(NumberTextBox.Text), StreetTextBox.Text, CityTextBox.Text, int.Parse(PostalCodeTextBox.Text), CountryTextBox.Text)));
+
                 Address address = new Address(NumberTextBox.Text, StreetTextBox.Text, CityTextBox.Text, PostalCodeTextBox.Text, CountryTextBox.Text);
                 Customer customer = new Customer(PhoneNumberTextBox.Text, NameTextBox.Text, SurnameTextBox.Text, address);
-                mainWindow.clerk.StoreCustomer(customer);
-                mainWindow.BtnNext_Click(sender, e);
+                Clerk.StoreCustomer(customer);
+                FrameShow.Navigate(new CommandPage(FrameShow, Clerk));
             }
             
         }
@@ -159,8 +161,8 @@ namespace Projet_M1_Integration_Systeme.Pages
             }
             else
             {
-
                 mainWindow.BtnPrevious_Click(sender, e);
+                Clerk.CloseCall(Clerk);
             }
             
         }

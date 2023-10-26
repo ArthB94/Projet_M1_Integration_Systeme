@@ -18,25 +18,13 @@ namespace Projet_M1_Integration_Systeme.Pages
 
         public CommandsStatusPage()
         {
-            CommandPreparation CommandPannel = new CommandPreparation();
+
 
             InitializeComponent();
+            CommandPreparation CommandPannel = new CommandPreparation(FramePizza);
             FramePizza.Content = CommandPannel;
-            DgCommandsDelivered.ItemsSource = mainWindow.deliveryMan.CommandsToDeliver;
+            DgCommandsDelivering.ItemsSource = DeliveryMan.CommandsDelivering;
 
         }
-
-        public void ShowCommand()
-        {
-            DetailsCommand InPreparationPanel = new DetailsCommand();
-            FramePizza.Content = InPreparationPanel;
-        }
-        public void ShowCommands() 
-        {
-            CommandPreparation CommandPannel = new CommandPreparation();
-            FramePizza.Content = CommandPannel;
-
-        }
-
     }
 }

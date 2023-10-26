@@ -67,6 +67,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Client" HorizontalAlignment="Left" Margin="0,0,0,10"/>
             <TextBlock Grid.Column="1" Grid.Row="0"  x:Name="LblClientNameValue"  Text="Jean Jack"   HorizontalAlignment="Left"/>
@@ -74,6 +75,8 @@
             <TextBlock Grid.Column="1" Grid.Row="1" x:Name="LblTotalPriceValue" Text="0"   HorizontalAlignment="Left"/>
             <TextBlock Grid.Column="0" Grid.Row="2" Text="Delivery date" HorizontalAlignment="Left" Margin="0,0,0,10"/>
             <TextBlock Grid.Column="1" Grid.Row="2"  x:Name="LblDeliveryDateValue"  Text="00-00-0000"   HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Delivery date" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="1" Grid.Row="3"  x:Name="LblStatus"  Text="Cashed"   HorizontalAlignment="Left"/>
 
         </Grid>
         

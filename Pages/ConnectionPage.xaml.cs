@@ -13,15 +13,18 @@ namespace Projet_M1_Integration_Systeme.Pages
     {
         // permet de récupérer touts les elements initialisés dans MainWindow
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+        Frame  FrameShow{ get; set;}
 
         // permet de vérifier si les champs repectent toutes les conditions nécessaires
         public bool IsButtonEnabled => NameTextBox.Text.Length > 0
             && SurnameTextBox.Text.Length > 0 && PhoneNumberTextBox.Text.Length == 10;
 
-        public ConnectionPage()
+        public ConnectionPage(Frame frameshow)
         {
 
             InitializeComponent();
+
+            FrameShow = frameshow;
 
             // permet de vérifier si les champs sont vides a chaque fois que un input est modifié
             VerifyIsEmpty();
@@ -81,10 +84,15 @@ namespace Projet_M1_Integration_Systeme.Pages
         private void BtnConnection_Click(object sender, RoutedEventArgs e)
         {
             // string name = NameTextBox.Text;
-
-            if (mainWindow.clerk.ConnectCustomer(NameTextBox.Text))
+            Clerk clerk = Clerk.CallPizzaria();
+            if (clerk == null)
             {
-                mainWindow.NavigateToPage(2);
+                MessageBox.Show("Erreur aucun clerk disponible");
+                return;
+            }
+            if (clerk.ConnectCustomer(NameTextBox.Text))
+            {
+                FrameShow.Navigate(new CommandPage(FrameShow, clerk));
             }
             else
             {

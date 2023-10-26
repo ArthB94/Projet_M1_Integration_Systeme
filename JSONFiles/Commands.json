@@ -1,12 +1,18 @@
 [
   {
     "Id": 1,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:01",
-    "Price": 24.0,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:20:51",
+    "Price": 24.5,
     "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      },
       {
         "Name": "Margarita",
         "Size": "Small",
@@ -38,324 +44,120 @@
         "Price": 1.5,
         "Type": "Cola",
         "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
       }
     ]
+  },
+  {
+    "Id": 3,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:20:57",
+    "Price": 5.0,
+    "Pizzas": [
+      {
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
+      }
+    ],
+    "Drinks": []
   },
   {
     "Id": 2,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:16",
-    "Price": 33.0,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:20:56",
+    "Price": 5.0,
     "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
       {
         "Name": "Margarita",
         "Size": "Small",
         "Price": 5.0
       }
     ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
-  },
-  {
-    "Id": 3,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:23",
-    "Price": 14.5,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
-  },
-  {
-    "Id": 4,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:30",
-    "Price": 21.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
+    "Drinks": []
   },
   {
     "Id": 5,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:41",
-    "Price": 31.0,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:05",
+    "Price": 5.0,
     "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
       {
         "Name": "Margarita",
         "Size": "Small",
         "Price": 5.0
       }
     ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
+    "Drinks": []
   },
   {
-    "Id": 6,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:48",
-    "Price": 16.0,
+    "Id": 4,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:04",
+    "Price": 5.0,
     "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
       {
         "Name": "Margarita",
         "Size": "Small",
         "Price": 5.0
       }
     ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
+    "Drinks": []
   },
   {
     "Id": 7,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:35:57",
-    "Price": 23.0,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:18",
+    "Price": 5.0,
     "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
       {
         "Name": "Margarita",
         "Size": "Small",
         "Price": 5.0
       }
     ],
-    "Drinks": [
+    "Drinks": []
+  },
+  {
+    "Id": 6,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:17",
+    "Price": 5.0,
+    "Pizzas": [
       {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
+        "Name": "Margarita",
+        "Size": "Small",
+        "Price": 5.0
       }
-    ]
+    ],
+    "Drinks": []
   },
   {
     "Id": 8,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:50:31",
-    "Price": 32.5,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:24",
+    "Price": 10.0,
     "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
       {
         "Name": "Margarita",
         "Size": "Small",
@@ -367,79 +169,18 @@
         "Price": 5.0
       }
     ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
+    "Drinks": []
   },
   {
     "Id": 9,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:50:43",
-    "Price": 22.5,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:29",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -449,39 +190,14 @@
   },
   {
     "Id": 10,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:50:50",
-    "Price": 16.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:33",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -491,34 +207,14 @@
   },
   {
     "Id": 11,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:50:57",
-    "Price": 18.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:36",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -528,49 +224,14 @@
   },
   {
     "Id": 12,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:51:06",
-    "Price": 26.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:42",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -580,39 +241,14 @@
   },
   {
     "Id": 13,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:51:12",
-    "Price": 16.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:52",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -622,91 +258,14 @@
   },
   {
     "Id": 14,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:52:39",
-    "Price": 26.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:54",
+    "Price": 1.5,
+    "Pizzas": [],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
-  },
-  {
-    "Id": 15,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:52:46",
-    "Price": 16.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",
@@ -716,17 +275,47 @@
   },
   {
     "Id": 16,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:52:54",
-    "Price": 19.5,
-    "Pizzas": [
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:59",
+    "Price": 1.5,
+    "Pizzas": [],
+    "Drinks": [
       {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "ClerkName": "Arthur",
+    "CustomerName": "DefaultName",
+    "CustomerSurname": "DefaultSurname",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:21:58",
+    "Price": 1.5,
+    "Pizzas": [],
+    "Drinks": [
+      {
+        "Price": 1.5,
+        "Type": "Cola",
+        "Volume": "25cl"
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:24:06",
+    "Price": 11.5,
+    "Pizzas": [
       {
         "Name": "Margarita",
         "Size": "Small",
@@ -743,25 +332,16 @@
         "Price": 1.5,
         "Type": "Cola",
         "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
       }
     ]
   },
   {
     "Id": 17,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_17:53:01",
+    "ClerkName": "Arthur",
+    "CustomerName": "Arthur",
+    "CustomerSurname": "Billebaut",
+    "Status": "Cashed",
+    "Date_time": "2023-10-26_10:24:01",
     "Price": 14.5,
     "Pizzas": [
       {
@@ -776,58 +356,6 @@
       }
     ],
     "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      }
-    ]
-  },
-  {
-    "Id": 18,
-    "ClerkName": "Jean",
-    "CustomerName": "Yo",
-    "CustomerSurname": "Lo",
-    "Date_time": "2023-10-24_20:00:42",
-    "Price": 26.0,
-    "Pizzas": [
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      },
-      {
-        "Name": "Margarita",
-        "Size": "Small",
-        "Price": 5.0
-      }
-    ],
-    "Drinks": [
-      {
-        "Price": 1.5,
-        "Type": "Cola",
-        "Volume": "25cl"
-      },
       {
         "Price": 1.5,
         "Type": "Cola",

@@ -30,6 +30,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             LblClientNameValue.Text = command.CustomerFullName;
             LblDeliveryDateValue.Text = command.Date_time;
             LblTotalPriceValue.Text = command.Price.ToString();
+            LblStatus.Text = command.Status;
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {

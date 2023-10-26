@@ -56,7 +56,7 @@
         <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
             <Label   Content="Commandes ready" FontWeight="Bold"  HorizontalAlignment="Center" />
         </Border>
-        <DataGrid Grid.Row="3" x:Name="DgCommandsReady" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
+        <DataGrid Grid.Row="3" x:Name="DgCommandsToDeliver" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
             <DataGrid.Background>
                 <SolidColorBrush Color="Gray" Opacity="0.6"  />
             </DataGrid.Background>

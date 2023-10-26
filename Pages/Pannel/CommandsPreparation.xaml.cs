@@ -10,11 +10,13 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
     public partial class CommandPreparation : Page
     {
         public MainWindow mainWindow { get; set; } = (MainWindow)Application.Current.MainWindow;
-        public CommandPreparation()
+        public Frame FrameShow { get; set; }
+        public CommandPreparation(Frame framefhow)
         {
+            FrameShow = framefhow;
             InitializeComponent();
             DgCommandsInPreparation.ItemsSource = mainWindow.kitchen.Commands;
-            DgCommandsReady.ItemsSource = mainWindow.kitchen.CommandsReady;
+            DgCommandsToDeliver.ItemsSource = DeliveryMan.CommandsToDeliver;
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
@@ -22,7 +24,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             {
                 if (button.DataContext is Command command)
                 {
-                    mainWindow.clerk.CommandShown(command);
+                    FrameShow.Navigate(new DetailsCommand(FrameShow, command));
                 }
             }
         }

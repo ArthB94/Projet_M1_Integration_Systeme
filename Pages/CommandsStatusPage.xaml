@@ -19,9 +19,9 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
-                <Label   Content="Commandes waiting for delivery" FontWeight="Bold"  HorizontalAlignment="Center" />
+                <Label   Content="Commandes delivering" FontWeight="Bold"  HorizontalAlignment="Center" />
             </Border>
-            <DataGrid Grid.Row="1" x:Name="DgCommandsDelivered" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
+            <DataGrid Grid.Row="1" x:Name="DgCommandsDelivering" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="1">
                 <DataGrid.Background>
                     <SolidColorBrush Color="Gray" Opacity="0.6"  />
                 </DataGrid.Background>

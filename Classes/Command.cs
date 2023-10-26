@@ -21,7 +21,7 @@ namespace Projet_M1_Integration_Systeme
 
         [JsonIgnore]
         private int delay;
-        [JsonIgnore]
+
         private string status;
 
         public ObservableCollection<PizzaViewModel> Pizzas { get; set; }
@@ -95,6 +95,7 @@ namespace Projet_M1_Integration_Systeme
         public string ClerkName { get; set; }
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
+        public string Status { get; set; }
         [JsonIgnore]
         public string CustomerFullName => CustomerName + " " + CustomerSurname;
 
@@ -111,6 +112,8 @@ namespace Projet_M1_Integration_Systeme
             CustomerName = commande.CustomerName;
             CustomerSurname = commande.CustomerSurname;
             ClerkName = commande.ClerkName;
+            Status = commande.Status;
+
             
             foreach (PizzaViewModel pizza in commande.PizzasReady)
             {
@@ -123,7 +126,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandReader(int id, string date_time,string customerName, string customerSurname, string clerkName, double price, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandReader(int id, string date_time,string customerName, string customerSurname, string clerkName, double price,string status, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;
@@ -133,6 +136,7 @@ namespace Projet_M1_Integration_Systeme
             ClerkName = clerkName;
             CustomerName = customerName;
             CustomerSurname = customerSurname;
+            Status = status;
         }
 
         public Command ToCommande()
@@ -144,6 +148,8 @@ namespace Projet_M1_Integration_Systeme
             commande.Date_time = Date_time;
             commande.CustomerName = CustomerName;
             commande.CustomerSurname = CustomerSurname;
+            commande.ClerkName = ClerkName;
+            commande.Status = Status;
 
             commande.ClerkName = ClerkName;
             foreach (Pizza pizza in Pizzas)

@@ -30,7 +30,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             FrameShow = frameShow;
             InitializeComponent();
 
-            DgCustomers.ItemsSource = mainWindow.clerk.LoadCustomers();
+            DgCustomers.ItemsSource = Clerk.LoadCustomers();
         }
         public void BtnShow_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +52,7 @@ namespace Projet_M1_Integration_Systeme.Pages.Pannel
             }
             else
             {
-                DgCustomers.ItemsSource = mainWindow.clerk.LoadCustomers();
+                DgCustomers.ItemsSource = Clerk.LoadCustomers();
             }
 
         }

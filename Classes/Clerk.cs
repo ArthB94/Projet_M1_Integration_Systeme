@@ -13,37 +13,41 @@ namespace Projet_M1_Integration_Systeme
     public class Clerk : Person
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        public int Id { get; set; }
+        public static List<Clerk> ClerkReady = new List<Clerk> {new Clerk("Arthur"),new Clerk("Asma") };
         public string Name { get; set; }
         public string Status { get; set; }
         public Command currentCommand {get; set; }
-        public Customer currentCustomer { get; set; }
-        public Command commandShown { get; set; }
-        private string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
-        private int lastCommandID;
+        public Customer currentCustomer { get; set; } = new Customer("0000000000","DefaultName","DefaultSurname");
+        private static string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
 
 
-        public Clerk(int id, string name) : base(name)
+        public Clerk( string name) : base(name)
         {
-            Id = id;
+
             Name = name;
             Status = "Waiting";
-            List<CommandReader> commands = LoadCommands();
-            if (commands.Count() > 0)
-            {
-                Command.IDS = commands.Last().Id;
-                Customer.IDS = commands.Last().Id;
-            }
+ 
+        }
+        public static Clerk CallPizzaria()
+        {
+            // retourner un clerk aléatoir dans clerkready et le retirer de la liste
+            Random random = new Random();
+            int index = random.Next(ClerkReady.Count);
+            Clerk clerk = ClerkReady[index];
+            ClerkReady.RemoveAt(index);
+            return clerk;
 
-            NewCommand();
-            commandShown = currentCommand;
+        }
+        public static void CloseCall(Clerk clerk)
+        {
+            ClerkReady.Add(clerk);
         }
         public void NewCommand()
         {
 
             currentCommand= new Command( new ObservableCollection<PizzaViewModel>(), new ObservableCollection<DrinkViewModel>());
-            currentCommand.CustomerName = mainWindow.currentCustomer.Name;
-            currentCommand.CustomerSurname = mainWindow.currentCustomer.Surname;
+            currentCommand.CustomerName = currentCustomer.Name;
+            currentCommand.CustomerSurname = currentCustomer.Surname;
         }
         public void AddPizza()
         {
@@ -66,36 +70,20 @@ namespace Projet_M1_Integration_Systeme
             currentCommand.ClerkName = Name;
             Console.WriteLine("AddCurentCommand");
             mainWindow.kitchen.addCommand(currentCommand);
-            lastCommandID++;
             NewCommand();
             
         }
-        public void CommandShown(Command command)
-        {
-            commandShown = command;
-            if (mainWindow.CommandsStatusPannel !=null)
-            {
-                mainWindow.CommandsStatusPannel.ShowCommand();
-            }
-        }
-        public void ShowCommands()
-        {
-            if (mainWindow.CommandsStatusPannel != null)
-            {
-                mainWindow.CommandsStatusPannel.ShowCommands();
-            }
-        }
-        public List<CommandReader> LoadCommandsFile(string fileName)
+        public static List<CommandReader> LoadCommandsFile(string fileName)
         {
             string jsonContent = File.ReadAllText(fileName);
             List<CommandReader> commands = JsonConvert.DeserializeObject<List<CommandReader>>(jsonContent);
             return commands;
         }
-        public List<CommandReader> LoadCommands ()
+        public static List<CommandReader> LoadCommands ()
         {
             return LoadCommandsFile(jsonFileSource + "Commands.json");
         }
-        public void StoreCommand(Command newCommand)
+        public static void StoreCommand(Command newCommand)
         {
             string jsonFilePath = jsonFileSource + "Commands.json";
             string jsonContent = File.ReadAllText(jsonFilePath);
@@ -120,7 +108,7 @@ namespace Projet_M1_Integration_Systeme
             }
 
         }
-        public void SendAddition(Command command)
+        public static void SendAddition(Command command)
         {
             Console.WriteLine("SendAddition");
             command.setDate();
@@ -128,7 +116,7 @@ namespace Projet_M1_Integration_Systeme
             StoreCommand(command);
         }
 
-        public List<Customer> LoadCustomers()
+        public static List<Customer> LoadCustomers()
         {
             string jsonContent = File.ReadAllText(jsonFileSource + "Customers.json");
             return JsonConvert.DeserializeObject<List<Customer>>(jsonContent);
@@ -142,6 +130,7 @@ namespace Projet_M1_Integration_Systeme
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             Console.WriteLine(updatedJson);
             File.WriteAllText(jsonFilePath, updatedJson);
+            currentCustomer = newCustomer;
         }
         public bool ConnectCustomer(string name)
         {
