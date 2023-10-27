@@ -14,12 +14,20 @@ namespace Projet_M1_Integration_Systeme
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public static List<Clerk> ClerkReady = new List<Clerk> { new Clerk("Arthur"), new Clerk("Asma") };
+        public static ObservableCollection<Clerk> ListOfClerks { get; set; } = new ObservableCollection<Clerk> { };
         public string Status { get; set; }
         public Command currentCommand { get; set; }
         public Customer currentCustomer { get; set; }
         private static string jsonFileSource = Directory.GetCurrentDirectory() + "/../../JSONFiles/";
+        public int cptCmd { get; set; } = 0;
+        public static void cloneList(List<Clerk> listtoclone)
+        {
+            foreach (Clerk c in listtoclone)
+            {
+                ListOfClerks.Add(c);
+            }
 
-
+        }
         public Clerk(string name) : base(name)
         {
 
@@ -191,6 +199,24 @@ namespace Projet_M1_Integration_Systeme
             string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(jsonFileSource + "Customers.json", updatedJson);
         }
+        public int getMyCommands()
+        {
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<CommandReader> mycmd = new List<CommandReader>(); //empty list of only mine
+            this.cptCmd = 0;
+            foreach (CommandReader cmd in allComds)
+            {
+                if (cmd.ClerkName == this.Name)
+                {
+                    OnPropertyChanged(nameof(cptCmd));
+                    mycmd.Add(cmd);
+                    this.cptCmd++;
+                }
+
+            }
+
+            return this.cptCmd;
+        }
         public static List<CommandReader> GetCommandsByCustomer(int customerId)
         {
             List<CommandReader> commands = LoadCommands();
@@ -207,6 +233,45 @@ namespace Projet_M1_Integration_Systeme
                 totalAmount += command.Price;
             }
             return totalAmount;
+        }
+        public static List<CommandReader> orderedAtSpecTime(DateTime? timeBegin, DateTime? timeEnds)
+        {
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<CommandReader> inTime = new List<CommandReader>(); //empty list of only right time
+
+            foreach (CommandReader cmd in allComds)
+            {
+                if (DateTime.Parse(cmd.Date_time) >= timeBegin && DateTime.Parse(cmd.Date_time) <= timeEnds)
+                {
+                    inTime.Add(cmd);
+                }
+
+            }
+
+            return inTime;
+        }
+        public static double getAvgAccount()
+        {
+            double ttlAccount = 0;
+            List<CommandReader> allComds = LoadCommands(); //all commands
+            List<Customer> allClients = LoadCustomers(); //all clients
+
+            foreach (CommandReader cmd in allComds)
+            {
+                ttlAccount += cmd.Price;
+            }
+            return ttlAccount / allClients.Count;
+
+        }
+        public static List<Customer> ListOfCustomers()
+        {
+            List<Customer> allClients = LoadCustomers(); //all clients
+            return allClients;
+        }
+        public static List<Customer> OrderedByName(List<Customer> allClients)
+        {
+            List<Customer> SortedList = allClients.OrderBy(o => o.Name).ToList();
+            return SortedList;
         }
     }
 }

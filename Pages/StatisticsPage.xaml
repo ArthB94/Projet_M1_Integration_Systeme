@@ -11,6 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -44,7 +45,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Clerks" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding nbCommand}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb command" Binding="{Binding cptCmd}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <DataGrid Grid.Row="2" x:Name="DgDeliveryMan" AutoGenerateColumns="False" VerticalAlignment="Stretch" BorderThickness="0" Margin="10">
@@ -61,7 +62,7 @@
                         </DataGrid.ColumnHeaderStyle>
                         <DataGrid.Columns >
                             <DataGridTextColumn IsReadOnly="True" Header="Delivery man" Binding="{Binding Name}" Width="*" />
-                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbCommand}" Width="*" />
+                            <DataGridTextColumn IsReadOnly="True" Header="nb delivery" Binding="{Binding nbDeliveries}" Width="*" />
                         </DataGrid.Columns>
                     </DataGrid>
                     <Grid Grid.Row="3"  Margin="10">
@@ -76,13 +77,14 @@
                         <TextBlock Grid.Column="0" Grid.Row="0" Text="Average price command"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
                         <TextBlock Grid.Column="1" x:Name="LblAvgCommande" Grid.Row="0"   HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="Average acount"  HorizontalAlignment="Left" Margin="0,0,0,10"/>
-                        <TextBlock Grid.Column="1" x:Name="LblAvgCAcount" Grid.Row="0"   HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" x:Name="LblAvgAcount" Grid.Row="1"   HorizontalAlignment="Left"/>
                     </Grid>
                 </Grid>
             </Grid>
         </Border>
-        <Frame Grid.Row="1" x:Name="FrameShow" />
-        <Button Grid.Row="2" x:Name="BtnShowCustomers" Content="Show customers" Click="BtnShowCustomers_Click"/>
+        <Button Grid.Row="1" x:Name="BtnSearch" Content="Refresh" HorizontalContentAlignment="Center" Click="BtnRefresh_Click"  Height="20" />
+        <Frame Grid.Row="2" x:Name="FrameShow" />
+        <Button Grid.Row="3" x:Name="BtnShowCustomers" Content="Show customers" Click="BtnShowCustomers_Click"/>
 
     </Grid>
 </Page>

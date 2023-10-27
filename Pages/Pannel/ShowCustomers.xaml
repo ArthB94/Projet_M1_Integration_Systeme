@@ -35,7 +35,7 @@
                 <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" Width="2*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Surname" Binding="{Binding Surname}" Width="2*" />
                 <DataGridTextColumn IsReadOnly="True" Header="First order" Binding="{Binding FirstCommandDate }" Width="2*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Country" Binding="{Binding Address.Country }" Width="2*" />
+                <DataGridTextColumn IsReadOnly="True" Header="City" Binding="{Binding Address.City }" Width="2*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Cumulative amount" Binding="{Binding TotalAmount }" Width="2*" />
                 <DataGridTemplateColumn  Width="25" >
                     <DataGridTemplateColumn.CellTemplate>

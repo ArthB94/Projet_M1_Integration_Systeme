@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml.Serialization;
 using Projet_M1_Integration_Systeme.Pages.Pannel;
 
 namespace Projet_M1_Integration_Systeme.Pages
@@ -11,22 +12,31 @@ namespace Projet_M1_Integration_Systeme.Pages
     public partial class StatisticsPage : Page
     {
         public MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-        Window newWindow = new UserWindow();
+        public UserWindow newWindow = new UserWindow();
 
         public StatisticsPage()
         {
+            Clerk.cloneList(Clerk.ClerkReady);
+            DeliveryMan.cloneList(DeliveryMan.DeliveryMansReady);
             InitializeComponent();
             FrameShow.Content = new ShowOldCommands(FrameShow);
-            //DgClerks.ItemsSource = une liste
-            //DgCustomers.ItemsSource = une liste
-            //LblAvgCommande.Text = UnloadedEvent valeur
-            //LblAvgCAcount.Text = UnloadedEvent valeur
+            //calc nb of clients beforehand
+            foreach (Clerk c in Clerk.ListOfClerks)
+            {
+                Console.WriteLine(c.getMyCommands() + " give " + c.cptCmd);
+            }
+            foreach (DeliveryMan d in DeliveryMan.AllDeliveryMen)
+            {
+                Console.WriteLine(d.getMyCommands() + " deliver " + d.nbDeliveries);
+            }
+            DgClerks.ItemsSource = Clerk.ListOfClerks;
+            DgDeliveryMan.ItemsSource = DeliveryMan.AllDeliveryMen;
+            LblAvgCommande.Text = CommandReader.avg.ToString();
+            Console.WriteLine("avg tostring " + CommandReader.avg.ToString());
+            LblAvgAcount.Text = Clerk.getAvgAccount().ToString();
         }
         public void BtnShowCustomers_Click(object sender, RoutedEventArgs e)
         {
-
-            // affiche la fenetre newWindow et fait en sorte qu'elle ne puisse pas etre dupliquée
-
             if (newWindow.IsVisible)
             {
                 newWindow.Activate();
@@ -38,7 +48,24 @@ namespace Projet_M1_Integration_Systeme.Pages
             }
 
         }
+       public void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Clerk c in Clerk.ListOfClerks)
+            {
+                Console.WriteLine(c.getMyCommands() + " give " + c.cptCmd);
+            }
+            foreach (DeliveryMan d in DeliveryMan.AllDeliveryMen)
+            {
+                Console.WriteLine(d.getMyCommands() + " deliver " + d.nbDeliveries);
+            }
+            DgClerks.ItemsSource = Clerk.ListOfClerks;
+            //DgCustomers.ItemsSource = Clerk.ListOfCustomers();
+            DgDeliveryMan.ItemsSource = DeliveryMan.AllDeliveryMen;
+            LblAvgCommande.Text = CommandReader.avg.ToString();
+            Console.WriteLine("avg tostring " + CommandReader.avg.ToString());
+            LblAvgAcount.Text = Clerk.getAvgAccount().ToString();
 
+        }
 
     }
 

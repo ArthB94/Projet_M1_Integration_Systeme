@@ -13,7 +13,7 @@ namespace Projet_M1_Integration_Systeme
         public static double avg => CalculateAvg();
         public static int IDS { get; set; } = 0;
 
-        public String Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
+        public String Date_time = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
         public string CustomerName { get; set; } = "Name";
         public string CustomerSurname { get; set; } = "Surname";
         public int CustomerId { get; set;} = 0;
@@ -40,8 +40,8 @@ namespace Projet_M1_Integration_Systeme
             Id = IDS;
             Status = "Waiting";
             Pizzas = pizzas;
-            Drinks = drinklist;
-            delay = 5;
+            Drinks = drinklist;          
+            DeliveryDelay = new Random().Next(3, 12);
 
         }
         public string Status 
@@ -74,6 +74,12 @@ namespace Projet_M1_Integration_Systeme
         }
         public static double CalculateAvg()
         {
+            totalPrices = 0;
+            foreach (CommandReader c in Clerk.LoadCommands())
+            {
+                totalPrices += c.Price;
+            }
+
             return totalPrices / (IDS - 1);
         }
 
@@ -86,7 +92,7 @@ namespace Projet_M1_Integration_Systeme
 
         public void setDate()
         {
-            Date_time = DateTime.Now.ToString("yyyy'-'MM'-'dd'_'HH':'mm':'ss");
+            Date_time = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
         }
 
 
@@ -98,12 +104,14 @@ namespace Projet_M1_Integration_Systeme
         public string CustomerName { get; set; }
         public string CustomerSurname { get; set; }
         public int CustomerId { get; set; }
+        public string DeliveryName { get; set; } 
         public string Status { get; set; }
         [JsonIgnore]
         public string CustomerFullName => CustomerName + " " + CustomerSurname;
 
         public String Date_time { get; set; }
         public double Price { get; set; }
+        public static double avg => Command.avg;
         public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
         public List<Drink> Drinks { get; set; } = new List<Drink>();
 
@@ -116,6 +124,7 @@ namespace Projet_M1_Integration_Systeme
             CustomerSurname = commande.CustomerSurname;
             CustomerId = commande.CustomerId;
             ClerkName = commande.ClerkName;
+            DeliveryName = commande.DeliveryName;
             Status = commande.Status;
 
             
@@ -130,7 +139,7 @@ namespace Projet_M1_Integration_Systeme
         }
 
         [JsonConstructor]
-        public CommandReader(int id, string date_time,string customerName, string customerSurname,int customerid, string clerkName, double price,string status, List<Pizza> pizzas, List<Drink> drinks)
+        public CommandReader(int id, string date_time,string customerName, string customerSurname,int customerid, string clerkName, string deliveryname, double price,string status, List<Pizza> pizzas, List<Drink> drinks)
         {
             Id = id;
             Date_time = date_time;
@@ -138,6 +147,7 @@ namespace Projet_M1_Integration_Systeme
             CustomerName = customerName;
             CustomerSurname = customerSurname;
             ClerkName = clerkName;
+            DeliveryName = deliveryname;
             Status = status;
             CustomerId = customerid;
             Pizzas = pizzas;
@@ -156,6 +166,7 @@ namespace Projet_M1_Integration_Systeme
             commande.CustomerSurname = CustomerSurname;
             commande.CustomerId = CustomerId;
             commande.ClerkName = ClerkName;
+            commande.DeliveryName = DeliveryName;
             commande.DeliveryName = ClerkName;
             commande.Status = Status;
 
